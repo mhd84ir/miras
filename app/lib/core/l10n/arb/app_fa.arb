@@ -1,0 +1,27 @@
+{
+  "@@locale": "fa",
+  "appTitle": "میراث",
+  "@appTitle": {
+    "description": "Application name shown in launcher and app bar contexts."
+  },
+  "homeTagline": "داستان‌های شاهنامه را بخوان، بفهم و به خاطر بسپار",
+  "@homeTagline": {
+    "description": "Tagline under the app name on the placeholder home screen."
+  },
+  "homeOpeningVerseCaption": "سرآغاز شاهنامه",
+  "@homeOpeningVerseCaption": {
+    "description": "Caption above the sample opening couplet on the home screen."
+  },
+  "homeStartButton": "شروع یادگیری",
+  "@homeStartButton": {
+    "description": "Primary call-to-action on the home screen."
+  },
+  "homeComingSoon": "به‌زودی…",
+  "@homeComingSoon": {
+    "description": "Temporary snackbar shown until the lesson flow exists."
+  },
+  "galleryTitle": "نمایشگاه سامانهٔ طراحی",
+  "@galleryTitle": {
+    "description": "Title of the debug-only design-system gallery screen."
+  }
+}

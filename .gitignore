@@ -22,6 +22,9 @@
 **/Pods/
 **/.symlinks/
 
+# Generated code
+app/lib/core/l10n/gen/
+
 # Test artifacts
 coverage/
 **/failures/

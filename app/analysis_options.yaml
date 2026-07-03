@@ -1,0 +1,11 @@
+include: package:very_good_analysis/analysis_options.yaml
+
+analyzer:
+  exclude:
+    - lib/core/l10n/gen/**
+
+linter:
+  rules:
+    # Application code: intent is documented where non-obvious; requiring doc
+    # comments on every public member adds noise, not clarity.
+    public_member_api_docs: false
