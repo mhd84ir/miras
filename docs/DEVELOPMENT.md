@@ -11,28 +11,12 @@
 
 Verify with `flutter doctor`.
 
-### Network note: blocked Google endpoints
+### Network note
 
-`dl.google.com` and `maven.google.com` geo-block some regions (including where
-this project is developed) — downloads return HTTP 404 for every URL. Workarounds
-used by this project:
-
-- **Android SDK packages:** point `sdkmanager` at the Tencent mirror, which
-  mirrors the official repository byte-for-byte:
-
-  ```sh
-  export SDK_TEST_BASE_URL="https://mirrors.cloud.tencent.com/AndroidSDK/"
-  sdkmanager "platform-tools" "platforms;android-36" ...
-  ```
-
-- **Gradle/Maven artifacts:** `app/android/settings.gradle.kts` and
-  `build.gradle.kts` list the Aliyun mirrors of `google` and `central` *before*
-  the official repositories. Environments with direct access (e.g. GitHub CI)
-  simply resolve from whichever answers first; no configuration difference is
-  needed per environment.
-
-- Flutter's own artifacts come from `storage.googleapis.com`, which is not
-  blocked. If it ever is, set `FLUTTER_STORAGE_BASE_URL`.
+`dl.google.com` and `maven.google.com` geo-block some regions: every download
+returns HTTP 404. If `sdkmanager` or Gradle downloads fail that way, connect
+through a VPN and retry — this project intentionally uses only the official
+repositories (no third-party mirrors in the build configuration).
 
 ## Everyday commands (run in `app/`)
 

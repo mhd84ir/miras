@@ -11,12 +11,6 @@ pluginManagement {
     includeBuild("$flutterSdkPath/packages/flutter_tools/gradle")
 
     repositories {
-        // Aliyun mirrors first: dl.google.com (behind google()/maven.google.com)
-        // geo-blocks some regions, including where this project is developed.
-        // The official repositories remain as fallbacks for environments where
-        // they are reachable (e.g. CI).
-        maven { url = uri("https://maven.aliyun.com/repository/google") }
-        maven { url = uri("https://maven.aliyun.com/repository/central") }
         google()
         mavenCentral()
         gradlePluginPortal()
