@@ -1,0 +1,35 @@
+# macOS
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Dart / Flutter (applies to app/ and tool/ packages)
+**/.dart_tool/
+**/build/
+**/.flutter-plugins
+**/.flutter-plugins-dependencies
+**/doc/api/
+
+# Android
+**/local.properties
+**/*.keystore
+**/key.properties
+
+# iOS (phase 3)
+**/Pods/
+**/.symlinks/
+
+# Test artifacts
+coverage/
+**/failures/
+
+# Content pipeline caches (generated audio is cached, not committed;
+# compiled content packs are build artifacts produced by tool/content_compiler)
+tool/content_compiler/.cache/
+
+# Secrets (TTS API keys for the content pipeline)
+.env
+*.env.local
