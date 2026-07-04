@@ -101,6 +101,12 @@ class DriftContentRepository implements ContentRepository {
   }
 
   @override
+  Future<List<VocabItem>> allVocab() async {
+    final rows = await _db.select(_db.vocabularyItemRows).get();
+    return rows.map(_vocab).toList();
+  }
+
+  @override
   Future<RetellingSection?> retelling(String id) async {
     final r = await (_db.select(
       _db.retellingRows,

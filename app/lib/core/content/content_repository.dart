@@ -17,6 +17,9 @@ abstract interface class ContentRepository {
 
   Future<List<VocabItem>> vocabByIds(List<String> ids);
 
+  /// Every vocabulary item in the pack — the review deck's distractor pool.
+  Future<List<VocabItem>> allVocab();
+
   Future<RetellingSection?> retelling(String id);
 
   /// For the library reading view, in narrative order.

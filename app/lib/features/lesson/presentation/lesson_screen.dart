@@ -54,6 +54,7 @@ class _LessonScreenState extends ConsumerState<LessonScreen> {
           state: state,
           onExit: () => context.go('/'),
           onRetry: () => ref.invalidate(provider),
+          onGoReview: () => context.go('/review'),
         );
 
       case LessonPhase.question || LessonPhase.feedback:

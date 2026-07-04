@@ -7,7 +7,10 @@ import 'package:miras/core/content/data/content_database.dart';
 import 'package:miras/core/content/data/drift_content_repository.dart';
 import 'package:miras/core/content/data/pack_bootstrap.dart';
 import 'package:miras/core/db/user_database.dart';
+import 'package:miras/core/notifications/notification_service.dart';
+import 'package:miras/features/gamification/data/gamification_repository.dart';
 import 'package:miras/features/home_path/data/progress_repository.dart';
+import 'package:miras/features/review/data/srs_repository.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -18,6 +21,9 @@ Future<void> main() async {
   final contentDb = ContentDatabase.openPack(packFile);
   final userDb = UserDatabase.open();
 
+  final gamification = DriftGamificationRepository(userDb);
+  await gamification.ensureSeeded();
+
   runApp(
     ProviderScope(
       overrides: [
@@ -26,6 +32,11 @@ Future<void> main() async {
         ),
         progressRepositoryProvider.overrideWithValue(
           DriftProgressRepository(userDb),
+        ),
+        gamificationRepositoryProvider.overrideWithValue(gamification),
+        srsRepositoryProvider.overrideWithValue(DriftSrsRepository(userDb)),
+        notificationServiceProvider.overrideWithValue(
+          LocalNotificationService(),
         ),
       ],
       child: const MirasApp(),

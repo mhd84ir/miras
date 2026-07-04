@@ -4,8 +4,11 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'package:miras/app.dart';
 import 'package:miras/core/content/content_providers.dart';
+import 'package:miras/core/notifications/notification_service.dart';
+import 'package:miras/features/gamification/data/gamification_repository.dart';
 import 'package:miras/features/home_path/data/progress_repository.dart';
 import 'package:miras/features/home_path/domain/lesson_progress.dart';
+import 'package:miras/features/review/data/srs_repository.dart';
 
 import '../helpers/fakes.dart';
 
@@ -21,6 +24,13 @@ void main() {
         ),
         progressRepositoryProvider.overrideWithValue(
           progress ?? FakeProgressRepository(),
+        ),
+        gamificationRepositoryProvider.overrideWithValue(
+          FakeGamificationRepository(),
+        ),
+        srsRepositoryProvider.overrideWithValue(FakeSrsRepository()),
+        notificationServiceProvider.overrideWithValue(
+          const NoopNotificationService(),
         ),
       ],
       child: const MirasApp(),

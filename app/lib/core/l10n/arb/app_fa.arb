@@ -106,5 +106,99 @@
   "libraryStory": "داستان",
   "@libraryStory": {
     "description": "Library segment toggle: retelling view."
+  },
+  "navReview": "مرور",
+  "@navReview": {
+    "description": "Bottom navigation label for the SRS review tab."
+  },
+  "navProfile": "نمایه",
+  "@navProfile": {
+    "description": "Bottom navigation label for the profile tab."
+  },
+  "heartsEmptyTitle": "دل نداری!",
+  "@heartsEmptyTitle": {
+    "description": "Shown when a lesson cannot start/continue with zero hearts."
+  },
+  "heartsEmptyBody": "برای بازیابی دل‌ها، واژه‌های آموخته را مرور کن.",
+  "@heartsEmptyBody": {
+    "description": "Explains that completing a review refills hearts."
+  },
+  "goToReview": "مرور واژه‌ها",
+  "@goToReview": {
+    "description": "Button leading to the review tab."
+  },
+  "reviewDueCount": "{count} واژه آمادهٔ مرور",
+  "@reviewDueCount": {
+    "description": "Review tab headline; count is pre-formatted with Persian digits.",
+    "placeholders": {
+      "count": {"type": "String"}
+    }
+  },
+  "reviewEmptyTitle": "فعلاً چیزی برای مرور نیست",
+  "@reviewEmptyTitle": {
+    "description": "Review tab empty state title."
+  },
+  "reviewEmptyBody": "واژه‌ها پس از آموختن در درس‌ها، این‌جا برای مرور می‌آیند.",
+  "@reviewEmptyBody": {
+    "description": "Review tab empty state explanation."
+  },
+  "reviewStart": "شروع مرور",
+  "@reviewStart": {
+    "description": "Button starting a review session."
+  },
+  "reviewCompletedTitle": "مرور تمام شد!",
+  "@reviewCompletedTitle": {
+    "description": "Review results headline; hearts are refilled."
+  },
+  "reviewHeartsRefilled": "دل‌هایت دوباره پر شد",
+  "@reviewHeartsRefilled": {
+    "description": "Subline on review results noting the heart refill reward."
+  },
+  "reviewPromptMeaning": "معنی این واژه چیست؟",
+  "@reviewPromptMeaning": {
+    "description": "Review question: choose the meaning for the shown word."
+  },
+  "reviewPromptWord": "کدام واژه این معنی را دارد؟",
+  "@reviewPromptWord": {
+    "description": "Review question: choose the word for the shown meaning."
+  },
+  "statStreakDays": "{days} روز",
+  "@statStreakDays": {
+    "description": "Streak chip label; days pre-formatted with Persian digits.",
+    "placeholders": {
+      "days": {"type": "String"}
+    }
+  },
+  "profileTotalXp": "امتیاز کل",
+  "@profileTotalXp": {
+    "description": "Profile stat label: total XP."
+  },
+  "profileLongestStreak": "بلندترین پیوستگی",
+  "@profileLongestStreak": {
+    "description": "Profile stat label: longest streak."
+  },
+  "profileVocabCount": "واژه‌های آموخته",
+  "@profileVocabCount": {
+    "description": "Profile stat label: tracked vocabulary count."
+  },
+  "profileAchievements": "دستاوردها",
+  "@profileAchievements": {
+    "description": "Profile section title: achievements."
+  },
+  "profileDailyGoal": "هدف روزانهٔ امتیاز",
+  "@profileDailyGoal": {
+    "description": "Profile setting: daily XP goal selector."
+  },
+  "profileNotifications": "یادآور روزانه",
+  "@profileNotifications": {
+    "description": "Profile setting: daily reminder notification toggle."
+  },
+  "notificationTitle": "میراث",
+  "@notificationTitle": {
+    "description": "Daily reminder notification title."
+  },
+  "notificationBody": "وقت مرور است! پیوستگی‌ات را نگه دار.",
+  "@notificationBody": {
+    "description": "Daily reminder notification body."
   }
 }

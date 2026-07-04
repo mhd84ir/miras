@@ -4,15 +4,13 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:miras/core/content/content_providers.dart';
+import 'package:miras/core/content/exercise_prompt.dart';
+import 'package:miras/features/gamification/application/gamification_service.dart';
 import 'package:miras/features/home_path/data/progress_repository.dart';
 import 'package:miras/features/lesson/application/lesson_loader.dart';
 import 'package:miras/features/lesson/domain/exercise_answer.dart';
 import 'package:miras/features/lesson/domain/lesson_result.dart';
 import 'package:miras/features/lesson/domain/loaded_exercise.dart';
-
-/// Session hearts: full refill per lesson in M2; the persistent heart
-/// economy arrives with M3 gamification (docs/DATA_MODEL.md §4).
-const sessionHearts = 5;
 
 enum LessonPhase {
   /// Exercises are being loaded from the pack.
@@ -34,12 +32,13 @@ class LessonState {
     required this.phase,
     this.queue = const [],
     this.index = 0,
-    this.hearts = sessionHearts,
+    this.hearts = 0,
     this.lastCorrect,
     this.firstTryCorrectIds = const {},
     this.answeredIds = const {},
     this.result,
     this.failed = false,
+    this.outOfHearts = false,
   });
 
   final LessonPhase phase;
@@ -65,6 +64,10 @@ class LessonState {
   /// True when hearts ran out before the queue finished.
   final bool failed;
 
+  /// True when the lesson could not even start (or failed) because the
+  /// persistent heart supply is empty — the UI points to review practice.
+  final bool outOfHearts;
+
   LoadedExercise? get current =>
       phase == LessonPhase.question || phase == LessonPhase.feedback
       ? queue[index]
@@ -85,6 +88,7 @@ class LessonState {
     Set<String>? answeredIds,
     LessonResult? result,
     bool? failed,
+    bool? outOfHearts,
   }) {
     return LessonState(
       phase: phase ?? this.phase,
@@ -96,6 +100,7 @@ class LessonState {
       answeredIds: answeredIds ?? this.answeredIds,
       result: result ?? this.result,
       failed: failed ?? this.failed,
+      outOfHearts: outOfHearts ?? this.outOfHearts,
     );
   }
 }
@@ -119,12 +124,25 @@ class LessonController extends Notifier<LessonState> {
   }
 
   Future<void> _load() async {
+    final hearts = await ref.read(gamificationServiceProvider).settledHearts();
+    if (!ref.mounted) return;
+
+    if (hearts.count <= 0) {
+      state = state.copyWith(
+        phase: LessonPhase.completed,
+        failed: true,
+        outOfHearts: true,
+      );
+      return;
+    }
+
     final loader = LessonLoader(ref.read(contentRepositoryProvider));
     final exercises = await loader.load(lessonId);
     if (!ref.mounted) return;
     state = LessonState(
       phase: LessonPhase.question,
       queue: exercises,
+      hearts: hearts.count,
     );
   }
 
@@ -153,10 +171,17 @@ class LessonController extends Notifier<LessonState> {
           lessonSessionId: _sessionId,
         );
 
+    // Wrong answers cost a persistent heart (docs/DATA_MODEL.md §4).
+    var hearts = state.hearts;
+    if (!correct) {
+      hearts = (await ref.read(gamificationServiceProvider).spendHeart()).count;
+      if (!ref.mounted) return;
+    }
+
     state = state.copyWith(
       phase: LessonPhase.feedback,
       lastCorrect: correct,
-      hearts: correct ? state.hearts : state.hearts - 1,
+      hearts: hearts,
       answeredIds: {...state.answeredIds, id},
       firstTryCorrectIds: correct && firstAttempt
           ? {...state.firstTryCorrectIds, id}
@@ -171,7 +196,11 @@ class LessonController extends Notifier<LessonState> {
     if (state.phase != LessonPhase.feedback) return;
 
     if (state.hearts <= 0) {
-      state = state.copyWith(phase: LessonPhase.completed, failed: true);
+      state = state.copyWith(
+        phase: LessonPhase.completed,
+        failed: true,
+        outOfHearts: true,
+      );
       return;
     }
     _advance();
@@ -197,6 +226,20 @@ class LessonController extends Notifier<LessonState> {
       correctFirstTry: state.firstTryCorrectIds.length,
     );
     await ref.read(progressRepositoryProvider).recordCompletion(result);
+
+    // Vocabulary formally introduced in this lesson enters the SRS deck.
+    final introducedVocabIds = {
+      for (final e in state.queue)
+        if (e.prompt case VocabIntroPrompt(:final vocabId)) vocabId,
+    }.toList();
+    await ref
+        .read(gamificationServiceProvider)
+        .onLessonCompleted(
+          result,
+          introducedVocabIds: introducedVocabIds,
+        );
+
+    if (!ref.mounted) return;
     state = state.copyWith(phase: LessonPhase.completed, result: result);
   }
 }

@@ -12,15 +12,17 @@ import 'package:miras/core/widgets/miras_progress_bar.dart';
 class ExerciseScaffold extends StatelessWidget {
   const ExerciseScaffold({
     required this.progress,
-    required this.hearts,
     required this.body,
     required this.footer,
     required this.onClose,
+    this.hearts,
     super.key,
   });
 
   final double progress;
-  final int hearts;
+
+  /// Shown when non-null; review sessions pass null (no hearts at stake).
+  final int? hearts;
   final Widget body;
   final Widget footer;
   final VoidCallback onClose;
@@ -47,8 +49,10 @@ class ExerciseScaffold extends StatelessWidget {
                     ).closeButtonTooltip,
                   ),
                   Expanded(child: MirasProgressBar(value: progress)),
-                  const SizedBox(width: MirasSpacing.md),
-                  _HeartsChip(hearts: hearts),
+                  if (hearts != null) ...[
+                    const SizedBox(width: MirasSpacing.md),
+                    _HeartsChip(hearts: hearts!),
+                  ],
                 ],
               ),
             ),

@@ -15,12 +15,16 @@ class LessonResultsView extends StatelessWidget {
     required this.state,
     required this.onExit,
     required this.onRetry,
+    required this.onGoReview,
     super.key,
   });
 
   final LessonState state;
   final VoidCallback onExit;
   final VoidCallback onRetry;
+
+  /// Out-of-hearts recovery path: review practice refills hearts.
+  final VoidCallback onGoReview;
 
   @override
   Widget build(BuildContext context) {
@@ -40,10 +44,22 @@ class LessonResultsView extends StatelessWidget {
                 Icon(Icons.heart_broken, size: 72, color: colors.anari),
                 const SizedBox(height: MirasSpacing.lg),
                 Text(
-                  strings.lessonFailedTitle,
+                  state.outOfHearts
+                      ? strings.heartsEmptyTitle
+                      : strings.lessonFailedTitle,
                   textAlign: TextAlign.center,
                   style: MirasTextStyles.headline.copyWith(color: colors.ink),
                 ),
+                if (state.outOfHearts) ...[
+                  const SizedBox(height: MirasSpacing.sm),
+                  Text(
+                    strings.heartsEmptyBody,
+                    textAlign: TextAlign.center,
+                    style: MirasTextStyles.body.copyWith(
+                      color: colors.inkMuted,
+                    ),
+                  ),
+                ],
               ] else ...[
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -80,9 +96,11 @@ class LessonResultsView extends StatelessWidget {
               const Spacer(),
               if (state.failed) ...[
                 MirasButton(
-                  label: strings.lessonRetry,
+                  label: state.outOfHearts
+                      ? strings.goToReview
+                      : strings.lessonRetry,
                   expand: true,
-                  onPressed: onRetry,
+                  onPressed: state.outOfHearts ? onGoReview : onRetry,
                 ),
                 const SizedBox(height: MirasSpacing.sm),
                 MirasButton(

@@ -6,6 +6,7 @@ import 'package:miras/core/content/models.dart';
 import 'package:miras/core/theme/miras_colors.dart';
 import 'package:miras/core/theme/miras_spacing.dart';
 import 'package:miras/core/theme/miras_text_styles.dart';
+import 'package:miras/features/gamification/presentation/stats_header.dart';
 import 'package:miras/features/home_path/application/path_providers.dart';
 import 'package:miras/features/home_path/presentation/widgets/lesson_path_node.dart';
 
@@ -19,17 +20,25 @@ class HomePathScreen extends ConsumerWidget {
 
     return Scaffold(
       body: SafeArea(
-        child: chapters.when(
-          loading: () => const Center(child: CircularProgressIndicator()),
-          error: (e, _) => Center(child: Text(e.toString())),
-          data: (list) => ListView(
-            padding: const EdgeInsetsDirectional.symmetric(
-              vertical: MirasSpacing.md,
+        child: Column(
+          children: [
+            const StatsHeader(),
+            Expanded(
+              child: chapters.when(
+                loading: () => const Center(child: CircularProgressIndicator()),
+                error: (e, _) => Center(child: Text(e.toString())),
+                data: (list) => ListView(
+                  padding: const EdgeInsetsDirectional.symmetric(
+                    vertical: MirasSpacing.md,
+                  ),
+                  children: [
+                    for (final chapter in list)
+                      _ChapterSection(chapter: chapter),
+                  ],
+                ),
+              ),
             ),
-            children: [
-              for (final chapter in list) _ChapterSection(chapter: chapter),
-            ],
-          ),
+          ],
         ),
       ),
     );
