@@ -24,6 +24,10 @@
 
 # Generated code
 app/lib/core/l10n/gen/
+app/lib/**/*.g.dart
+
+# Generated content pack (built by tool/content_compiler)
+app/assets/content/
 
 # Test artifacts
 coverage/

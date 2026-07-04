@@ -18,10 +18,93 @@
   },
   "homeComingSoon": "به‌زودی…",
   "@homeComingSoon": {
-    "description": "Temporary snackbar shown until the lesson flow exists."
+    "description": "Temporary snackbar shown for not-yet-built features."
   },
   "galleryTitle": "نمایشگاه سامانهٔ طراحی",
   "@galleryTitle": {
     "description": "Title of the debug-only design-system gallery screen."
+  },
+  "navHome": "یادگیری",
+  "@navHome": {
+    "description": "Bottom navigation label for the learning path tab."
+  },
+  "navLibrary": "کتابخانه",
+  "@navLibrary": {
+    "description": "Bottom navigation label for the library tab."
+  },
+  "lessonCheck": "بررسی",
+  "@lessonCheck": {
+    "description": "Footer button that submits the current answer."
+  },
+  "lessonContinue": "ادامه",
+  "@lessonContinue": {
+    "description": "Footer button that advances to the next exercise."
+  },
+  "lessonCorrect": "آفرین!",
+  "@lessonCorrect": {
+    "description": "Feedback banner title for a correct answer."
+  },
+  "lessonWrongTitle": "پاسخ درست:",
+  "@lessonWrongTitle": {
+    "description": "Feedback banner title preceding the correct answer text."
+  },
+  "lessonCompletedTitle": "درس تمام شد!",
+  "@lessonCompletedTitle": {
+    "description": "Results screen headline after finishing a lesson."
+  },
+  "lessonFailedTitle": "دل‌هایت تمام شد",
+  "@lessonFailedTitle": {
+    "description": "Results screen headline when hearts run out."
+  },
+  "lessonRetry": "تلاش دوباره",
+  "@lessonRetry": {
+    "description": "Button to restart a failed lesson."
+  },
+  "lessonAccuracy": "دقت: {percent}٪",
+  "@lessonAccuracy": {
+    "description": "Accuracy line on the results screen; percent is pre-formatted with Persian digits.",
+    "placeholders": {
+      "percent": {"type": "String"}
+    }
+  },
+  "clozeInstruction": "واژهٔ جاافتاده را برگزین",
+  "@clozeInstruction": {
+    "description": "Instruction shown above a cloze exercise."
+  },
+  "listeningInstruction": "آنچه می‌شنوی را برگزین",
+  "@listeningInstruction": {
+    "description": "Instruction shown above a listening exercise."
+  },
+  "matchingInstruction": "هر واژه را با معنی آن جفت کن",
+  "@matchingInstruction": {
+    "description": "Instruction shown above a matching board."
+  },
+  "assemblyInstruction": "واژه‌ها را به ترتیب مصراع بچین",
+  "@assemblyInstruction": {
+    "description": "Instruction shown above a hemistich assembly exercise."
+  },
+  "sequencingInstruction": "رویدادها را به ترتیب داستان مرتب کن",
+  "@sequencingInstruction": {
+    "description": "Instruction shown above a sequencing exercise."
+  },
+  "meaningLabel": "معنی",
+  "@meaningLabel": {
+    "description": "Label above a verse's modern-Persian meaning."
+  },
+  "interpretationLabel": "نکته",
+  "@interpretationLabel": {
+    "description": "Label above a verse's interpretation note."
+  },
+  "etymologyLabel": "ریشه‌شناسی",
+  "@etymologyLabel": {
+    "description": "Label above a vocabulary item's etymology note."
+  },
+  "libraryVerses": "ابیات",
+  "@libraryVerses": {
+    "description": "Library segment toggle: verses view."
+  },
+  "libraryStory": "داستان",
+  "@libraryStory": {
+    "description": "Library segment toggle: retelling view."
   }
 }

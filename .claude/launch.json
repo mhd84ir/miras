@@ -1,0 +1,14 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "miras-web",
+      "runtimeExecutable": "sh",
+      "runtimeArgs": [
+        "-c",
+        "cd app && flutter run -d web-server --web-port=8080 --web-hostname=127.0.0.1"
+      ],
+      "port": 8080
+    }
+  ]
+}

@@ -35,6 +35,22 @@ Future<void> _loadFonts() async {
     }
     await loader.load();
   }
+
+  // Material icon glyphs render as boxes in goldens unless the icon font is
+  // loaded explicitly from the Flutter SDK cache.
+  final flutterRoot = Platform.environment['FLUTTER_ROOT'];
+  if (flutterRoot != null) {
+    final iconFont = File(
+      '$flutterRoot/bin/cache/artifacts/material_fonts/MaterialIcons-Regular.otf',
+    );
+    if (iconFont.existsSync()) {
+      final loader = FontLoader('MaterialIcons')
+        ..addFont(
+          Future.value(ByteData.sublistView(iconFont.readAsBytesSync())),
+        );
+      await loader.load();
+    }
+  }
 }
 
 /// Allows up to 0.5% pixel difference so goldens generated on macOS still pass

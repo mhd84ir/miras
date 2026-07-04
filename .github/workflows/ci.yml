@@ -27,8 +27,17 @@ jobs:
       - name: Install dependencies
         run: flutter pub get
 
+      - name: Build content pack (app asset)
+        working-directory: tool/content_compiler
+        run: |
+          dart pub get
+          dart run content_compiler build --content ../../content --out ../../app/assets/content
+
       - name: Generate localizations
         run: flutter gen-l10n
+
+      - name: Generate code (drift)
+        run: dart run build_runner build --delete-conflicting-outputs
 
       - name: Check formatting
         run: dart format --set-exit-if-changed lib test

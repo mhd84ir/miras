@@ -34,6 +34,8 @@ class PackWriter {
       db.execute('''
         PRAGMA journal_mode = OFF;
         PRAGMA synchronous = OFF;
+        -- Read by the app's Drift layer as the schema version marker.
+        PRAGMA user_version = $contentSchemaVersion;
 
         CREATE TABLE content_pack (
           pack_version INTEGER NOT NULL,
