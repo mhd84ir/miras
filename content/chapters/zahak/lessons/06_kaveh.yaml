@@ -1,0 +1,59 @@
+id: zahak.l06
+type: verses
+title: "کاوهٔ آهنگر و درفش کاویانی"
+exercises:
+  - id: zahak.l06.e01
+    type: vocabIntro
+    prompt: { vocabId: vocab.dadkhah }
+  - id: zahak.l06.e02
+    type: vocabIntro
+    prompt: { vocabId: vocab.khorushidan }
+  - id: zahak.l06.e03
+    type: vocabIntro
+    prompt: { vocabId: vocab.mahzar }
+  - id: zahak.l06.e04
+    type: vocabIntro
+    prompt: { vocabId: vocab.derafsh }
+  - id: zahak.l06.e05
+    type: vocabIntro
+    prompt: { vocabId: vocab.band }
+  - id: zahak.l06.e06
+    type: verseIntro
+    prompt: { verseId: zahak.v015 }
+  - id: zahak.l06.e07
+    type: verseIntro
+    prompt: { verseId: zahak.v016 }
+  - id: zahak.l06.e08
+    type: cloze
+    prompt:
+      verseId: zahak.v016
+      hemistich: 2
+      blankToken: 4
+      options: ["دادخواه", "بیدادگر", "خوالیگر"]
+      correctIndex: 0
+  - id: zahak.l06.e09
+    type: verseIntro
+    prompt: { verseId: zahak.v017 }
+  - id: zahak.l06.e10
+    type: verseIntro
+    prompt: { verseId: zahak.v018 }
+  - id: zahak.l06.e11
+    type: hemistichAssembly
+    prompt:
+      verseId: zahak.v018
+      hemistich: 2
+      distractors: ["درفش"]
+  - id: zahak.l06.e12
+    type: verseIntro
+    prompt: { verseId: zahak.v019 }
+  - id: zahak.l06.e13
+    type: verseIntro
+    prompt: { verseId: zahak.v020 }
+  - id: zahak.l06.e14
+    type: cloze
+    prompt:
+      verseId: zahak.v020
+      hemistich: 2
+      blankToken: 3
+      options: ["درفش", "محضر", "گزند"]
+      correctIndex: 0

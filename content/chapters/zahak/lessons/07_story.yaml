@@ -1,0 +1,46 @@
+id: zahak.l07
+type: story
+title: "داستان ضحاک — بازخوانی"
+exercises:
+  - id: zahak.l07.e01
+    type: storySection
+    prompt: { retellingId: zahak.r01 }
+  - id: zahak.l07.e02
+    type: storySection
+    prompt: { retellingId: zahak.r02 }
+  - id: zahak.l07.e03
+    type: comprehension
+    prompt:
+      question: "خوراکِ ماران ضحاک چه بود؟"
+      options: ["مغز جوانان", "گوشت گاو و بره", "زردهٔ تخم‌مرغ"]
+      correctIndex: 0
+  - id: zahak.l07.e04
+    type: storySection
+    prompt: { retellingId: zahak.r03 }
+  - id: zahak.l07.e05
+    type: storySection
+    prompt: { retellingId: zahak.r04 }
+  - id: zahak.l07.e06
+    type: storySection
+    prompt: { retellingId: zahak.r05 }
+  - id: zahak.l07.e07
+    type: comprehension
+    prompt:
+      question: "کاوه با محضرِ ضحاک چه کرد؟"
+      options:
+        - "آن را درید و زیر پا انداخت"
+        - "آن را گواهی کرد"
+        - "آن را نزد فریدون برد"
+      correctIndex: 0
+  - id: zahak.l07.e08
+    type: storySection
+    prompt: { retellingId: zahak.r06 }
+  - id: zahak.l07.e09
+    type: comprehension
+    prompt:
+      question: "چرا فریدون ضحاک را نکشت؟"
+      options:
+        - "سروش گفت زمانش نرسیده و باید به بند کشیده شود"
+        - "ضحاک از میدان گریخت"
+        - "کاوه برای او شفاعت کرد"
+      correctIndex: 0

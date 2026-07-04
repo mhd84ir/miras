@@ -146,12 +146,14 @@ Persian examples use the Shahnameh's opening: «به نام خداوندِ جا�
 
 | Type | Schema (fields) |
 |---|---|
-| `vocabIntro` | `{ "vocabId": "vocab.kherad" }` — renders from vocabulary table |
+| `vocabIntro` | `{ "vocabId": "vocab.kherad" }` — presentation; renders from vocabulary table |
+| `verseIntro` | `{ "verseId": "zahak.v001" }` — presentation; couplet + meaning + interpretation |
+| `storySection` | `{ "retellingId": "zahak.r01" }` — presentation; one retelling section |
 | `matching` | `{ "pairs": ["vocab.kherad", "vocab.andisheh", "vocab.shahriar", "vocab.anjoman"] }` |
 | `multipleChoice` | `{ "question": "معنی «خرد» چیست؟", "options": ["عقل و دانایی", "کوچک", "شادمانی", "پادشاهی"], "correctIndex": 0, "vocabId": "vocab.kherad" }` |
-| `cloze` | `{ "verseId": "kingdom.v001", "hemistich": 1, "blankToken": 5, "options": ["خرد", "هنر", "سخن", "روان"], "correctIndex": 0 }` |
-| `listening` | `{ "audioAsset": "vocab.kherad", "options": ["خرد", "خورد", "خُرد", "گرد"], "correctIndex": 0 }` |
-| `hemistichAssembly` | `{ "verseId": "kingdom.v001", "hemistich": 2, "distractors": ["جهان", "سخن"] }` — correct tiles derived from verse text |
+| `cloze` | `{ "verseId": "zahak.v001", "hemistich": 1, "blankToken": 5, "options": ["خرد", "هنر", "سخن", "روان"], "correctIndex": 0 }` — compiler verifies `options[correctIndex]` equals the blanked token |
+| `listening` | `{ "vocabId": "vocab.kherad", "options": ["خرد", "خورد", "گرد"], "correctIndex": 0 }` — audio comes from the vocab item's `audio_asset`; app skips the exercise if audio is absent |
+| `hemistichAssembly` | `{ "verseId": "zahak.v001", "hemistich": 2, "distractors": ["جهان", "سخن"] }` — correct tiles derived from verse text |
 | `comprehension` | `{ "question": "کاوه چرا برخاست؟", "options": [...], "correctIndex": 1 }` |
 | `sequencing` | `{ "events": [{"id": "a", "text": "..."}, ...], "correctOrder": ["c", "a", "b", "d"] }` |
 

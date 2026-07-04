@@ -1,0 +1,70 @@
+id: zahak.l03
+type: verses
+title: "ابیات ۱ — فریب ابلیس"
+exercises:
+  - id: zahak.l03.e01
+    type: verseIntro
+    prompt: { verseId: zahak.v001 }
+  - id: zahak.l03.e02
+    type: verseIntro
+    prompt: { verseId: zahak.v002 }
+  - id: zahak.l03.e03
+    type: verseIntro
+    prompt: { verseId: zahak.v003 }
+  - id: zahak.l03.e04
+    type: cloze
+    prompt:
+      verseId: zahak.v003
+      hemistich: 2
+      blankToken: 2
+      options: ["سبکسار", "گرانمایه", "خردمند"]
+      correctIndex: 0
+  - id: zahak.l03.e05
+    type: verseIntro
+    prompt: { verseId: zahak.v004 }
+  - id: zahak.l03.e06
+    type: verseIntro
+    prompt: { verseId: zahak.v005 }
+  - id: zahak.l03.e07
+    type: cloze
+    prompt:
+      verseId: zahak.v002
+      hemistich: 1
+      blankToken: 3
+      options: ["گرانمایه", "فرومایه", "سبکسار"]
+      correctIndex: 0
+  - id: zahak.l03.e08
+    type: verseIntro
+    prompt: { verseId: zahak.v006 }
+  - id: zahak.l03.e09
+    type: verseIntro
+    prompt: { verseId: zahak.v007 }
+  - id: zahak.l03.e10
+    type: multipleChoice
+    prompt:
+      question: "ابلیس در چهرهٔ خوالیگر چه پاداشی از ضحاک خواست؟"
+      options:
+        - "بوسه زدن بر کتف‌های شاه"
+        - "گنج و زرِ فراوان"
+        - "فرمانروایی یک شهر"
+      correctIndex: 0
+  - id: zahak.l03.e11
+    type: verseIntro
+    prompt: { verseId: zahak.v008 }
+  - id: zahak.l03.e12
+    type: hemistichAssembly
+    prompt:
+      verseId: zahak.v008
+      hemistich: 1
+      distractors: ["درفش", "خورش"]
+  - id: zahak.l03.e13
+    type: verseIntro
+    prompt: { verseId: zahak.v009 }
+  - id: zahak.l03.e14
+    type: cloze
+    prompt:
+      verseId: zahak.v009
+      hemistich: 1
+      blankToken: 5
+      options: ["خورش", "گزند", "درفش"]
+      correctIndex: 0

@@ -1,0 +1,51 @@
+id: zahak.l04
+type: vocab
+title: "واژگان ۲ — روزگار بیداد"
+exercises:
+  - id: zahak.l04.e01
+    type: vocabIntro
+    prompt: { vocabId: vocab.katf }
+  - id: zahak.l04.e02
+    type: vocabIntro
+    prompt: { vocabId: vocab.khoresh }
+  - id: zahak.l04.e03
+    type: vocabIntro
+    prompt: { vocabId: vocab.shahriar }
+  - id: zahak.l04.e04
+    type: vocabIntro
+    prompt: { vocabId: vocab.anjoman }
+  - id: zahak.l04.e05
+    type: vocabIntro
+    prompt: { vocabId: vocab.farzaneh }
+  - id: zahak.l04.e06
+    type: vocabIntro
+    prompt: { vocabId: vocab.khar }
+  - id: zahak.l04.e07
+    type: vocabIntro
+    prompt: { vocabId: vocab.arjmand }
+  - id: zahak.l04.e08
+    type: vocabIntro
+    prompt: { vocabId: vocab.gazand }
+  - id: zahak.l04.e09
+    type: matching
+    prompt:
+      pairs: [vocab.shahriar, vocab.farzaneh, vocab.khar, vocab.arjmand]
+  - id: zahak.l04.e10
+    type: multipleChoice
+    prompt:
+      question: "در بیت «بر او سالیان انجمن شد هزار»، «انجمن شد» یعنی چه؟"
+      options: ["گرد آمد و انباشته شد", "پراکنده شد", "فراموش شد"]
+      correctIndex: 0
+      vocabId: vocab.anjoman
+  - id: zahak.l04.e11
+    type: listening
+    prompt:
+      vocabId: vocab.khoresh
+      options: ["خورش", "خروش", "خرگوش"]
+      correctIndex: 0
+  - id: zahak.l04.e12
+    type: listening
+    prompt:
+      vocabId: vocab.gazand
+      options: ["گزند", "گزنه", "کمند"]
+      correctIndex: 0

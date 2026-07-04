@@ -1,0 +1,39 @@
+id: zahak.l01
+type: vocab
+title: "واژگان ۱ — مرداس و ابلیس"
+exercises:
+  - id: zahak.l01.e01
+    type: vocabIntro
+    prompt: { vocabId: vocab.geranmayeh }
+  - id: zahak.l01.e02
+    type: vocabIntro
+    prompt: { vocabId: vocab.dad_o_dahesh }
+  - id: zahak.l01.e03
+    type: vocabIntro
+    prompt: { vocabId: vocab.saboksar }
+  - id: zahak.l01.e04
+    type: vocabIntro
+    prompt: { vocabId: vocab.nikkhah }
+  - id: zahak.l01.e05
+    type: vocabIntro
+    prompt: { vocabId: vocab.forumayeh }
+  - id: zahak.l01.e06
+    type: vocabIntro
+    prompt: { vocabId: vocab.bidadgar }
+  - id: zahak.l01.e07
+    type: vocabIntro
+    prompt: { vocabId: vocab.khaligar }
+  - id: zahak.l01.e08
+    type: multipleChoice
+    prompt:
+      question: "معنی «خوالیگر» چیست؟"
+      options: ["آشپز", "آهنگر", "پزشک", "سوارکار"]
+      correctIndex: 0
+      vocabId: vocab.khaligar
+  - id: zahak.l01.e09
+    type: multipleChoice
+    prompt:
+      question: "کدام واژه ضدِّ «گرانمایه» است؟"
+      options: ["فرومایه", "ارجمند", "نیک‌خواه"]
+      correctIndex: 0
+      vocabId: vocab.forumayeh

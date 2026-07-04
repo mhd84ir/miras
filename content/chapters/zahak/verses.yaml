@@ -1,0 +1,161 @@
+# Verse text verbatim from Ganjoor (public domain). Do not edit hemistichs;
+# fix at source reference if a transcription error is ever found.
+# TODO(editorial): meanings and interpretations pending literary review.
+verses:
+  # --- خاستگاه ضحاک (شاهنامه، پادشاهی جمشید، بخش ۲ و ۳)
+  - id: zahak.v001
+    hemistich1: "یکی مرد بود اندر آن روزگار"
+    hemistich2: "ز دشت سواران نیزه گذار"
+    meaning: "در آن روزگار مردی از سرزمینِ سواران نیزه‌افکن (دشت تازیان) بود."
+    interpretation: "آغاز داستان ضحاک؛ فردوسی صحنه را از ایران به سرزمین تازیان می‌برد."
+    source: "ganjoor:/ferdousi/shahname/jamshid/sh2#0"
+  - id: zahak.v002
+    hemistich1: "که مرداس نام گرانمایه بود"
+    hemistich2: "به داد و دهش برترین پایه بود"
+    meaning: "نام آن مرد بزرگوار مرداس بود و در عدالت و بخشندگی جایگاهی بلند داشت."
+    interpretation: "پدرِ نیک‌سرشتِ ضحاک؛ تضاد میان پدر دادگر و پسر بیدادگر ستون اخلاقی این داستان است."
+    vocabulary: [vocab.geranmayeh, vocab.dad_o_dahesh]
+    source: "ganjoor:/ferdousi/shahname/jamshid/sh2#2"
+  - id: zahak.v003
+    hemistich1: "جهانجوی را نام ضحّاک بود"
+    hemistich2: "دلیر و سبکسار و ناپاک بود"
+    meaning: "نام آن جوان جاه‌طلب ضحاک بود؛ دلیر بود اما سبک‌مغز و ناپاک."
+    interpretation: "فردوسی در یک مصراع سه صفت کلیدی ضحاک را کنار هم می‌نشاند: دلیریِ بی‌خرد، راهی به تباهی."
+    vocabulary: [vocab.saboksar]
+    source: "ganjoor:/ferdousi/shahname/jamshid/sh2#8"
+  - id: zahak.v004
+    hemistich1: "چنان بد که ابلیس روزی پگاه"
+    hemistich2: "بیامد به سان یکی نیک‌خواه"
+    meaning: "چنین شد که ابلیس بامدادی در چهرهٔ یک خیرخواه نزد ضحاک آمد."
+    interpretation: "نخستین فریب: اهریمن همیشه در جامهٔ دوست ظاهر می‌شود — بن‌مایه‌ای که در سراسر داستان تکرار خواهد شد."
+    vocabulary: [vocab.nikkhah]
+    source: "ganjoor:/ferdousi/shahname/jamshid/sh2#13"
+  - id: zahak.v005
+    hemistich1: "فرومایه ضحاک بیدادگر"
+    hemistich2: "بدین چاره بگرفت جای پدر"
+    meaning: "ضحاکِ پست و ستمگر با این نیرنگ جای پدر را گرفت."
+    interpretation: "پدرکشی، نخستین گناه ضحاک؛ فردوسی داوری اخلاقی‌اش را در دو صفتِ آغاز بیت آشکار می‌کند."
+    vocabulary: [vocab.forumayeh, vocab.bidadgar]
+    source: "ganjoor:/ferdousi/shahname/jamshid/sh2#43"
+  - id: zahak.v006
+    hemistich1: "بدو گفت اگر شاه را در خورم"
+    hemistich2: "یکی نامور پاک خوالیگرم"
+    meaning: "ابلیس به ضحاک گفت: اگر شایستهٔ شاه باشم، آشپزی نامدار و پاکیزه‌کارم."
+    interpretation: "دومین چهرهٔ ابلیس: خوالیگر (آشپز). واژه‌ای کهن که امروز فراموش شده است."
+    vocabulary: [vocab.khaligar]
+    source: "ganjoor:/ferdousi/shahname/jamshid/sh3#7"
+  - id: zahak.v007
+    hemistich1: "که فرمان دهد تا سر کتف اوی"
+    hemistich2: "ببوسم بدو بر نهم چشم و روی"
+    meaning: "خواسته‌اش این بود که شاه فرمان دهد تا بر شانه‌های او بوسه زند و چشم و روی بر آن نهد."
+    interpretation: "پاداشی که ابلیس می‌خواهد ساده می‌نماید — و همین سادگی، هولناکش می‌کند."
+    vocabulary: [vocab.katf]
+    source: "ganjoor:/ferdousi/shahname/jamshid/sh3#29"
+  - id: zahak.v008
+    hemistich1: "دو مار سیه از دو کتفش برست"
+    hemistich2: "غمی گشت و از هر سویی چاره جست"
+    meaning: "از جای بوسه‌ها دو مار سیاه از شانه‌هایش رویید؛ اندوهگین شد و از هر سو چاره جُست."
+    interpretation: "تولد «ضحاک ماردوش»؛ شرِ پذیرفته‌شده اکنون بخشی از تنِ اوست و جدا شدنی نیست."
+    vocabulary: [vocab.katf]
+    source: "ganjoor:/ferdousi/shahname/jamshid/sh3#34"
+  - id: zahak.v009
+    hemistich1: "به جز مغز مردم مده‌شان خورش"
+    hemistich2: "مگر خود بمیرند از این پرورش"
+    meaning: "ابلیس (در چهرهٔ پزشک) گفت: جز مغز آدمیان به ماران خوراک مده، شاید از این خوراک بمیرند."
+    interpretation: "سومین فریب، تلخ‌ترینِ همه: نابودی جوانان به بهانهٔ درمان. بیداد نظام‌مند آغاز می‌شود."
+    vocabulary: [vocab.khoresh]
+    source: "ganjoor:/ferdousi/shahname/jamshid/sh3#42"
+
+  # --- پادشاهی ضحاک (شاهنامه، ضحاک، بخش ۱)
+  - id: zahak.v010
+    hemistich1: "چو ضحاک شد بر جهان شهریار"
+    hemistich2: "بر او سالیان انجمن شد هزار"
+    meaning: "چون ضحاک فرمانروای جهان شد، هزار سال بر او گرد آمد (هزار سال پادشاهی کرد)."
+    interpretation: "بیت آغازین پادشاهی ضحاک؛ «انجمن شدن سالیان» تصویری از انباشتِ سنگینِ زمانِ بیداد است."
+    vocabulary: [vocab.shahriar, vocab.anjoman]
+    source: "ganjoor:/ferdousi/shahname/zahak/sh1#0"
+  - id: zahak.v011
+    hemistich1: "نهان گشت کردار فرزانگان"
+    hemistich2: "پراگنده شد کام دیوانگان"
+    meaning: "رفتار خردمندان پنهان شد و خواستهٔ دیوسیرتان همه‌جا را گرفت."
+    interpretation: "جامعه زیر بیداد وارونه می‌شود: خرد به پستو می‌رود و دیوانگی فرمان می‌راند."
+    vocabulary: [vocab.farzaneh]
+    source: "ganjoor:/ferdousi/shahname/zahak/sh1#2"
+  - id: zahak.v012
+    hemistich1: "هنر خوار شد جادویی ارجمند"
+    hemistich2: "نهان راستی آشکارا گزند"
+    meaning: "هنر بی‌ارزش شد و جادوگری گرامی؛ راستی پنهان گشت و آسیب و زیان آشکار."
+    interpretation: "یکی از بلندآوازه‌ترین بیت‌های شاهنامه در توصیف روزگار ستم — چهار وارونگی در یک بیت."
+    vocabulary: [vocab.khar, vocab.arjmand, vocab.gazand]
+    source: "ganjoor:/ferdousi/shahname/zahak/sh1#3"
+
+  # --- کابوس ضحاک (شاهنامه، ضحاک، بخش ۳)
+  - id: zahak.v013
+    hemistich1: "چنان دید کز کاخ شاهنشهان"
+    hemistich2: "سه جنگی پدید آمدی ناگهان"
+    meaning: "در خواب دید که از کاخ شاهنشاهان ناگهان سه جنگاور پدیدار شدند."
+    interpretation: "کابوس ضحاک؛ کهتری که در میان است فریدون است — سرنوشت پیش از رسیدن، خبر می‌فرستد."
+    source: "ganjoor:/ferdousi/shahname/zahak/sh3#2"
+  - id: zahak.v014
+    hemistich1: "همی تاختی تا دماوند کوه"
+    hemistich2: "کشان و دوان از پس اندر گروه"
+    meaning: "او را کشان‌کشان تا کوه دماوند می‌تاخت و گروهی از پی می‌دویدند."
+    interpretation: "خواب، پایان داستان را پیشاپیش می‌گوید: دماوند از همین‌جا سرنوشتِ ضحاک است."
+    source: "ganjoor:/ferdousi/shahname/zahak/sh3#6"
+
+  # --- کاوهٔ آهنگر (شاهنامه، ضحاک، بخش ۷)
+  - id: zahak.v015
+    hemistich1: "هم آنگه یکایک ز درگاه شاه"
+    hemistich2: "برآمد خروشیدن دادخواه"
+    meaning: "در همان هنگام، ناگهان از درگاه شاه فریاد دادخواهی برخاست."
+    interpretation: "درست هنگامی که بزرگان بر محضرِ دروغ گواهی می‌نویسند، صدای عدالت از بیرون کاخ می‌رسد."
+    vocabulary: [vocab.dadkhah, vocab.khorushidan]
+    source: "ganjoor:/ferdousi/shahname/zahak/sh7#17"
+  - id: zahak.v016
+    hemistich1: "خروشید و زد دست بر سر ز شاه"
+    hemistich2: "که شاها منم کاوهٔ دادخواه"
+    meaning: "فریاد زد و از دست شاه بر سر خود کوبید که: ای شاه، منم کاوهٔ دادخواه!"
+    interpretation: "مشهورترین لحظهٔ داستان: مردی گمنام از میان مردم، رو در روی هزار سال بیداد می‌ایستد."
+    vocabulary: [vocab.dadkhah, vocab.khorushidan]
+    source: "ganjoor:/ferdousi/shahname/zahak/sh7#20"
+  - id: zahak.v017
+    hemistich1: "یکی بی‌زیان مرد آهنگرم"
+    hemistich2: "ز شاه آتش آید همی بر سرم"
+    meaning: "من آهنگری بی‌آزارم، اما از سوی شاه آتش بر سرم می‌بارد."
+    interpretation: "کاوه خود را «بی‌زیان» می‌نامد — قدرتِ اعتراضش در همین سادگی و بی‌گناهی است."
+    source: "ganjoor:/ferdousi/shahname/zahak/sh7#21"
+  - id: zahak.v018
+    hemistich1: "خروشید و برجست لرزان ز جای"
+    hemistich2: "بدرّید و بسپرد محضر به پای"
+    meaning: "فریاد زد و لرزان از جای برخاست؛ استشهادنامه را درید و زیر پا انداخت."
+    interpretation: "دریدنِ محضر، «نه» گفتن به سندِ دروغین مشروعیت است — کانون اخلاقی کل داستان."
+    vocabulary: [vocab.mahzar]
+    source: "ganjoor:/ferdousi/shahname/zahak/sh7#34"
+  - id: zahak.v019
+    hemistich1: "همان کاوه آن بر سر نیزه کرد"
+    hemistich2: "همان‌گه ز بازار برخاست گَرد"
+    meaning: "کاوه همان چرم آهنگری را بر سر نیزه کرد؛ همان دم از بازار غوغا برخاست."
+    interpretation: "پیش‌بند چرمی آهنگری — نماد کار و رنج — پرچم قیام می‌شود."
+    source: "ganjoor:/ferdousi/shahname/zahak/sh7#47"
+  - id: zahak.v020
+    hemistich1: "فرو هشت ازو سرخ و زرد و بنفش"
+    hemistich2: "همی خواندش کاویانی درفش"
+    meaning: "از آن چرم رشته‌های سرخ و زرد و بنفش آویخت و آن را «درفش کاویانی» نامید."
+    interpretation: "فریدون چرم کاوه را به گوهر و دیبا می‌آراید: پرچمی که سده‌ها نماد ایران ماند."
+    vocabulary: [vocab.derafsh]
+    source: "ganjoor:/ferdousi/shahname/zahak/sh7#58"
+
+  # --- بند دماوند (شاهنامه، ضحاک، بخش ۱۲)
+  - id: zahak.v021
+    hemistich1: "بیآورد ضحاک را چون نوند"
+    hemistich2: "به کوه دماوند کردش به بند"
+    meaning: "ضحاک را شتابان (چون اسب تیزرو) آورد و در کوه دماوند به بند کشید."
+    interpretation: "به فرمان سروش، ضحاک کشته نمی‌شود؛ شر نابود نمی‌شود، مهار می‌شود — اسطوره‌ای که هنوز زنده است."
+    vocabulary: [vocab.band]
+    source: "ganjoor:/ferdousi/shahname/zahak/sh12#62"
+  - id: zahak.v022
+    hemistich1: "از او نام ضحاک چون خاک شد"
+    hemistich2: "جهان از بد او همه پاک شد"
+    meaning: "نام ضحاک چون خاک بی‌ارزش شد و جهان از بدیِ او یکسره پاک گشت."
+    interpretation: "پایان‌بندی داستان با جناسِ «ضحاک/خاک/پاک»؛ داوری تاریخ دربارهٔ ستمگر."
+    source: "ganjoor:/ferdousi/shahname/zahak/sh12#67"

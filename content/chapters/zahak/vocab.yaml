@@ -1,0 +1,112 @@
+# TODO(editorial): definitions and etymologies pending literary review.
+items:
+  - id: vocab.geranmayeh
+    word: "گرانمایه"
+    pronunciation: "gerān-māye"
+    meaning: "ارزشمند، بزرگوار"
+    etymology: "از «گران» (سنگین، پُربها) + «مایه» (سرمایه، گوهر)"
+    example_verse: zahak.v002
+  - id: vocab.dad_o_dahesh
+    word: "داد و دهش"
+    pronunciation: "dād-o-dahesh"
+    meaning: "عدالت و بخشندگی"
+    etymology: "«داد» (عدل) و «دهش» از ریشهٔ دادن (بخشش)"
+    example_verse: zahak.v002
+  - id: vocab.saboksar
+    word: "سبکسار"
+    pronunciation: "sabok-sār"
+    meaning: "سبک‌مغز، بی‌فکر و نااستوار"
+    example_verse: zahak.v003
+  - id: vocab.nikkhah
+    word: "نیک‌خواه"
+    pronunciation: "nik-khāh"
+    meaning: "خیرخواه، دوستدار خوبی برای دیگران"
+    example_verse: zahak.v004
+  - id: vocab.forumayeh
+    word: "فرومایه"
+    pronunciation: "forumāye"
+    meaning: "پست، بی‌ارزش"
+    etymology: "از «فرو» (پایین) + «مایه»؛ در برابر «گرانمایه»"
+    example_verse: zahak.v005
+  - id: vocab.bidadgar
+    word: "بیدادگر"
+    pronunciation: "bidādgar"
+    meaning: "ستمگر"
+    etymology: "«بیداد» (بی + داد: نبودِ عدالت) + پسوند «گر»"
+    example_verse: zahak.v005
+  - id: vocab.khaligar
+    word: "خوالیگر"
+    pronunciation: "khāligar"
+    meaning: "آشپز"
+    etymology: "از «خوالی» (خوردنی) + پسوند «گر»؛ واژه‌ای کهن که امروز فراموش شده است"
+    example_verse: zahak.v006
+  - id: vocab.katf
+    word: "کتف"
+    pronunciation: "katf"
+    meaning: "شانه، دوش"
+    example_verse: zahak.v008
+  - id: vocab.khoresh
+    word: "خورش"
+    pronunciation: "khoresh"
+    meaning: "خوراک، غذا"
+    etymology: "از ریشهٔ «خوردن»؛ معنای کهن آن هر گونه خوراک است، نه فقط خورشت امروزی"
+    example_verse: zahak.v009
+  - id: vocab.shahriar
+    word: "شهریار"
+    pronunciation: "shahriyār"
+    meaning: "پادشاه، فرمانروا"
+    etymology: "از «شهر» (در معنای کهن: کشور) + «یار» (دارنده): دارندهٔ کشور"
+    example_verse: zahak.v010
+  - id: vocab.anjoman
+    word: "انجمن"
+    pronunciation: "anjoman"
+    meaning: "گرد آمدن، جمع شدن؛ در این بیت: «انجمن شد» یعنی گرد آمد و انباشته شد"
+    example_verse: zahak.v010
+  - id: vocab.farzaneh
+    word: "فرزانه"
+    pronunciation: "farzāne"
+    meaning: "دانا، خردمند"
+    example_verse: zahak.v011
+  - id: vocab.khar
+    word: "خوار"
+    pronunciation: "khār"
+    meaning: "پست و بی‌ارزش، بی‌اعتبار"
+    example_verse: zahak.v012
+  - id: vocab.arjmand
+    word: "ارجمند"
+    pronunciation: "arjmand"
+    meaning: "گرامی، باارزش"
+    etymology: "از «ارج» (ارزش) + پسوند «مند»"
+    example_verse: zahak.v012
+  - id: vocab.gazand
+    word: "گزند"
+    pronunciation: "gazand"
+    meaning: "آسیب، زیان"
+    example_verse: zahak.v012
+  - id: vocab.dadkhah
+    word: "دادخواه"
+    pronunciation: "dādkhāh"
+    meaning: "خواهانِ عدالت؛ کسی که برای گرفتن حق خود فریاد می‌زند"
+    etymology: "از «داد» (عدالت) + «خواه» (خواهنده)"
+    example_verse: zahak.v016
+  - id: vocab.khorushidan
+    word: "خروشیدن"
+    pronunciation: "khorushidan"
+    meaning: "فریاد زدن، بانگ برآوردن"
+    example_verse: zahak.v016
+  - id: vocab.mahzar
+    word: "محضر"
+    pronunciation: "mahzar"
+    meaning: "استشهادنامه؛ سندی که گروهی با گواهی خود آن را تأیید می‌کنند"
+    example_verse: zahak.v018
+  - id: vocab.derafsh
+    word: "درفش"
+    pronunciation: "derafsh"
+    meaning: "پرچم"
+    etymology: "از فارسی میانه «drafš»؛ درفش کاویانی پرچم ملی ایران باستان شد"
+    example_verse: zahak.v020
+  - id: vocab.band
+    word: "بند"
+    pronunciation: "band"
+    meaning: "زنجیر، اسارت"
+    example_verse: zahak.v021

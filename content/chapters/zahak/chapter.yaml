@@ -1,0 +1,22 @@
+# Chapter: ضحاک و کاوهٔ آهنگر
+# Verse text sourced verbatim from Ganjoor (public domain):
+#   /ferdousi/shahname/jamshid (sh2, sh3) and /ferdousi/shahname/zahak (sh1–sh12)
+# TODO(editorial): meanings, interpretations, and retelling are original drafts
+# pending literary review.
+id: zahak
+position: 2
+title: "ضحاک و کاوهٔ آهنگر"
+subtitle: "هزار سال بیداد و برخاستن درفش کاویانی"
+summary: >-
+  ابلیس جوانی سبکسار را می‌فریبد تا بر تخت پدر بنشیند؛ از بوسهٔ اهریمن دو مار
+  بر کتف‌های ضحاک می‌روید و هزار سال بیداد بر ایران‌زمین سایه می‌افکند — تا
+  آنکه آهنگری دادخواه چرم‌پارهٔ خود را بر سر نیزه می‌کند و جهان دگرگون می‌شود.
+lessons:
+  - lessons/01_vocab.yaml
+  - lessons/02_practice.yaml
+  - lessons/03_verses_origin.yaml
+  - lessons/04_vocab.yaml
+  - lessons/05_verses_reign.yaml
+  - lessons/06_kaveh.yaml
+  - lessons/07_story.yaml
+  - lessons/08_review.yaml

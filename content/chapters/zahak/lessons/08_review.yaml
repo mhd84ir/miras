@@ -1,0 +1,69 @@
+id: zahak.l08
+type: review
+title: "مرور — از مرداس تا دماوند"
+exercises:
+  - id: zahak.l08.e01
+    type: matching
+    prompt:
+      pairs: [vocab.dadkhah, vocab.mahzar, vocab.derafsh, vocab.band]
+  - id: zahak.l08.e02
+    type: sequencing
+    difficulty: 2
+    prompt:
+      events:
+        - id: a
+          text: "ابلیس ضحاک را به کشتن پدر برمی‌انگیزد"
+        - id: b
+          text: "از بوسهٔ ابلیس دو مار بر کتف‌های ضحاک می‌روید"
+        - id: c
+          text: "ایرانیان ضحاک را به شاهی می‌خوانند و بیداد آغاز می‌شود"
+        - id: d
+          text: "ضحاک خواب سه جنگاور و کوه دماوند را می‌بیند"
+        - id: e
+          text: "کاوه محضر را می‌درد و درفش کاویانی برمی‌خیزد"
+        - id: f
+          text: "فریدون ضحاک را در دماوند به بند می‌کشد"
+      correctOrder: [a, b, c, d, e, f]
+  - id: zahak.l08.e03
+    type: cloze
+    difficulty: 2
+    prompt:
+      verseId: zahak.v010
+      hemistich: 2
+      blankToken: 3
+      options: ["انجمن", "درفش", "گزند"]
+      correctIndex: 0
+  - id: zahak.l08.e04
+    type: comprehension
+    prompt:
+      question: "درفش کاویانی از چه ساخته شد؟"
+      options: ["چرم آهنگری کاوه", "دیبای روم", "پوست شیر"]
+      correctIndex: 0
+  - id: zahak.l08.e05
+    type: hemistichAssembly
+    difficulty: 2
+    prompt:
+      verseId: zahak.v022
+      hemistich: 1
+      distractors: ["پاک"]
+  - id: zahak.l08.e06
+    type: cloze
+    difficulty: 2
+    prompt:
+      verseId: zahak.v022
+      hemistich: 2
+      blankToken: 5
+      options: ["پاک", "خاک", "چاک"]
+      correctIndex: 0
+  - id: zahak.l08.e07
+    type: comprehension
+    prompt:
+      question: "چه کسی ضحاک را به بند کشید؟"
+      options: ["فریدون", "کاوه", "جمشید"]
+      correctIndex: 0
+  - id: zahak.l08.e08
+    type: listening
+    prompt:
+      vocabId: vocab.derafsh
+      options: ["درفش", "درویش", "فرش"]
+      correctIndex: 0

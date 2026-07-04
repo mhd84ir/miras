@@ -1,0 +1,47 @@
+id: zahak.l05
+type: verses
+title: "ابیات ۲ — هزار سال بیداد"
+exercises:
+  - id: zahak.l05.e01
+    type: verseIntro
+    prompt: { verseId: zahak.v010 }
+  - id: zahak.l05.e02
+    type: cloze
+    prompt:
+      verseId: zahak.v010
+      hemistich: 1
+      blankToken: 5
+      options: ["شهریار", "دادخواه", "خوالیگر"]
+      correctIndex: 0
+  - id: zahak.l05.e03
+    type: verseIntro
+    prompt: { verseId: zahak.v011 }
+  - id: zahak.l05.e04
+    type: hemistichAssembly
+    prompt:
+      verseId: zahak.v011
+      hemistich: 2
+      distractors: ["فرزانگان"]
+  - id: zahak.l05.e05
+    type: verseIntro
+    prompt: { verseId: zahak.v012 }
+  - id: zahak.l05.e06
+    type: cloze
+    prompt:
+      verseId: zahak.v012
+      hemistich: 1
+      blankToken: 4
+      options: ["ارجمند", "گرانمایه", "خوار"]
+      correctIndex: 0
+  - id: zahak.l05.e07
+    type: verseIntro
+    prompt: { verseId: zahak.v013 }
+  - id: zahak.l05.e08
+    type: verseIntro
+    prompt: { verseId: zahak.v014 }
+  - id: zahak.l05.e09
+    type: multipleChoice
+    prompt:
+      question: "در کابوس ضحاک، او را کِشان به کدام کوه می‌بردند؟"
+      options: ["دماوند", "البرز", "بیستون"]
+      correctIndex: 0

@@ -1,0 +1,38 @@
+id: zahak.l02
+type: practice
+title: "تمرین واژگان ۱"
+exercises:
+  - id: zahak.l02.e01
+    type: matching
+    prompt:
+      pairs: [vocab.geranmayeh, vocab.saboksar, vocab.nikkhah, vocab.forumayeh]
+  - id: zahak.l02.e02
+    type: multipleChoice
+    prompt:
+      question: "«داد و دهش» یعنی چه؟"
+      options: ["عدالت و بخشندگی", "جنگ و ستیز", "سوگند و پیمان"]
+      correctIndex: 0
+      vocabId: vocab.dad_o_dahesh
+  - id: zahak.l02.e03
+    type: listening
+    prompt:
+      vocabId: vocab.saboksar
+      options: ["سبکسار", "سبکبار", "سوگوار"]
+      correctIndex: 0
+  - id: zahak.l02.e04
+    type: listening
+    prompt:
+      vocabId: vocab.bidadgar
+      options: ["بیدادگر", "دادگر", "بازیگر"]
+      correctIndex: 0
+  - id: zahak.l02.e05
+    type: matching
+    prompt:
+      pairs: [vocab.khaligar, vocab.bidadgar, vocab.dad_o_dahesh]
+  - id: zahak.l02.e06
+    type: multipleChoice
+    prompt:
+      question: "«نیک‌خواه» یعنی چه؟"
+      options: ["خیرخواه", "بدخواه", "دادخواه"]
+      correctIndex: 0
+      vocabId: vocab.nikkhah
