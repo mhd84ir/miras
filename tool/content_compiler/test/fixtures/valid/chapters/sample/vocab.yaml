@@ -1,0 +1,11 @@
+items:
+  - id: vocab.kherad
+    word: "خرد"
+    pronunciation: "kherad"
+    meaning: "عقل و دانایی"
+    etymology: "از فارسی میانه «خرد» (xrad)"
+    example_verse: sample.v001
+  - id: vocab.andisheh
+    word: "اندیشه"
+    pronunciation: "andisheh"
+    meaning: "فکر، تأمل"

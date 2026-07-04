@@ -1,0 +1,8 @@
+id: sample
+position: 1
+title: "فصل نمونه"
+subtitle: "برای آزمون خودکار"
+summary: "این فصل تنها برای آزمون‌های خودکار ساخته شده است."
+lessons:
+  - lessons/01_vocab.yaml
+  - lessons/02_practice.yaml

@@ -1,0 +1,28 @@
+id: sample.l02
+type: practice
+title: "تمرین نمونه"
+exercises:
+  - id: sample.l02.e01
+    type: cloze
+    prompt:
+      verseId: sample.v001
+      hemistich: 1
+      blankToken: 5
+      options: ["خرد", "روان", "سخن"]
+      correctIndex: 0
+  - id: sample.l02.e02
+    type: matching
+    prompt:
+      pairs: [vocab.kherad, vocab.andisheh]
+  - id: sample.l02.e03
+    type: sequencing
+    difficulty: 2
+    prompt:
+      events:
+        - id: a
+          text: "ستایش خداوند"
+        - id: b
+          text: "ستایش خرد"
+        - id: c
+          text: "آغاز داستان"
+      correctOrder: [a, b, c]

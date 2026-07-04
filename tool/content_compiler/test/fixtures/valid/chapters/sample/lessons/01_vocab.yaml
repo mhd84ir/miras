@@ -1,0 +1,15 @@
+id: sample.l01
+type: vocab
+title: "واژگان نمونه"
+exercises:
+  - id: sample.l01.e01
+    type: vocabIntro
+    prompt:
+      vocabId: vocab.kherad
+  - id: sample.l01.e02
+    type: multipleChoice
+    prompt:
+      question: "معنی «خرد» چیست؟"
+      options: ["عقل و دانایی", "کوچک", "شادمانی"]
+      correctIndex: 0
+      vocabId: vocab.kherad

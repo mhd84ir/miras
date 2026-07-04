@@ -1,0 +1,8 @@
+verses:
+  - id: sample.v001
+    hemistich1: "به نام خداوند جان و خرد"
+    hemistich2: "کزین برتر اندیشه برنگذرد"
+    meaning: "سخن را با نام خداوندِ جان و خرد آغاز می‌کنم که اندیشه از او برتر نمی‌رود."
+    interpretation: "بیت آغازین شاهنامه؛ ستایش خرد به‌عنوان برترین آفریدهٔ خداوند."
+    vocabulary: [vocab.kherad, vocab.andisheh]
+    source: "ganjoor:/ferdousi/shahname/aghaz/sh1#0"
