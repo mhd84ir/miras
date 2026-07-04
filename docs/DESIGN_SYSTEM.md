@@ -55,7 +55,7 @@ All faces are open (SIL OFL) and bundled with the app.
 |---|---|---|
 | UI text | **Vazirmatn** | The modern standard for Persian UI; excellent hinting and Persian glyph coverage |
 | Display / headings | **Estedad** | Contemporary Persian display face with character |
-| Verse text | Evaluated in M0 via golden tests: **Amiri**, **Noto Naskh Arabic**, Vazirmatn at display sizes | Verse-grade Naskh rendering is a launch-blocking decision |
+| Verse text | **Amiri** | Decided in M0 via on-device comparison against Noto Naskh Arabic and Vazirmatn: classical literary Naskh, clearly distinguishes poetry from UI text |
 
 ### Scale (Persian needs taller line-height than Latin: ≥1.6 for body)
 
@@ -67,7 +67,7 @@ All faces are open (SIL OFL) and bundled with the app.
 | `body` | Vazirmatn Regular | 16 / 26 | Default text |
 | `bodySmall` | Vazirmatn Regular | 14 / 22 | Secondary text |
 | `caption` | Vazirmatn Medium | 12 / 18 | Labels, counters |
-| `verse` | verse face (M0 decision) | 20 / 40 | بیت display — the couplet widget |
+| `verse` | Amiri Regular | 22 / 44 | بیت display — the couplet widget (sized up for Amiri's lighter optical weight) |
 | `verseMeaning` | Vazirmatn Regular | 15 / 26 | Modern-Persian meaning under verses |
 
 ### Persian typography rules (hard requirements)

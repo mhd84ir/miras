@@ -40,11 +40,7 @@ flutter:
           weight: 600
         - asset: assets/fonts/Estedad-Bold.ttf
           weight: 700
-    # Verse-face candidates under evaluation (M0 exit criterion). The loser and
-    # any unused weights are removed once the CoupletView font decision is made.
+    # Verse face (M0 decision — DESIGN_SYSTEM.md §3): classical Naskh for بیت display.
     - family: Amiri
       fonts:
         - asset: assets/fonts/Amiri-Regular.ttf
-    - family: NotoNaskhArabic
-      fonts:
-        - asset: assets/fonts/NotoNaskhArabic.ttf

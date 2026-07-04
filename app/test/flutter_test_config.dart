@@ -25,7 +25,6 @@ Future<void> _loadFonts() async {
     ],
     'Estedad': ['Estedad-SemiBold.ttf', 'Estedad-Bold.ttf'],
     'Amiri': ['Amiri-Regular.ttf'],
-    'NotoNaskhArabic': ['NotoNaskhArabic.ttf'],
   };
 
   for (final MapEntry(key: family, value: files) in families.entries) {

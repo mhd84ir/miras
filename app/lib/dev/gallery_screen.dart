@@ -9,14 +9,9 @@ import 'package:miras/core/widgets/couplet_view.dart';
 import 'package:miras/core/widgets/miras_button.dart';
 
 /// Development-only design-system gallery: renders every token and component
-/// for visual review, including the verse-face comparison (M0 exit criterion).
-/// Registered only in debug builds (see app_router.dart).
+/// for visual review. Registered only in debug builds (see app_router.dart).
 class GalleryScreen extends StatelessWidget {
   const GalleryScreen({super.key});
-
-  // Verse-face candidates rendered against the same couplet. The chosen
-  // family becomes MirasTextStyles.verseFontFamily; the rest are removed.
-  static const _verseFaceCandidates = ['Vazirmatn', 'Amiri', 'NotoNaskhArabic'];
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +26,7 @@ class GalleryScreen extends StatelessWidget {
           _section(context, 'رنگ‌ها', _ColorGrid(colors: colors)),
           _section(context, 'گونه‌شناسی متن', const _TypeScale()),
           _section(context, 'دکمه‌ها', const _Buttons()),
-          _section(context, 'بیت — مقایسهٔ قلم مصراع', const _VerseFaces()),
+          _section(context, 'بیت', const _VerseSample()),
           _section(context, 'اعداد فارسی', const _Numbers()),
         ],
       ),
@@ -169,41 +164,26 @@ class _Buttons extends StatelessWidget {
   }
 }
 
-class _VerseFaces extends StatelessWidget {
-  const _VerseFaces();
+class _VerseSample extends StatelessWidget {
+  const _VerseSample();
 
   @override
   Widget build(BuildContext context) {
     final colors = context.mirasColors;
 
-    return Column(
-      children: [
-        for (final family in GalleryScreen._verseFaceCandidates)
-          Padding(
-            padding: const EdgeInsetsDirectional.only(bottom: MirasSpacing.md),
-            child: DecoratedBox(
-              decoration: BoxDecoration(
-                color: colors.surface,
-                borderRadius: BorderRadius.circular(MirasRadii.md),
-                border: Border.all(color: colors.hairline),
-              ),
-              child: Padding(
-                padding: const EdgeInsetsDirectional.all(MirasSpacing.md),
-                child: Column(
-                  children: [
-                    Text(family, style: Theme.of(context).textTheme.labelSmall),
-                    const SizedBox(height: MirasSpacing.sm),
-                    CoupletView(
-                      hemistich1: 'به نام خداوند جان و خرد',
-                      hemistich2: 'کزین برتر اندیشه برنگذرد',
-                      style: MirasTextStyles.verse.copyWith(fontFamily: family),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-      ],
+    return DecoratedBox(
+      decoration: BoxDecoration(
+        color: colors.surface,
+        borderRadius: BorderRadius.circular(MirasRadii.md),
+        border: Border.all(color: colors.hairline),
+      ),
+      child: const Padding(
+        padding: EdgeInsetsDirectional.all(MirasSpacing.md),
+        child: CoupletView(
+          hemistich1: 'به نام خداوند جان و خرد',
+          hemistich2: 'کزین برتر اندیشه برنگذرد',
+        ),
+      ),
     );
   }
 }

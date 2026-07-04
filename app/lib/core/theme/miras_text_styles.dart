@@ -8,9 +8,9 @@ abstract final class MirasTextStyles {
   static const uiFontFamily = 'Vazirmatn';
   static const displayFontFamily = 'Estedad';
 
-  /// Verse face is under evaluation (M0 exit criterion, see the design-system
-  /// gallery's couplet comparison). Placeholder until the decision is made.
-  static const verseFontFamily = 'Vazirmatn';
+  /// Amiri — classical literary Naskh, chosen in M0 via on-device comparison
+  /// against Noto Naskh Arabic and Vazirmatn (DESIGN_SYSTEM.md §3).
+  static const verseFontFamily = 'Amiri';
 
   /// Chapter titles, celebrations.
   static const display = TextStyle(
@@ -60,12 +60,13 @@ abstract final class MirasTextStyles {
     height: 18 / 12,
   );
 
-  /// بیت display — used by CoupletView.
+  /// بیت display — used by CoupletView. Sized 22 (vs 20 in the original scale)
+  /// to compensate for Amiri's lighter optical weight.
   static const verse = TextStyle(
     fontFamily: verseFontFamily,
-    fontWeight: FontWeight.w500,
-    fontSize: 20,
-    height: 40 / 20,
+    fontWeight: FontWeight.w400,
+    fontSize: 22,
+    height: 44 / 22,
   );
 
   /// Modern-Persian meaning shown under verses.
