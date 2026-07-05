@@ -1,0 +1,65 @@
+# TODO(editorial): definitions and etymologies pending literary review.
+items:
+  - id: vocab.farreh
+    word: "فرّه"
+    pronunciation: "farreh"
+    meaning: "شکوه و تأیید ایزدی که به شاهانِ دادگر داده می‌شود"
+    etymology: "از اوستایی «خْوَرِنَه» (xᵛarənah)؛ همان «فرّ» و «فروغ ایزدی»"
+    example_verse: jamshid.v002
+  - id: vocab.mobad
+    word: "موبد"
+    pronunciation: "mobad"
+    meaning: "روحانی و دانای دین زرتشتی؛ در شاهنامه: دانا و رایزن"
+    example_verse: jamshid.v002
+  - id: vocab.joshan
+    word: "جوشن"
+    pronunciation: "joshan"
+    meaning: "زره، جامهٔ جنگی فلزی"
+    example_verse: jamshid.v003
+  - id: vocab.reshtan
+    word: "رشتن"
+    pronunciation: "reshtan"
+    meaning: "ریسیدن نخ از پشم یا پنبه"
+    example_verse: jamshid.v004
+  - id: vocab.pud
+    word: "پود"
+    pronunciation: "pud"
+    meaning: "رشته‌های افقی پارچه که میان تارها بافته می‌شود"
+    etymology: "جفتِ «تار»؛ ترکیب «تار و پود» از همین‌جاست"
+    example_verse: jamshid.v004
+  - id: vocab.gohar
+    word: "گوهر"
+    pronunciation: "gohar"
+    meaning: "سنگ گران‌بها؛ در معنای گسترده‌تر: ذات و سرشت"
+    example_verse: jamshid.v005
+  - id: vocab.afshandan
+    word: "افشاندن"
+    pronunciation: "afshāndan"
+    meaning: "پاشیدن، ریختن (گوهر افشاندن: نثار کردن جواهر برای شادباش)"
+    example_verse: jamshid.v008
+  - id: vocab.khosrow
+    word: "خسرو"
+    pronunciation: "khosrow"
+    meaning: "پادشاه بزرگ؛ عنوان شاهان نامدار"
+    example_verse: jamshid.v009
+  - id: vocab.yadegar
+    word: "یادگار"
+    pronunciation: "yādegār"
+    meaning: "آنچه از کسی یا روزگاری به جا می‌ماند"
+    example_verse: jamshid.v009
+  - id: vocab.mani
+    word: "منی"
+    pronunciation: "mani"
+    meaning: "خودبینی و غرور؛ «منی کردن»: خود را برتر از همه دیدن"
+    etymology: "از ضمیر «من» + یای مصدری — خودِ واژه داستانِ غرور است"
+    example_verse: jamshid.v011
+  - id: vocab.nasepas
+    word: "ناسپاس"
+    pronunciation: "nāsepās"
+    meaning: "ناشکر، قدرنشناس"
+    example_verse: jamshid.v014
+  - id: vocab.haras
+    word: "هراس"
+    pronunciation: "harās"
+    meaning: "ترس، بیم"
+    example_verse: jamshid.v014

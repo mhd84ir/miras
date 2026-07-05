@@ -1,0 +1,39 @@
+id: sohrab.l04
+type: verses
+title: "ابیات ۲ — تهمینه و مهرهٔ بازو"
+exercises:
+  - id: sohrab.l04.e01
+    type: verseIntro
+    prompt: { verseId: sohrab.v006 }
+  - id: sohrab.l04.e02
+    type: verseIntro
+    prompt: { verseId: sohrab.v007 }
+  - id: sohrab.l04.e03
+    type: cloze
+    prompt:
+      verseId: sohrab.v007
+      hemistich: 1
+      blankToken: 4
+      options: ["مهره", "دشنه", "جوشن"]
+      correctIndex: 0
+  - id: sohrab.l04.e04
+    type: verseIntro
+    prompt: { verseId: sohrab.v008 }
+  - id: sohrab.l04.e05
+    type: verseIntro
+    prompt: { verseId: sohrab.v009 }
+  - id: sohrab.l04.e06
+    type: multipleChoice
+    prompt:
+      question: "رستم به تهمینه سپرد اگر فرزندشان پسر بود، با مهره چه کند؟"
+      options:
+        - "بر بازوی او ببندد"
+        - "بر گیسوی او بدوزد"
+        - "به شاه سمنگان بسپارد"
+      correctIndex: 0
+  - id: sohrab.l04.e07
+    type: hemistichAssembly
+    prompt:
+      verseId: sohrab.v009
+      hemistich: 1
+      distractors: ["جنگ"]

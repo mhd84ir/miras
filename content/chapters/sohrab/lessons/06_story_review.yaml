@@ -1,0 +1,73 @@
+id: sohrab.l06
+type: review
+title: "داستان و مرور — نوشدارویی که دیر رسید"
+exercises:
+  - id: sohrab.l06.e01
+    type: storySection
+    prompt: { retellingId: sohrab.r01 }
+  - id: sohrab.l06.e02
+    type: storySection
+    prompt: { retellingId: sohrab.r02 }
+  - id: sohrab.l06.e03
+    type: comprehension
+    prompt:
+      question: "چرا سهراب پدرش را نمی‌شناخت؟"
+      options:
+        - "رستم پیش از زادن او به ایران بازگشته بود"
+        - "رستم او را از خود رانده بود"
+        - "سهراب در ایران بزرگ شده بود"
+      correctIndex: 0
+  - id: sohrab.l06.e04
+    type: storySection
+    prompt: { retellingId: sohrab.r03 }
+  - id: sohrab.l06.e05
+    type: comprehension
+    prompt:
+      question: "چرا افراسیاب نمی‌خواست پدر و پسر یکدیگر را بشناسند؟"
+      options:
+        - "امید داشت یکدیگر را از پای درآورند"
+        - "می‌خواست هر دو را به توران ببرد"
+        - "از خشم کاووس می‌ترسید"
+      correctIndex: 0
+  - id: sohrab.l06.e06
+    type: storySection
+    prompt: { retellingId: sohrab.r04 }
+  - id: sohrab.l06.e07
+    type: storySection
+    prompt: { retellingId: sohrab.r05 }
+  - id: sohrab.l06.e08
+    type: comprehension
+    prompt:
+      question: "کدام مَثَل فارسی از این داستان برخاسته است؟"
+      options:
+        - "نوشدارو پس از مرگ سهراب"
+        - "کار نیکو کردن از پر کردن است"
+        - "شاهنامه آخرش خوش است"
+      correctIndex: 0
+  - id: sohrab.l06.e09
+    type: sequencing
+    difficulty: 2
+    prompt:
+      events:
+        - id: a
+          text: "رخش ربوده می‌شود و رستم به سمنگان می‌رسد"
+        - id: b
+          text: "رستم مهرهٔ بازو را به تهمینه می‌سپارد"
+        - id: c
+          text: "سهراب برای یافتن پدر لشکر به ایران می‌کشد"
+        - id: d
+          text: "در سومین کشتی، دشنهٔ رستم بر پهلوی سهراب می‌نشیند"
+        - id: e
+          text: "نوشدارو دیر می‌رسد و سهراب می‌میرد"
+      correctOrder: [a, b, c, d, e]
+  - id: sohrab.l06.e10
+    type: matching
+    prompt:
+      pairs: [vocab.nooshdaru, vocab.khasteh, vocab.deshneh, vocab.akhtar]
+  - id: sohrab.l06.e11
+    type: hemistichAssembly
+    difficulty: 2
+    prompt:
+      verseId: sohrab.v014
+      hemistich: 1
+      distractors: ["ترگ"]

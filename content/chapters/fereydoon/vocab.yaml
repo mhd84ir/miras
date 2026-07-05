@@ -1,0 +1,66 @@
+# TODO(editorial): definitions and etymologies pending literary review.
+items:
+  - id: vocab.kamgar
+    word: "کامگار"
+    pronunciation: "kāmgār"
+    meaning: "کامروا، پیروز و به‌مراد‌رسیده"
+    etymology: "از «کام» (خواسته، آرزو) + «گار» (دارنده)"
+    example_verse: fereydoon.v001
+  - id: vocab.khojasteh
+    word: "خجسته"
+    pronunciation: "khojasteh"
+    meaning: "فرخنده، مبارک"
+    example_verse: fereydoon.v002
+  - id: vocab.mehregan
+    word: "مهرگان"
+    pronunciation: "mehregān"
+    meaning: "جشن باستانی مهرماه؛ در شاهنامه یادگار تاج‌گذاری فریدون"
+    etymology: "از «مهر» (ایزد پیمان و روشنایی) + پسوند جشن «گان»"
+    example_verse: fereydoon.v004
+  - id: vocab.aeen
+    word: "آیین"
+    pronunciation: "āyin"
+    meaning: "رسم، شیوه، سنت"
+    example_verse: fereydoon.v004
+  - id: vocab.bonyad
+    word: "بنیاد"
+    pronunciation: "bonyād"
+    meaning: "پایه، اساس؛ «بنیاد نهادن»: پی‌ریزی کردن"
+    example_verse: fereydoon.v005
+  - id: vocab.aaz
+    word: "آز"
+    pronunciation: "āz"
+    meaning: "حرص و طمع سیری‌ناپذیر — یکی از دشمنان بزرگ آدمی در شاهنامه"
+    example_verse: fereydoon.v006
+  - id: vocab.boom
+    word: "بوم"
+    pronunciation: "bum"
+    meaning: "سرزمین، زادبوم؛ «بوم و بر»: خانه و سرزمین"
+    example_verse: fereydoon.v007
+  - id: vocab.golbon
+    word: "گلبن"
+    pronunciation: "golbon"
+    meaning: "بوتهٔ گل، درخت گل سرخ"
+    etymology: "از «گل» + «بن» (ریشه، بوته)"
+    example_verse: fereydoon.v008
+  - id: vocab.khavar
+    word: "خاور"
+    pronunciation: "khāvar"
+    meaning: "در فارسی کهن: مغرب؛ در فارسی امروز معنای آن وارونه شده و «مشرق» است"
+    example_verse: fereydoon.v011
+  - id: vocab.nahofteh
+    word: "نهفته"
+    pronunciation: "nahofteh"
+    meaning: "پنهان، پوشیده"
+    example_verse: fereydoon.v010
+  - id: vocab.salkhord
+    word: "سالخورد"
+    pronunciation: "sālkhord"
+    meaning: "پیر، کهن‌سال"
+    etymology: "کسی که سال بسیار «خورده» است — تصویری کهن از گذر عمر"
+    example_verse: fereydoon.v012
+  - id: vocab.kohan
+    word: "کهن"
+    pronunciation: "kohan"
+    meaning: "کهنه، دیرینه، باستانی"
+    example_verse: fereydoon.v013

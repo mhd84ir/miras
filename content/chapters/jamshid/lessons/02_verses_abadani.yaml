@@ -1,0 +1,36 @@
+id: jamshid.l02
+type: verses
+title: "ابیات ۱ — آبادانی جهان"
+exercises:
+  - id: jamshid.l02.e01
+    type: verseIntro
+    prompt: { verseId: jamshid.v001 }
+  - id: jamshid.l02.e02
+    type: verseIntro
+    prompt: { verseId: jamshid.v002 }
+  - id: jamshid.l02.e03
+    type: cloze
+    prompt:
+      verseId: jamshid.v002
+      hemistich: 1
+      blankToken: 3
+      options: ["فرّهٔ", "مهرهٔ", "جامهٔ"]
+      correctIndex: 0
+  - id: jamshid.l02.e04
+    type: verseIntro
+    prompt: { verseId: jamshid.v003 }
+  - id: jamshid.l02.e05
+    type: verseIntro
+    prompt: { verseId: jamshid.v004 }
+  - id: jamshid.l02.e06
+    type: multipleChoice
+    prompt:
+      question: "جمشید نخست چه چیزی را به مردم آموخت؟"
+      options: ["ساخت جنگ‌افزار", "بافتن جامه", "پزشکی"]
+      correctIndex: 0
+  - id: jamshid.l02.e07
+    type: hemistichAssembly
+    prompt:
+      verseId: jamshid.v004
+      hemistich: 1
+      distractors: ["پود"]

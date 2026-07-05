@@ -1,0 +1,36 @@
+id: sohrab.l01
+type: vocab
+title: "واژگان ۱ — تندباد و ترنج"
+exercises:
+  - id: sohrab.l01.e01
+    type: vocabIntro
+    prompt: { vocabId: vocab.tondbad }
+  - id: sohrab.l01.e02
+    type: vocabIntro
+    prompt: { vocabId: vocab.toranj }
+  - id: sohrab.l01.e03
+    type: vocabIntro
+    prompt: { vocabId: vocab.setamkareh }
+  - id: sohrab.l01.e04
+    type: vocabIntro
+    prompt: { vocabId: vocab.nakhchir }
+  - id: sohrab.l01.e05
+    type: vocabIntro
+    prompt: { vocabId: vocab.tarkash }
+  - id: sohrab.l01.e06
+    type: vocabIntro
+    prompt: { vocabId: vocab.shohreh }
+  - id: sohrab.l01.e07
+    type: multipleChoice
+    prompt:
+      question: "«نخچیر» یعنی چه؟"
+      options: ["شکار", "نبرد", "سفر"]
+      correctIndex: 0
+      vocabId: vocab.nakhchir
+  - id: sohrab.l01.e08
+    type: multipleChoice
+    prompt:
+      question: "«ترکش» چیست؟"
+      options: ["تیردان", "زره", "نیزهٔ کوتاه"]
+      correctIndex: 0
+      vocabId: vocab.tarkash

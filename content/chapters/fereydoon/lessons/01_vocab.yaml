@@ -1,0 +1,36 @@
+id: fereydoon.l01
+type: vocab
+title: "واژگان ۱ — تاج و مهرگان"
+exercises:
+  - id: fereydoon.l01.e01
+    type: vocabIntro
+    prompt: { vocabId: vocab.kamgar }
+  - id: fereydoon.l01.e02
+    type: vocabIntro
+    prompt: { vocabId: vocab.khojasteh }
+  - id: fereydoon.l01.e03
+    type: vocabIntro
+    prompt: { vocabId: vocab.mehregan }
+  - id: fereydoon.l01.e04
+    type: vocabIntro
+    prompt: { vocabId: vocab.aeen }
+  - id: fereydoon.l01.e05
+    type: vocabIntro
+    prompt: { vocabId: vocab.bonyad }
+  - id: fereydoon.l01.e06
+    type: vocabIntro
+    prompt: { vocabId: vocab.aaz }
+  - id: fereydoon.l01.e07
+    type: multipleChoice
+    prompt:
+      question: "«آز» یعنی چه؟"
+      options: ["حرص و طمع سیری‌ناپذیر", "خشم ناگهانی", "ترس از مرگ"]
+      correctIndex: 0
+      vocabId: vocab.aaz
+  - id: fereydoon.l01.e08
+    type: multipleChoice
+    prompt:
+      question: "جشن «مهرگان» یادگار کیست؟"
+      options: ["فریدون", "جمشید", "کاوه"]
+      correctIndex: 0
+      vocabId: vocab.mehregan

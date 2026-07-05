@@ -1,0 +1,46 @@
+id: sohrab.l05
+type: verses
+title: "ابیات ۳ — نبرد و نوشدارو"
+exercises:
+  - id: sohrab.l05.e01
+    type: verseIntro
+    prompt: { verseId: sohrab.v010 }
+  - id: sohrab.l05.e02
+    type: cloze
+    prompt:
+      verseId: sohrab.v010
+      hemistich: 2
+      blankToken: 3
+      options: ["توان", "امان", "گمان"]
+      correctIndex: 0
+  - id: sohrab.l05.e03
+    type: verseIntro
+    prompt: { verseId: sohrab.v015 }
+  - id: sohrab.l05.e04
+    type: verseIntro
+    prompt: { verseId: sohrab.v011 }
+  - id: sohrab.l05.e05
+    type: verseIntro
+    prompt: { verseId: sohrab.v012 }
+  - id: sohrab.l05.e06
+    type: cloze
+    prompt:
+      verseId: sohrab.v012
+      hemistich: 1
+      blankToken: 1
+      options: ["نوشدارو", "شمشیری", "گوهری"]
+      correctIndex: 0
+  - id: sohrab.l05.e07
+    type: verseIntro
+    prompt: { verseId: sohrab.v013 }
+  - id: sohrab.l05.e08
+    type: verseIntro
+    prompt: { verseId: sohrab.v014 }
+  - id: sohrab.l05.e09
+    type: cloze
+    prompt:
+      verseId: sohrab.v014
+      hemistich: 2
+      blankToken: 6
+      options: ["ترگ", "برگ", "مرگ"]
+      correctIndex: 0

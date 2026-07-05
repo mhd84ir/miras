@@ -1,0 +1,36 @@
+id: fereydoon.l03
+type: vocab
+title: "واژگان ۲ — بوم و بخش"
+exercises:
+  - id: fereydoon.l03.e01
+    type: vocabIntro
+    prompt: { vocabId: vocab.boom }
+  - id: fereydoon.l03.e02
+    type: vocabIntro
+    prompt: { vocabId: vocab.golbon }
+  - id: fereydoon.l03.e03
+    type: vocabIntro
+    prompt: { vocabId: vocab.khavar }
+  - id: fereydoon.l03.e04
+    type: vocabIntro
+    prompt: { vocabId: vocab.nahofteh }
+  - id: fereydoon.l03.e05
+    type: vocabIntro
+    prompt: { vocabId: vocab.salkhord }
+  - id: fereydoon.l03.e06
+    type: vocabIntro
+    prompt: { vocabId: vocab.kohan }
+  - id: fereydoon.l03.e07
+    type: matching
+    prompt:
+      pairs: [vocab.kamgar, vocab.aaz, vocab.bonyad, vocab.khojasteh]
+  - id: fereydoon.l03.e08
+    type: multipleChoice
+    prompt:
+      question: "نکتهٔ جالب واژهٔ «خاور» چیست؟"
+      options:
+        - "در فارسی کهن به معنای مغرب بود و امروز معنایش وارونه شده"
+        - "از زبان یونانی وام گرفته شده است"
+        - "فقط در شاهنامه به کار رفته است"
+      correctIndex: 0
+      vocabId: vocab.khavar

@@ -1,0 +1,36 @@
+id: jamshid.l03
+type: vocab
+title: "واژگان ۲ — از نوروز تا نخوت"
+exercises:
+  - id: jamshid.l03.e01
+    type: vocabIntro
+    prompt: { vocabId: vocab.afshandan }
+  - id: jamshid.l03.e02
+    type: vocabIntro
+    prompt: { vocabId: vocab.khosrow }
+  - id: jamshid.l03.e03
+    type: vocabIntro
+    prompt: { vocabId: vocab.yadegar }
+  - id: jamshid.l03.e04
+    type: vocabIntro
+    prompt: { vocabId: vocab.mani }
+  - id: jamshid.l03.e05
+    type: vocabIntro
+    prompt: { vocabId: vocab.nasepas }
+  - id: jamshid.l03.e06
+    type: vocabIntro
+    prompt: { vocabId: vocab.haras }
+  - id: jamshid.l03.e07
+    type: matching
+    prompt:
+      pairs: [vocab.farreh, vocab.mobad, vocab.gohar, vocab.pud]
+  - id: jamshid.l03.e08
+    type: multipleChoice
+    prompt:
+      question: "«منی کردن» یعنی چه؟"
+      options:
+        - "خود را برتر از همه دیدن"
+        - "سخاوتمندانه بخشیدن"
+        - "به سفر رفتن"
+      correctIndex: 0
+      vocabId: vocab.mani

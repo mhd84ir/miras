@@ -1,0 +1,36 @@
+id: sohrab.l03
+type: vocab
+title: "واژگان ۲ — مهره و نوشدارو"
+exercises:
+  - id: sohrab.l03.e01
+    type: vocabIntro
+    prompt: { vocabId: vocab.mohreh }
+  - id: sohrab.l03.e02
+    type: vocabIntro
+    prompt: { vocabId: vocab.akhtar }
+  - id: sohrab.l03.e03
+    type: vocabIntro
+    prompt: { vocabId: vocab.deshneh }
+  - id: sohrab.l03.e04
+    type: vocabIntro
+    prompt: { vocabId: vocab.nooshdaru }
+  - id: sohrab.l03.e05
+    type: vocabIntro
+    prompt: { vocabId: vocab.khasteh }
+  - id: sohrab.l03.e06
+    type: vocabIntro
+    prompt: { vocabId: vocab.targ }
+  - id: sohrab.l03.e07
+    type: vocabIntro
+    prompt: { vocabId: vocab.farakh }
+  - id: sohrab.l03.e08
+    type: multipleChoice
+    prompt:
+      question: "در فارسی کهن، «خسته» یعنی چه؟"
+      options: ["زخمی و مجروح", "بی‌حال و کوفته", "گرسنه"]
+      correctIndex: 0
+      vocabId: vocab.khasteh
+  - id: sohrab.l03.e09
+    type: matching
+    prompt:
+      pairs: [vocab.deshneh, vocab.targ, vocab.tarkash, vocab.mohreh]

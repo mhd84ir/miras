@@ -1,0 +1,37 @@
+id: fereydoon.l05
+type: story
+title: "داستان فریدون — بازخوانی"
+exercises:
+  - id: fereydoon.l05.e01
+    type: storySection
+    prompt: { retellingId: fereydoon.r01 }
+  - id: fereydoon.l05.e02
+    type: storySection
+    prompt: { retellingId: fereydoon.r02 }
+  - id: fereydoon.l05.e03
+    type: comprehension
+    prompt:
+      question: "ستایش بزرگ فردوسی از فریدون چیست؟"
+      options:
+        - "پانصد سال فرمان راند و یک روز هم بنیادِ بد ننهاد"
+        - "بزرگ‌ترین لشکر جهان را ساخت"
+        - "هرگز پیر نشد"
+      correctIndex: 0
+  - id: fereydoon.l05.e04
+    type: storySection
+    prompt: { retellingId: fereydoon.r03 }
+  - id: fereydoon.l05.e05
+    type: comprehension
+    prompt:
+      question: "ایران‌زمین به کدام پسر رسید؟"
+      options: ["ایرج", "سلم", "تور"]
+      correctIndex: 0
+  - id: fereydoon.l05.e06
+    type: storySection
+    prompt: { retellingId: fereydoon.r04 }
+  - id: fereydoon.l05.e07
+    type: verseIntro
+    prompt: { verseId: fereydoon.v012 }
+  - id: fereydoon.l05.e08
+    type: verseIntro
+    prompt: { verseId: fereydoon.v013 }

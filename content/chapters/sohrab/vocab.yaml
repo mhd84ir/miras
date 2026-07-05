@@ -1,0 +1,70 @@
+# TODO(editorial): definitions and etymologies pending literary review.
+items:
+  - id: vocab.tondbad
+    word: "تندباد"
+    pronunciation: "tondbād"
+    meaning: "باد سخت و ناگهانی، طوفان"
+    example_verse: sohrab.v001
+  - id: vocab.toranj
+    word: "ترنج"
+    pronunciation: "toranj"
+    meaning: "میوه‌ای خوش‌بو از خانوادهٔ مرکبات؛ بالنگ"
+    example_verse: sohrab.v001
+  - id: vocab.setamkareh
+    word: "ستمکاره"
+    pronunciation: "setamkāreh"
+    meaning: "ستمگر، بیدادگر"
+    example_verse: sohrab.v002
+  - id: vocab.nakhchir
+    word: "نخچیر"
+    pronunciation: "nakhchir"
+    meaning: "شکار؛ نخچیر کردن: به شکار رفتن"
+    example_verse: sohrab.v005
+  - id: vocab.tarkash
+    word: "ترکش"
+    pronunciation: "tarkash"
+    meaning: "تیردان؛ کیسه یا جعبهٔ تیر که بر کمر یا دوش می‌بستند"
+    etymology: "از ترکی «تیرکش»؛ جای تیر"
+    example_verse: sohrab.v005
+  - id: vocab.shohreh
+    word: "شهره"
+    pronunciation: "shohreh"
+    meaning: "نامدار، مشهور"
+    example_verse: sohrab.v007
+  - id: vocab.mohreh
+    word: "مهره"
+    pronunciation: "mohreh"
+    meaning: "دانه یا سنگ گرد سوراخ‌دار؛ در این داستان: نشانِ بازوی رستم"
+    example_verse: sohrab.v007
+  - id: vocab.akhtar
+    word: "اختر"
+    pronunciation: "akhtar"
+    meaning: "ستاره؛ بخت و طالع"
+    example_verse: sohrab.v008
+  - id: vocab.deshneh
+    word: "دشنه"
+    pronunciation: "deshneh"
+    meaning: "خنجر، کارد جنگی"
+    example_verse: sohrab.v011
+  - id: vocab.nooshdaru
+    word: "نوشدارو"
+    pronunciation: "nushdāru"
+    meaning: "داروی شفابخش افسانه‌ای؛ در فارسی امروز: چاره‌ای که دیر برسد"
+    etymology: "از «نوش» (شهد، بی‌مرگی) + «دارو» — «نوشدارو پس از مرگ سهراب» از همین داستان مَثَل شد"
+    example_verse: sohrab.v012
+  - id: vocab.khasteh
+    word: "خسته"
+    pronunciation: "khasteh"
+    meaning: "در فارسی کهن: زخمی و مجروح — نه «بی‌حال» امروزی"
+    etymology: "از «خَستن» (زخم زدن)؛ معنای امروزیِ آن بعدها پدید آمد"
+    example_verse: sohrab.v012
+  - id: vocab.targ
+    word: "ترگ"
+    pronunciation: "targ"
+    meaning: "کلاهخود جنگی"
+    example_verse: sohrab.v014
+  - id: vocab.farakh
+    word: "فراخ"
+    pronunciation: "farākh"
+    meaning: "پهناور، گشاده"
+    example_verse: sohrab.v013

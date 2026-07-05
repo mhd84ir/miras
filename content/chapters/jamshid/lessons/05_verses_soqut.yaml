@@ -1,0 +1,41 @@
+id: jamshid.l05
+type: verses
+title: "ابیات ۳ — منی و گسستن فرّ"
+exercises:
+  - id: jamshid.l05.e01
+    type: verseIntro
+    prompt: { verseId: jamshid.v011 }
+  - id: jamshid.l05.e02
+    type: cloze
+    prompt:
+      verseId: jamshid.v011
+      hemistich: 2
+      blankToken: 5
+      options: ["ناسپاس", "سرافراز", "خردمند"]
+      correctIndex: 0
+  - id: jamshid.l05.e03
+    type: verseIntro
+    prompt: { verseId: jamshid.v012 }
+  - id: jamshid.l05.e04
+    type: verseIntro
+    prompt: { verseId: jamshid.v013 }
+  - id: jamshid.l05.e05
+    type: cloze
+    prompt:
+      verseId: jamshid.v013
+      hemistich: 1
+      blankToken: 4
+      options: ["فرّ", "تاج", "گنج"]
+      correctIndex: 0
+  - id: jamshid.l05.e06
+    type: verseIntro
+    prompt: { verseId: jamshid.v014 }
+  - id: jamshid.l05.e07
+    type: multipleChoice
+    prompt:
+      question: "پس از سخنان مغرورانهٔ جمشید چه روی داد؟"
+      options:
+        - "فرّ یزدان از او گسست"
+        - "دیوان بر او شوریدند"
+        - "تختش در هوا شکست"
+      correctIndex: 0

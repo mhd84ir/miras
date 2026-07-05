@@ -1,0 +1,91 @@
+# Verse text verbatim from Ganjoor (public domain). Do not edit hemistichs.
+# TODO(editorial): meanings and interpretations pending literary review.
+verses:
+  - id: fereydoon.v001
+    hemistich1: "فریدون چو شد بر جهان کامگار"
+    hemistich2: "ندانست جز خویشتن شهریار"
+    meaning: "چون فریدون بر جهان پیروز و کامروا شد، جز خود پادشاهی در جهان نمی‌شناخت."
+    interpretation: "آغاز پادشاهی فریدون پس از به بند کشیدن ضحاک — این‌بار «جز خویشتن ندانستن» از سرِ پیروزی است، نه غرور؛ اما پژواک داستان جمشید در گوش می‌ماند."
+    vocabulary: [vocab.kamgar, vocab.shahriar]
+    source: "ganjoor:/ferdousi/shahname/fereydoon/sh1#0"
+  - id: fereydoon.v002
+    hemistich1: "به روز خجسته سر مهر‌ماه"
+    hemistich2: "به سر بر نهاد آن کیانی کلاه"
+    meaning: "در روز فرخنده‌ای در آغاز مهرماه، تاج کیانی را بر سر نهاد."
+    interpretation: "تاج‌گذاری در مهرماه — ریشهٔ جشن مهرگان."
+    vocabulary: [vocab.khojasteh]
+    source: "ganjoor:/ferdousi/shahname/fereydoon/sh1#2"
+  - id: fereydoon.v003
+    hemistich1: "زمانه بی‌اندوه گشت از بدی"
+    hemistich2: "گرفتند هر کس ره ایزدی"
+    meaning: "روزگار از بدی بی‌اندوه شد و همه راه ایزدی در پیش گرفتند."
+    source: "ganjoor:/ferdousi/shahname/fereydoon/sh1#3"
+  - id: fereydoon.v004
+    hemistich1: "پرستیدن مهرگان دین اوست"
+    hemistich2: "تن‌آسانی و خوردن آیین اوست"
+    meaning: "بزرگداشت مهرگان دین او بود و آسودن و مهمانی، آیین او."
+    interpretation: "مهرگان چون نوروزِ جمشید، یادگارِ شاهی دادگر — دو جشن بزرگ ایرانی، دو بنیان‌گذار اسطوره‌ای."
+    vocabulary: [vocab.mehregan, vocab.aeen]
+    source: "ganjoor:/ferdousi/shahname/fereydoon/sh1#8"
+  - id: fereydoon.v005
+    hemistich1: "ورا بد جهان سالیان پانصد"
+    hemistich2: "نیفکند یک روز بنیاد بد"
+    meaning: "پانصد سال جهان از آنِ او بود و حتی یک روز بنیادِ بد ننهاد."
+    interpretation: "فشرده‌ترین ستایش شاهنامه از یک فرمانروا: نه «هرگز بد نکرد»، که «بنیادِ بد ننهاد» — بدی را نهادینه نکرد."
+    vocabulary: [vocab.bonyad]
+    source: "ganjoor:/ferdousi/shahname/fereydoon/sh1#10"
+  - id: fereydoon.v006
+    hemistich1: "جهان چون برو بر نماند ای پسر"
+    hemistich2: "تو نیز آز مپرست و انده مخور"
+    meaning: "ای پسر، جهان که برای او نماند؛ تو نیز آز را مپرست و اندوه مخور."
+    interpretation: "فردوسی از دل داستان بیرون می‌آید و مستقیم با خواننده سخن می‌گوید: آز، دشمن آدمی است."
+    vocabulary: [vocab.aaz]
+    source: "ganjoor:/ferdousi/shahname/fereydoon/sh1#11"
+  - id: fereydoon.v007
+    hemistich1: "هر آن چیز کز راه بیداد دید"
+    hemistich2: "هر آن بوم و بر کآن نه آباد دید"
+    meaning: "هر چیزی را که از راه بیداد می‌دید، و هر سرزمینی را که آباد نمی‌یافت…"
+    interpretation: "فریدون گرد جهان می‌گردد و بیداد را با آبادانی پاسخ می‌دهد (بیت بعد: «به نیکی ببست از همه دست بد»)."
+    vocabulary: [vocab.boom, vocab.bidadgar]
+    source: "ganjoor:/ferdousi/shahname/fereydoon/sh1#43"
+  - id: fereydoon.v008
+    hemistich1: "بیاراست گیتی بسان بهشت"
+    hemistich2: "به جای گیا سرو گلبن بکشت"
+    meaning: "جهان را چون بهشت آراست و به جای علفِ خودرو، سرو و بوتهٔ گل کاشت."
+    interpretation: "آبادانی به مثابهٔ باغبانی — تصویری که ایرانِ آرمانی را باغ می‌بیند."
+    vocabulary: [vocab.golbon]
+    source: "ganjoor:/ferdousi/shahname/fereydoon/sh1#45"
+  - id: fereydoon.v009
+    hemistich1: "ز سالش چو یک پنجه اندر کشید"
+    hemistich2: "سه فرزند‌ش آمد گرامی پدید"
+    meaning: "چون پنجاه سال از عمرش گذشت، سه فرزند گرامی یافت."
+    interpretation: "سلم و تور از شهرناز، و ایرج از ارنواز — سه شاخهٔ سرنوشت."
+    source: "ganjoor:/ferdousi/shahname/fereydoon/sh2#0"
+  - id: fereydoon.v010
+    hemistich1: "نهفته چو بیرون کشید از نهان"
+    hemistich2: "به سه بخش کرد آفریدون جهان"
+    meaning: "فریدون آنچه را در نهان اندیشیده بود آشکار کرد و جهان را به سه بخش کرد."
+    interpretation: "لحظهٔ سرنوشت‌ساز: تقسیم جهان. «آفریدون» صورت کهن‌تر نام فریدون است."
+    vocabulary: [vocab.nahofteh]
+    source: "ganjoor:/ferdousi/shahname/fereydoon/sh5#0"
+  - id: fereydoon.v011
+    hemistich1: "یکی روم و خاور دگر ترک و چین"
+    hemistich2: "سیم دشت گردان و ایران‌زمین"
+    meaning: "یک بخش روم و خاور، بخش دیگر سرزمین ترک و چین، و سوم دشت پهلوانان و ایران‌زمین."
+    interpretation: "روم و باختر به سلم، توران و چین به تور، و ایران — بهترین بخش — به ایرج کهتر می‌رسد؛ بذر رشک برادران."
+    vocabulary: [vocab.khavar]
+    source: "ganjoor:/ferdousi/shahname/fereydoon/sh5#1"
+  - id: fereydoon.v012
+    hemistich1: "فریدون فرزانه شد سالخورد"
+    hemistich2: "به باغ بهار اندر آورد گرد"
+    meaning: "فریدونِ خردمند پیر شد و بر باغِ بهارِ او گرد نشست."
+    interpretation: "پیری چون گردی که بر باغ بهار می‌نشیند — از زیباترین استعاره‌های سالخوردگی در شاهنامه."
+    vocabulary: [vocab.farzaneh, vocab.salkhord]
+    source: "ganjoor:/ferdousi/shahname/fereydoon/sh6#1"
+  - id: fereydoon.v013
+    hemistich1: "برین گونه گردد سراسر سخن"
+    hemistich2: "شود سست نیرو چو گردد کهن"
+    meaning: "سخن سراسر همین است: هر چیز چون کهنه شود، نیرویش سستی می‌گیرد."
+    interpretation: "دربارهٔ بیت مشهور «فریدون فرخ فرشته نبود»: در چاپ مسکو جزو «ملحقات» است، نه متن اصلی — نمونه‌ای از تفاوت نسخه‌ها."
+    vocabulary: [vocab.kohan]
+    source: "ganjoor:/ferdousi/shahname/fereydoon/sh6#2"

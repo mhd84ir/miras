@@ -1,0 +1,102 @@
+# Verse text verbatim from Ganjoor (public domain). Do not edit hemistichs.
+# TODO(editorial): meanings and interpretations pending literary review.
+verses:
+  - id: sohrab.v001
+    hemistich1: "اگر تندبادی براید ز کنج"
+    hemistich2: "بخاک افگند نارسیده ترنج"
+    meaning: "اگر تندبادی از گوشه‌ای برخیزد و ترنجِ نارسیده را به خاک افکند…"
+    interpretation: "سرآغاز فلسفی داستان: مرگِ جوانِ نارسیده چون میوهٔ کال که باد می‌اندازد. فردوسی پیش از آغاز، سوگ را اعلام می‌کند."
+    vocabulary: [vocab.tondbad, vocab.toranj]
+    source: "ganjoor:/ferdousi/shahname/sohrab/sh1#0"
+  - id: sohrab.v002
+    hemistich1: "ستمکاره خوانیمش ار دادگر"
+    hemistich2: "هنرمند دانیمش ار بی‌هنر"
+    meaning: "آیا آن باد را ستمگر بنامیم یا دادگر؟ هنرمند بدانیم یا بی‌هنر؟"
+    interpretation: "پرسش از عدالتِ مرگ — فردوسی پاسخ نمی‌دهد؛ می‌پرسد."
+    vocabulary: [vocab.setamkareh]
+    source: "ganjoor:/ferdousi/shahname/sohrab/sh1#1"
+  - id: sohrab.v003
+    hemistich1: "اگر مرگ دادست بیداد چیست"
+    hemistich2: "ز داد این همه بانگ و فریاد چیست"
+    meaning: "اگر مرگ، داد است، پس بیداد چیست؟ و اگر داد است، این‌همه فریاد از چیست؟"
+    interpretation: "از بلندترین لحظه‌های اندیشه در ادب فارسی؛ پرسشی که هزار سال است بی‌پاسخ مانده."
+    source: "ganjoor:/ferdousi/shahname/sohrab/sh1#2"
+  - id: sohrab.v004
+    hemistich1: "کنون رزم سهراب رانم نخست"
+    hemistich2: "ازان کین که او با پدر چون بجست"
+    meaning: "اکنون نخست داستان رزم سهراب را می‌گویم: از آن جنگ که با پدر خویش کرد."
+    interpretation: "فردوسی گره داستان را از همان آغاز می‌گشاید — تعلیق در «چگونه»، نه در «چه»."
+    source: "ganjoor:/ferdousi/shahname/sohrab/sh1#13"
+  - id: sohrab.v005
+    hemistich1: "غمی بد دلش ساز نخچیر کرد"
+    hemistich2: "کمر بست و ترکش پر از تیر کرد"
+    meaning: "دلش گرفته بود؛ آهنگ شکار کرد، کمر بست و تیردانش را پر از تیر کرد."
+    interpretation: "همه چیز از یک روزِ دل‌گرفتهٔ رستم آغاز می‌شود — شکاری که سرنوشت شد."
+    vocabulary: [vocab.nakhchir, vocab.tarkash]
+    source: "ganjoor:/ferdousi/shahname/sohrab/sh2#2"
+  - id: sohrab.v006
+    hemistich1: "پسِ پرده اندرْ یکی ماه روی"
+    hemistich2: "چو خورشید تابان پُر از رنگ و بوی"
+    meaning: "از پس پرده، ماه‌رویی چون خورشید تابان، سرشار از رنگ و بو، پدیدار شد."
+    interpretation: "ورود تهمینه، شاهدخت سمنگان — شبی که سرنوشت سهراب در آن رقم خورد."
+    source: "ganjoor:/ferdousi/shahname/sohrab/sh4#3"
+  - id: sohrab.v007
+    hemistich1: "به بازوی رستم یکی مهره بود"
+    hemistich2: "که آن مهره اندر جهان شهره بود"
+    meaning: "بر بازوی رستم مهره‌ای بود که در جهان نامدار بود."
+    interpretation: "مهرهٔ بازو — نشانی که می‌توانست همه چیز را نجات دهد، و نداد."
+    vocabulary: [vocab.mohreh, vocab.shohreh]
+    source: "ganjoor:/ferdousi/shahname/sohrab/sh4#37"
+  - id: sohrab.v008
+    hemistich1: "ور ایدونک آید ز اختر پسر"
+    hemistich2: "ببندش ببازو نشان پدر"
+    meaning: "و اگر بختت پسری آورد، این نشانِ پدر را بر بازویش ببند."
+    interpretation: "وصیت رستم به تهمینه؛ همان مهره‌ای که در واپسین دم، دیر شناخته می‌شود."
+    vocabulary: [vocab.akhtar]
+    source: "ganjoor:/ferdousi/shahname/sohrab/sh4#40"
+  - id: sohrab.v009
+    hemistich1: "هنوز از دهن بوی شیر آیدش"
+    hemistich2: "همی رای شمشیر و تیر آیدش"
+    meaning: "هنوز از دهانش بوی شیر می‌آید، اما در سرش اندیشهٔ شمشیر و تیر است."
+    interpretation: "سهرابِ نوجوان به روایت جاسوسان افراسیاب — کودکی که برای یافتن پدر، لشکر می‌کشد."
+    source: "ganjoor:/ferdousi/shahname/sohrab/sh6#1"
+  - id: sohrab.v010
+    hemistich1: "خم آورد پشت دلیر جوان"
+    hemistich2: "زمانه بیامد نبودش توان"
+    meaning: "پشت آن جوان دلیر خم شد؛ زمانه‌اش فرارسیده بود و توانی نمانده بود."
+    interpretation: "لحظهٔ شکست سهراب در سومین کشتی — «زمانه بیامد»: تقدیر، نه ضعف."
+    source: "ganjoor:/ferdousi/shahname/sohrab/sh18#5"
+  - id: sohrab.v011
+    hemistich1: "به دشنه جگرگاه پور دلیر"
+    hemistich2: "دریدم که رستم مماناد دیر"
+    meaning: "با دشنه پهلوی پسر دلیرم را دریدم — که رستم پس از این دیر نپاید!"
+    interpretation: "سخن رستم در پیام به کاووس: اعترافی که هر واژه‌اش زخم است."
+    vocabulary: [vocab.deshneh]
+    source: "ganjoor:/ferdousi/shahname/sohrab/sh19#2"
+  - id: sohrab.v012
+    hemistich1: "ازان نوشدارو که در گنج تست"
+    hemistich2: "کجا خستگان را کند تن درست"
+    meaning: "از آن نوشدارویی که در گنجینهٔ توست و زخمیان را تندرست می‌کند…"
+    interpretation: "درخواست نوشدارو از کاووس. «خستگان» یعنی زخمیان — معنای کهنِ خسته."
+    vocabulary: [vocab.nooshdaru, vocab.khasteh]
+    source: "ganjoor:/ferdousi/shahname/sohrab/sh19#4"
+  - id: sohrab.v013
+    hemistich1: "که سهراب شد زین جهان فراخ"
+    hemistich2: "همی از تو تابوت خواهد نه کاخ"
+    meaning: "سهراب از این جهانِ پهناور رفت؛ اکنون از تو تابوت می‌خواهد، نه کاخ."
+    interpretation: "خبر مرگ به رستم می‌رسد — تابوت به جای کاخ؛ داغِ همهٔ وعده‌های ناداده."
+    vocabulary: [vocab.farakh]
+    source: "ganjoor:/ferdousi/shahname/sohrab/sh20#3"
+  - id: sohrab.v014
+    hemistich1: "شکاریم یکسر همه پیش مرگ"
+    hemistich2: "سری زیر تاج و سری زیر ترگ"
+    meaning: "همهٔ ما در برابر مرگ شکاریم — چه آن سر که زیر تاج است و چه آن سر که زیر کلاهخود."
+    interpretation: "پند گودرز به رستمِ سوگوار؛ داد و بیدادِ آغاز داستان، اینجا به تسلیم می‌رسد."
+    vocabulary: [vocab.targ]
+    source: "ganjoor:/ferdousi/shahname/sohrab/sh18#76"
+  - id: sohrab.v015
+    hemistich1: "نشست از بر رخش رستم چو گرد"
+    hemistich2: "پر از خون رخ و لب پر از باد سرد"
+    meaning: "رستم چون گرد بر رخش نشست؛ رخش پر از خون و لبش پر از آهِ سرد."
+    interpretation: "بازگشت رستم به لشکر پس از آن ضربت — «باد سرد» همان آه است."
+    source: "ganjoor:/ferdousi/shahname/sohrab/sh18#56"

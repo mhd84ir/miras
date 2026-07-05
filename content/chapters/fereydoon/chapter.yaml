@@ -1,0 +1,20 @@
+# Chapter: فریدون
+# Verse text verbatim from Ganjoor (public domain): /ferdousi/shahname/fereydoon.
+# TODO(editorial): meanings, interpretations, and retelling are original drafts
+# pending literary review.
+id: fereydoon
+position: 3
+title: "فریدون"
+subtitle: "پانصد سال داد، و بخش کردن جهان"
+summary: >-
+  فریدون در مهرماه تاج بر سر نهاد و مهرگان را بنیاد گذاشت. پانصد سال چنان
+  به داد فرمان راند که یک روز هم بنیادِ بد ننهاد. اما چون پیری رسید و جهان
+  را میان سه پسر بخش کرد، دانهٔ رشکی کاشته شد که تراژدی‌های بعدی شاهنامه
+  از آن رویید.
+lessons:
+  - lessons/01_vocab.yaml
+  - lessons/02_verses_dad.yaml
+  - lessons/03_vocab.yaml
+  - lessons/04_verses_bakhsh.yaml
+  - lessons/05_story.yaml
+  - lessons/06_review.yaml

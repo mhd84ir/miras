@@ -1,0 +1,39 @@
+id: jamshid.l01
+type: vocab
+title: "واژگان ۱ — شاهِ سازنده"
+exercises:
+  - id: jamshid.l01.e01
+    type: vocabIntro
+    prompt: { vocabId: vocab.farreh }
+  - id: jamshid.l01.e02
+    type: vocabIntro
+    prompt: { vocabId: vocab.mobad }
+  - id: jamshid.l01.e03
+    type: vocabIntro
+    prompt: { vocabId: vocab.joshan }
+  - id: jamshid.l01.e04
+    type: vocabIntro
+    prompt: { vocabId: vocab.reshtan }
+  - id: jamshid.l01.e05
+    type: vocabIntro
+    prompt: { vocabId: vocab.pud }
+  - id: jamshid.l01.e06
+    type: vocabIntro
+    prompt: { vocabId: vocab.gohar }
+  - id: jamshid.l01.e07
+    type: multipleChoice
+    prompt:
+      question: "«فرّه» چیست؟"
+      options:
+        - "شکوه و تأیید ایزدیِ شاهان دادگر"
+        - "تاج زرین پادشاهان"
+        - "سپاه ویژهٔ شاه"
+      correctIndex: 0
+      vocabId: vocab.farreh
+  - id: jamshid.l01.e08
+    type: multipleChoice
+    prompt:
+      question: "در بافندگی، «پود» جفتِ کدام واژه است؟"
+      options: ["تار", "نخ", "ریسه"]
+      correctIndex: 0
+      vocabId: vocab.pud

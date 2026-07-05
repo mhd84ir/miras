@@ -1,0 +1,44 @@
+id: jamshid.l04
+type: verses
+title: "ابیات ۲ — تخت پرنده و نوروز"
+exercises:
+  - id: jamshid.l04.e01
+    type: verseIntro
+    prompt: { verseId: jamshid.v005 }
+  - id: jamshid.l04.e02
+    type: verseIntro
+    prompt: { verseId: jamshid.v006 }
+  - id: jamshid.l04.e03
+    type: hemistichAssembly
+    prompt:
+      verseId: jamshid.v006
+      hemistich: 1
+      distractors: ["زمین"]
+  - id: jamshid.l04.e04
+    type: verseIntro
+    prompt: { verseId: jamshid.v007 }
+  - id: jamshid.l04.e05
+    type: verseIntro
+    prompt: { verseId: jamshid.v008 }
+  - id: jamshid.l04.e06
+    type: cloze
+    prompt:
+      verseId: jamshid.v008
+      hemistich: 2
+      blankToken: 6
+      options: ["خواندند", "افشاندند", "ساختند"]
+      correctIndex: 0
+  - id: jamshid.l04.e07
+    type: verseIntro
+    prompt: { verseId: jamshid.v009 }
+  - id: jamshid.l04.e08
+    type: verseIntro
+    prompt: { verseId: jamshid.v010 }
+  - id: jamshid.l04.e09
+    type: cloze
+    prompt:
+      verseId: jamshid.v010
+      hemistich: 1
+      blankToken: 2
+      options: ["سیصد", "هفتصد", "پانصد"]
+      correctIndex: 0

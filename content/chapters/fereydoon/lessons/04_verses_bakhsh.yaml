@@ -1,0 +1,44 @@
+id: fereydoon.l04
+type: verses
+title: "ابیات ۲ — بخش کردن جهان"
+exercises:
+  - id: fereydoon.l04.e01
+    type: verseIntro
+    prompt: { verseId: fereydoon.v006 }
+  - id: fereydoon.l04.e02
+    type: cloze
+    prompt:
+      verseId: fereydoon.v006
+      hemistich: 2
+      blankToken: 2
+      options: ["آز", "داد", "مهر"]
+      correctIndex: 0
+  - id: fereydoon.l04.e03
+    type: verseIntro
+    prompt: { verseId: fereydoon.v007 }
+  - id: fereydoon.l04.e04
+    type: verseIntro
+    prompt: { verseId: fereydoon.v008 }
+  - id: fereydoon.l04.e05
+    type: hemistichAssembly
+    prompt:
+      verseId: fereydoon.v008
+      hemistich: 1
+      distractors: ["بیداد"]
+  - id: fereydoon.l04.e06
+    type: verseIntro
+    prompt: { verseId: fereydoon.v009 }
+  - id: fereydoon.l04.e07
+    type: verseIntro
+    prompt: { verseId: fereydoon.v010 }
+  - id: fereydoon.l04.e08
+    type: cloze
+    prompt:
+      verseId: fereydoon.v010
+      hemistich: 2
+      blankToken: 1
+      options: ["سه", "دو", "چهار"]
+      correctIndex: 0
+  - id: fereydoon.l04.e09
+    type: verseIntro
+    prompt: { verseId: fereydoon.v011 }

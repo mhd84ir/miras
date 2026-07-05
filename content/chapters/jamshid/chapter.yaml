@@ -1,0 +1,19 @@
+# Chapter: پادشاهی جمشید
+# Verse text verbatim from Ganjoor (public domain): /ferdousi/shahname/jamshid (sh1).
+# TODO(editorial): meanings, interpretations, and retelling are original drafts
+# pending literary review.
+id: jamshid
+position: 1
+title: "پادشاهی جمشید"
+subtitle: "شکوه، نوروز و بهای غرور"
+summary: >-
+  جمشید هفتصد سال بر جهان فرمان راند: جنگ‌افزار و جامه و پزشکی به مردم آموخت،
+  تختی پرنده ساخت و نوروز را بنیاد نهاد. اما چون همه چیز به کام شد، «منی کرد»
+  و فرّ ایزدی از او گسست — و راه برای ضحاک باز شد.
+lessons:
+  - lessons/01_vocab.yaml
+  - lessons/02_verses_abadani.yaml
+  - lessons/03_vocab.yaml
+  - lessons/04_verses_nowruz.yaml
+  - lessons/05_verses_soqut.yaml
+  - lessons/06_story_review.yaml

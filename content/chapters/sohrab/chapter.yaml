@@ -1,0 +1,20 @@
+# Chapter: رستم و سهراب
+# Verse text verbatim from Ganjoor (public domain): /ferdousi/shahname/sohrab.
+# TODO(editorial): meanings, interpretations, and retelling are original drafts
+# pending literary review.
+id: sohrab
+position: 4
+title: "رستم و سهراب"
+subtitle: "تراژدی پدر و پسر"
+summary: >-
+  رخش گم می‌شود و رستم به سمنگان می‌رسد؛ تهمینه شبانه نزد او می‌آید و از این
+  پیوند سهراب زاده می‌شود — پسری که پدر را هرگز ندیده است. سال‌ها بعد، پدر و
+  پسر ناشناس در میدان جنگ رو‌به‌رو می‌شوند؛ و نوشدارو، آن‌گاه که می‌رسد،
+  دیر رسیده است. تلخ‌ترین داستان شاهنامه.
+lessons:
+  - lessons/01_vocab.yaml
+  - lessons/02_verses_aghaz.yaml
+  - lessons/03_vocab.yaml
+  - lessons/04_verses_tahmineh.yaml
+  - lessons/05_verses_nabard.yaml
+  - lessons/06_story_review.yaml

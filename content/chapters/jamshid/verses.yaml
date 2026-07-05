@@ -1,0 +1,96 @@
+# Verse text verbatim from Ganjoor (public domain). Do not edit hemistichs.
+# TODO(editorial): meanings and interpretations pending literary review.
+verses:
+  - id: jamshid.v001
+    hemistich1: "گرانمایه جمشید فرزند او"
+    hemistich2: "کمر بست یک‌دل پر از پند او"
+    meaning: "جمشیدِ گران‌قدر، فرزند طهمورث، یک‌دل و سرشار از پندهای پدر، کمر همت بست."
+    interpretation: "آغاز پادشاهی جمشید؛ «کمر بستن» یعنی آمادهٔ کار و خدمت شدن."
+    source: "ganjoor:/ferdousi/shahname/jamshid/sh1#0"
+  - id: jamshid.v002
+    hemistich1: "منم گفت با فرّهٔ ایزدی"
+    hemistich2: "همم شهریاری همم موبدی"
+    meaning: "گفت: منم که فرّهٔ ایزدی دارم؛ هم پادشاهم و هم موبد (پیشوای دین)."
+    interpretation: "جمشید هر دو مقام شاهی و دینی را یکجا دارد — اوج اقتدار، و نطفهٔ غروری که بعدها او را فرو می‌کشد."
+    vocabulary: [vocab.farreh, vocab.mobad]
+    source: "ganjoor:/ferdousi/shahname/jamshid/sh1#5"
+  - id: jamshid.v003
+    hemistich1: "به فرّ کیی نرم کرد آهنا"
+    hemistich2: "چو خود و زره کرد و چون جوشنا"
+    meaning: "با فرّ شاهانه آهن را نرم کرد و از آن کلاهخود و زره و جوشن ساخت."
+    interpretation: "نخستین آموزگاری جمشید: فن آهنگری و ساخت جنگ‌افزار. «آهنا» و «جوشنا» الف اطلاق کهن دارند."
+    vocabulary: [vocab.joshan]
+    source: "ganjoor:/ferdousi/shahname/jamshid/sh1#8"
+  - id: jamshid.v004
+    hemistich1: "بیاموختشان رشتن و تافتن"
+    hemistich2: "به تار اندرون پود را بافتن"
+    meaning: "به مردم ریسیدن و تابیدن نخ را آموخت و اینکه پود را در میان تار ببافند."
+    interpretation: "پس از جنگ‌افزار، جامه: تمدن در شاهنامه گام‌به‌گام ساخته می‌شود."
+    vocabulary: [vocab.reshtan, vocab.pud]
+    source: "ganjoor:/ferdousi/shahname/jamshid/sh1#13"
+  - id: jamshid.v005
+    hemistich1: "به فرّ کیانی یکی تخت ساخت"
+    hemistich2: "چه مایه بدو گوهر اندر نشاخت"
+    meaning: "با فرّ شاهانه تختی ساخت و چه بسیار گوهر بر آن نشاند."
+    interpretation: "تخت پرندهٔ جمشید — یکی از خیال‌انگیزترین تصویرهای اسطورهٔ ایرانی."
+    vocabulary: [vocab.gohar]
+    source: "ganjoor:/ferdousi/shahname/jamshid/sh1#47"
+  - id: jamshid.v006
+    hemistich1: "چو خورشید تابان میان هوا"
+    hemistich2: "نشسته بر او شاه فرمانروا"
+    meaning: "شاهِ فرمانروا بر آن تخت نشسته بود و چون خورشیدِ تابان در میان آسمان می‌درخشید."
+    interpretation: "دیوان تخت را به آسمان برمی‌دارند؛ جمشید چون خورشید بر فراز جهان."
+    source: "ganjoor:/ferdousi/shahname/jamshid/sh1#49"
+  - id: jamshid.v007
+    hemistich1: "جهان انجمن شد بر آن تخت او"
+    hemistich2: "شگفتی فرومانده از بخت او"
+    meaning: "مردمِ جهان گرد تخت او جمع شدند و از بخت و شکوه او در شگفت ماندند."
+    vocabulary: [vocab.anjoman]
+    source: "ganjoor:/ferdousi/shahname/jamshid/sh1#50"
+  - id: jamshid.v008
+    hemistich1: "به جمشید بر گوهر افشاندند"
+    hemistich2: "مر آن روز را روز نو خواندند"
+    meaning: "بر جمشید گوهر نثار کردند و آن روز را «روز نو» — نوروز — نامیدند."
+    interpretation: "بنیاد نوروز در شاهنامه: جشنی که از اسطوره تا امروزِ ما پیوسته مانده است."
+    vocabulary: [vocab.gohar, vocab.afshandan]
+    source: "ganjoor:/ferdousi/shahname/jamshid/sh1#51"
+  - id: jamshid.v009
+    hemistich1: "چنین جشن فرخ از آن روزگار"
+    hemistich2: "به ما ماند از آن خسروان یادگار"
+    meaning: "این جشن خجسته از آن روزگار، از آن پادشاهان، برای ما به یادگار مانده است."
+    interpretation: "فردوسی خود پلی می‌زند از اسطوره به «ما» — نوروزِ خوانندهٔ امروز همان یادگار جمشید است."
+    vocabulary: [vocab.khosrow, vocab.yadegar]
+    source: "ganjoor:/ferdousi/shahname/jamshid/sh1#54"
+  - id: jamshid.v010
+    hemistich1: "چنین سال سیصد همی رفت کار"
+    hemistich2: "ندیدند مرگ اندر آن روزگار"
+    meaning: "سیصد سال بدین‌سان گذشت و در آن روزگار مردم مرگ را ندیدند."
+    interpretation: "اوج عصر زرین: جهانی بی‌مرگ و بی‌رنج — درست پیش از سقوط."
+    source: "ganjoor:/ferdousi/shahname/jamshid/sh1#55"
+  - id: jamshid.v011
+    hemistich1: "منی کرد آن شاه یزدان شناس"
+    hemistich2: "ز یزدان بپیچید و شد ناسپاس"
+    meaning: "آن شاهِ خداشناس دچار خودبینی شد؛ از یزدان روی گرداند و ناسپاس گشت."
+    interpretation: "چرخشگاه داستان در یک واژه: «منی». پرسش جاودانهٔ شاهنامه: قدرتِ بی‌سپاس چه می‌کند؟"
+    vocabulary: [vocab.mani, vocab.nasepas]
+    source: "ganjoor:/ferdousi/shahname/jamshid/sh1#61"
+  - id: jamshid.v012
+    hemistich1: "هنر در جهان از من آمد پدید"
+    hemistich2: "چو من نامور تخت شاهی ندید"
+    meaning: "گفت: هنر در جهان از من پدید آمد و تخت شاهی، نامداری چون من ندیده است."
+    interpretation: "سخنان جمشید در جمع بزرگان — هر جمله «من»؛ فردوسی غرور را با تکرار همین واژه تصویر می‌کند."
+    source: "ganjoor:/ferdousi/shahname/jamshid/sh1#64"
+  - id: jamshid.v013
+    hemistich1: "چو این گفته شد فرّ یزدان از اوی"
+    hemistich2: "بگشت و جهان شد پر از گفت‌وگوی"
+    meaning: "چون این سخنان گفته شد، فرّ ایزدی از او برگشت و جهان پر از زمزمه و آشوب شد."
+    interpretation: "فرّه با سخن ناسپاسانه می‌گسلد — مشروعیت در شاهنامه به داد و سپاس بسته است، نه به تاج."
+    vocabulary: [vocab.farreh]
+    source: "ganjoor:/ferdousi/shahname/jamshid/sh1#69"
+  - id: jamshid.v014
+    hemistich1: "به یزدان هر آن کس که شد ناسپاس"
+    hemistich2: "به دلش اندر آید ز هر سو هراس"
+    meaning: "هر کس به یزدان ناسپاس شود، از هر سو در دلش ترس راه می‌یابد."
+    interpretation: "پند پایانی: جای خالی سپاس را هراس پر می‌کند."
+    vocabulary: [vocab.nasepas, vocab.haras]
+    source: "ganjoor:/ferdousi/shahname/jamshid/sh1#72"

@@ -1,0 +1,41 @@
+id: fereydoon.l02
+type: verses
+title: "ابیات ۱ — پانصد سال داد"
+exercises:
+  - id: fereydoon.l02.e01
+    type: verseIntro
+    prompt: { verseId: fereydoon.v001 }
+  - id: fereydoon.l02.e02
+    type: cloze
+    prompt:
+      verseId: fereydoon.v001
+      hemistich: 1
+      blankToken: 5
+      options: ["کامگار", "شهریار", "ناسپاس"]
+      correctIndex: 0
+  - id: fereydoon.l02.e03
+    type: verseIntro
+    prompt: { verseId: fereydoon.v002 }
+  - id: fereydoon.l02.e04
+    type: hemistichAssembly
+    prompt:
+      verseId: fereydoon.v002
+      hemistich: 2
+      distractors: ["درفش"]
+  - id: fereydoon.l02.e05
+    type: verseIntro
+    prompt: { verseId: fereydoon.v003 }
+  - id: fereydoon.l02.e06
+    type: verseIntro
+    prompt: { verseId: fereydoon.v004 }
+  - id: fereydoon.l02.e07
+    type: verseIntro
+    prompt: { verseId: fereydoon.v005 }
+  - id: fereydoon.l02.e08
+    type: cloze
+    prompt:
+      verseId: fereydoon.v005
+      hemistich: 1
+      blankToken: 4
+      options: ["پانصد", "سیصد", "هزار"]
+      correctIndex: 0
