@@ -68,15 +68,16 @@ class DriftSrsRepository implements SrsRepository {
 
   @override
   Stream<int> watchDueCount(DateTime now) {
-    final count = _db.srsCardRows.vocabularyItemId.count();
-    final query = _db.selectOnly(_db.srsCardRows)
-      ..addColumns([count])
-      ..where(
-        _db.srsCardRows.dueAt.isSmallerOrEqualValue(
-          now.toUtc().toIso8601String(),
-        ),
-      );
-    return query.watchSingle().map((row) => row.read(count) ?? 0);
+    // "Due" must be evaluated when each event emits, not when the stream is
+    // created — cards seeded after subscription would otherwise never count.
+    return _db
+        .select(_db.srsCardRows)
+        .watch()
+        .map(
+          (rows) => rows
+              .where((r) => !DateTime.parse(r.dueAt).isAfter(_now()))
+              .length,
+        );
   }
 
   @override
