@@ -36,9 +36,8 @@ final FutureProvider<int> totalXpProvider = FutureProvider.autoDispose<int>(
   (ref) => ref.watch(gamificationRepositoryProvider).totalXp(),
 );
 
-final StreamProvider<({int dailyXpGoal, bool notificationsEnabled})>
-profileProvider =
-    StreamProvider.autoDispose<({int dailyXpGoal, bool notificationsEnabled})>(
+final StreamProvider<UserProfileSettings> profileProvider =
+    StreamProvider.autoDispose<UserProfileSettings>(
       (ref) => ref.watch(gamificationRepositoryProvider).watchProfile(),
     );
 

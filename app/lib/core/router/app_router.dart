@@ -11,12 +11,14 @@ import 'package:miras/features/home_path/presentation/home_path_screen.dart';
 import 'package:miras/features/lesson/presentation/lesson_screen.dart';
 import 'package:miras/features/library/presentation/library_chapter_screen.dart';
 import 'package:miras/features/library/presentation/library_screen.dart';
+import 'package:miras/features/onboarding/presentation/onboarding_screen.dart';
 import 'package:miras/features/profile/presentation/profile_screen.dart';
 import 'package:miras/features/review/presentation/review_screen.dart';
 import 'package:miras/features/review/presentation/review_session_screen.dart';
 
 abstract final class AppRoutes {
   static const home = '/';
+  static const onboarding = '/onboarding';
   static const review = '/review';
   static const reviewSession = '/review/session';
   static const library = '/library';
@@ -26,8 +28,14 @@ abstract final class AppRoutes {
   static String lesson(String lessonId) => '/lesson/$lessonId';
 }
 
-final appRouter = GoRouter(
+/// [initialLocation] is decided once at bootstrap: /onboarding on first run.
+GoRouter createAppRouter({String initialLocation = AppRoutes.home}) => GoRouter(
+  initialLocation: initialLocation,
   routes: [
+    GoRoute(
+      path: AppRoutes.onboarding,
+      builder: (context, state) => const OnboardingScreen(),
+    ),
     StatefulShellRoute.indexedStack(
       builder: (context, state, shell) => _NavigationShell(shell: shell),
       branches: [

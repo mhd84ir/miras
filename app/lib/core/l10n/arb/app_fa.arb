@@ -200,5 +200,75 @@
   "notificationBody": "وقت مرور است! پیوستگی‌ات را نگه دار.",
   "@notificationBody": {
     "description": "Daily reminder notification body."
+  },
+  "themeLabel": "پوسته",
+  "@themeLabel": {
+    "description": "Profile setting label: theme mode selector."
+  },
+  "themeSystem": "سیستم",
+  "@themeSystem": {
+    "description": "Theme option: follow system."
+  },
+  "themeLight": "روشن",
+  "@themeLight": {
+    "description": "Theme option: light."
+  },
+  "themeDark": "تیره",
+  "@themeDark": {
+    "description": "Theme option: dark."
+  },
+  "onboardWelcomeTitle": "به میراث خوش آمدی",
+  "@onboardWelcomeTitle": {
+    "description": "Onboarding step 1 title."
+  },
+  "onboardWelcomeBody": "شاهنامه را با درس‌های کوتاه روزانه بخوان، بفهم و به خاطر بسپار.",
+  "@onboardWelcomeBody": {
+    "description": "Onboarding step 1 body."
+  },
+  "onboardGoalTitle": "هدف روزانه‌ات را برگزین",
+  "@onboardGoalTitle": {
+    "description": "Onboarding step 2 title: daily XP goal."
+  },
+  "onboardGoalBody": "هر روز چند امتیاز؟ بعداً هم می‌توانی تغییرش دهی.",
+  "@onboardGoalBody": {
+    "description": "Onboarding step 2 body."
+  },
+  "onboardNotifTitle": "یادآور روزانه می‌خواهی؟",
+  "@onboardNotifTitle": {
+    "description": "Onboarding step 3 title: notification opt-in."
+  },
+  "onboardNotifBody": "هر شب یادت می‌اندازیم که پیوستگی‌ات را نگه داری.",
+  "@onboardNotifBody": {
+    "description": "Onboarding step 3 body."
+  },
+  "onboardNotifYes": "بله، یادم بینداز",
+  "@onboardNotifYes": {
+    "description": "Onboarding: accept daily reminder."
+  },
+  "onboardNotifSkip": "فعلاً نه",
+  "@onboardNotifSkip": {
+    "description": "Onboarding: skip daily reminder."
+  },
+  "semStreak": "پیوستگی: {days} روز",
+  "@semStreak": {
+    "description": "Accessibility label for the streak chip.",
+    "placeholders": {
+      "days": {"type": "String"}
+    }
+  },
+  "semHearts": "دل: {count} از ۵",
+  "@semHearts": {
+    "description": "Accessibility label for the hearts chip.",
+    "placeholders": {
+      "count": {"type": "String"}
+    }
+  },
+  "semTodayXp": "امتیاز امروز: {earned} از {goal}",
+  "@semTodayXp": {
+    "description": "Accessibility label for the daily XP chip.",
+    "placeholders": {
+      "earned": {"type": "String"},
+      "goal": {"type": "String"}
+    }
   }
 }

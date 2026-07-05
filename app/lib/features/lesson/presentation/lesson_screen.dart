@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
@@ -89,9 +90,14 @@ class _LessonScreenState extends ConsumerState<LessonScreen> {
                         : strings.lessonCheck,
                     expand: true,
                     onPressed: isPresentation || _draft != null
-                        ? () => controller.submit(
-                            isPresentation ? const Acknowledged() : _draft!,
-                          )
+                        ? () async {
+                            await controller.submit(
+                              isPresentation ? const Acknowledged() : _draft!,
+                            );
+                            if (!isPresentation) {
+                              await _answerHaptic(ref, widget.lessonId);
+                            }
+                          }
                         : null,
                   )
                 : MirasButton(
@@ -146,6 +152,16 @@ class _LessonScreenState extends ConsumerState<LessonScreen> {
         enabled: enabled,
       ),
     };
+  }
+
+  /// Gentle physical confirmation on answers (DESIGN_SYSTEM.md §5); no-op
+  /// when the device has no vibrator.
+  Future<void> _answerHaptic(WidgetRef ref, String lessonId) async {
+    final correct = ref.read(lessonControllerProvider(lessonId)).lastCorrect;
+    if (correct == null) return;
+    await (correct
+        ? HapticFeedback.lightImpact()
+        : HapticFeedback.mediumImpact());
   }
 
   String? _correctAnswerText(LoadedExercise current) {

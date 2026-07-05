@@ -31,6 +31,16 @@ class CoupletView extends StatelessWidget {
       color: context.mirasColors.ink,
     );
 
+    // Screen readers get the couplet as one utterance with a natural pause,
+    // rather than two disconnected lines.
+    return Semantics(
+      label: '$hemistich1، $hemistich2',
+      excludeSemantics: true,
+      child: _layout(effectiveStyle),
+    );
+  }
+
+  Widget _layout(TextStyle effectiveStyle) {
     return LayoutBuilder(
       builder: (context, constraints) {
         final hemistichs = [

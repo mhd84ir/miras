@@ -12,6 +12,7 @@ Future<void> pumpGolden(
   Widget child, {
   Brightness brightness = Brightness.light,
   Size surfaceSize = const Size(400, 700),
+  TextScaler textScaler = TextScaler.noScaling,
 }) async {
   await tester.binding.setSurfaceSize(surfaceSize);
   addTearDown(() => tester.binding.setSurfaceSize(null));
@@ -23,6 +24,10 @@ Future<void> pumpGolden(
       supportedLocales: const [Locale('fa')],
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       debugShowCheckedModeBanner: false,
+      builder: (context, appChild) => MediaQuery(
+        data: MediaQuery.of(context).copyWith(textScaler: textScaler),
+        child: appChild!,
+      ),
       home: Scaffold(
         body: Center(
           child: Padding(

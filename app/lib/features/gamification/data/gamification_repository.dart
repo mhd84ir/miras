@@ -1,4 +1,5 @@
 import 'package:drift/drift.dart';
+import 'package:flutter/material.dart' show ThemeMode;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:miras/core/db/user_database.dart';
@@ -31,10 +32,20 @@ abstract interface class GamificationRepository {
   Stream<Set<String>> watchUnlockedAchievements();
   Future<void> unlockAchievement(String id, DateTime at);
 
-  Stream<({int dailyXpGoal, bool notificationsEnabled})> watchProfile();
+  Stream<UserProfileSettings> watchProfile();
   Future<void> setDailyXpGoal(int xp);
   Future<void> setNotificationsEnabled({required bool enabled});
+  Future<void> setThemeMode(ThemeMode mode);
+  Future<void> setOnboarded();
 }
+
+/// Profile settings snapshot (docs/DATA_MODEL.md §2).
+typedef UserProfileSettings = ({
+  int dailyXpGoal,
+  bool notificationsEnabled,
+  ThemeMode themeMode,
+  bool onboarded,
+});
 
 class DriftGamificationRepository implements GamificationRepository {
   DriftGamificationRepository(this._db, {DateTime Function()? clock})
@@ -219,13 +230,40 @@ class DriftGamificationRepository implements GamificationRepository {
   // ---------------------------------------------------------- profile
 
   @override
-  Stream<({int dailyXpGoal, bool notificationsEnabled})> watchProfile() =>
+  Stream<UserProfileSettings> watchProfile() =>
       _singleRow(_db.userProfileRows).watchSingle().map(
         (r) => (
           dailyXpGoal: r.dailyXpGoal,
           notificationsEnabled: r.notificationsEnabled,
+          themeMode:
+              ThemeMode.values.asNameMap()[r.themeMode] ?? ThemeMode.system,
+          onboarded: r.onboarded,
         ),
       );
+
+  @override
+  Future<void> setThemeMode(ThemeMode mode) async {
+    await _db
+        .update(_db.userProfileRows)
+        .write(
+          UserProfileRowsCompanion(
+            themeMode: Value(mode.name),
+            updatedAt: Value(_ts),
+          ),
+        );
+  }
+
+  @override
+  Future<void> setOnboarded() async {
+    await _db
+        .update(_db.userProfileRows)
+        .write(
+          UserProfileRowsCompanion(
+            onboarded: const Value(true),
+            updatedAt: Value(_ts),
+          ),
+        );
+  }
 
   @override
   Future<void> setDailyXpGoal(int xp) async {

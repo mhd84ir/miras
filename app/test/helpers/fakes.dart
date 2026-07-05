@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart' show ThemeMode;
+
 import 'package:miras/core/content/content_repository.dart';
 import 'package:miras/core/content/models.dart';
 import 'package:miras/features/gamification/data/gamification_repository.dart';
@@ -114,6 +116,8 @@ class FakeGamificationRepository implements GamificationRepository {
   final unlocked = <String>{};
   int dailyXpGoal = XpRules.defaultDailyGoal;
   bool notificationsEnabled = false;
+  ThemeMode themeMode = ThemeMode.system;
+  bool onboarded = true;
 
   @override
   Future<HeartsState> hearts() async => heartsState;
@@ -166,13 +170,20 @@ class FakeGamificationRepository implements GamificationRepository {
   }
 
   @override
-  Stream<({int dailyXpGoal, bool notificationsEnabled})> watchProfile() =>
-      Stream.value(
-        (
-          dailyXpGoal: dailyXpGoal,
-          notificationsEnabled: notificationsEnabled,
-        ),
-      );
+  Stream<UserProfileSettings> watchProfile() => Stream.value(
+    (
+      dailyXpGoal: dailyXpGoal,
+      notificationsEnabled: notificationsEnabled,
+      themeMode: themeMode,
+      onboarded: onboarded,
+    ),
+  );
+
+  @override
+  Future<void> setThemeMode(ThemeMode mode) async => themeMode = mode;
+
+  @override
+  Future<void> setOnboarded() async => onboarded = true;
 
   @override
   Future<void> setDailyXpGoal(int xp) async => dailyXpGoal = xp;

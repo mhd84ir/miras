@@ -7,6 +7,7 @@ import 'package:miras/core/persian_text/persian_text.dart';
 import 'package:miras/core/theme/miras_colors.dart';
 import 'package:miras/core/theme/miras_spacing.dart';
 import 'package:miras/core/theme/miras_text_styles.dart';
+import 'package:miras/core/widgets/tazhib_rosette.dart';
 import 'package:miras/features/gamification/application/stats_providers.dart';
 import 'package:miras/features/gamification/data/gamification_repository.dart';
 import 'package:miras/features/gamification/domain/achievements.dart';
@@ -94,6 +95,32 @@ class ProfileScreen extends ConsumerWidget {
             onSelectionChanged: (selection) => ref
                 .read(gamificationRepositoryProvider)
                 .setDailyXpGoal(selection.first),
+          ),
+          const SizedBox(height: MirasSpacing.lg),
+          Text(
+            strings.themeLabel,
+            style: MirasTextStyles.title.copyWith(color: colors.ink),
+          ),
+          const SizedBox(height: MirasSpacing.sm),
+          SegmentedButton<ThemeMode>(
+            segments: [
+              ButtonSegment(
+                value: ThemeMode.system,
+                label: Text(strings.themeSystem),
+              ),
+              ButtonSegment(
+                value: ThemeMode.light,
+                label: Text(strings.themeLight),
+              ),
+              ButtonSegment(
+                value: ThemeMode.dark,
+                label: Text(strings.themeDark),
+              ),
+            ],
+            selected: {profile?.themeMode ?? ThemeMode.system},
+            onSelectionChanged: (selection) => ref
+                .read(gamificationRepositoryProvider)
+                .setThemeMode(selection.first),
           ),
           const SizedBox(height: MirasSpacing.md),
           SwitchListTile(
@@ -183,23 +210,39 @@ class _AchievementTile extends StatelessWidget {
       padding: const EdgeInsetsDirectional.only(bottom: MirasSpacing.sm),
       child: Row(
         children: [
-          Container(
-            width: 48,
-            height: 48,
-            decoration: BoxDecoration(
-              color: unlocked
-                  ? colors.zarrin.withValues(alpha: 0.15)
-                  : colors.surfaceVariant,
-              shape: BoxShape.circle,
-              border: Border.all(
-                color: unlocked ? colors.zarrin : colors.hairline,
-                width: 2,
-              ),
-            ),
-            child: Icon(
-              unlocked ? Icons.emoji_events : Icons.lock,
-              color: unlocked ? colors.zarrin : colors.inkMuted,
-              size: 24,
+          SizedBox(
+            width: 56,
+            height: 56,
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                // Tazhib ring crowns unlocked medals (DESIGN_SYSTEM.md §7).
+                if (unlocked)
+                  TazhibRosette(
+                    size: 56,
+                    color: colors.zarrin.withValues(alpha: 0.55),
+                    strokeWidth: 1,
+                  ),
+                Container(
+                  width: 40,
+                  height: 40,
+                  decoration: BoxDecoration(
+                    color: unlocked
+                        ? colors.zarrin.withValues(alpha: 0.15)
+                        : colors.surfaceVariant,
+                    shape: BoxShape.circle,
+                    border: Border.all(
+                      color: unlocked ? colors.zarrin : colors.hairline,
+                      width: 2,
+                    ),
+                  ),
+                  child: Icon(
+                    unlocked ? Icons.emoji_events : Icons.lock,
+                    color: unlocked ? colors.zarrin : colors.inkMuted,
+                    size: 20,
+                  ),
+                ),
+              ],
             ),
           ),
           const SizedBox(width: MirasSpacing.md),

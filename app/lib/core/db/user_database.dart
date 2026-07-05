@@ -50,6 +50,11 @@ class UserProfileRows extends Table {
       .withDefault(const Constant(false))();
   BoolColumn get soundEnabled =>
       boolean().named('sound_enabled').withDefault(const Constant(true))();
+
+  /// 'system' | 'light' | 'dark' — parsed into ThemeMode by the UI layer.
+  TextColumn get themeMode =>
+      text().named('theme_mode').withDefault(const Constant('system'))();
+  BoolColumn get onboarded => boolean().withDefault(const Constant(false))();
   TextColumn get updatedAt => text().named('updated_at')();
 
   @override
@@ -151,19 +156,25 @@ class UserDatabase extends _$UserDatabase {
   }
 
   @override
-  int get schemaVersion => 2;
+  int get schemaVersion => 3;
 
   @override
   MigrationStrategy get migration => MigrationStrategy(
     onUpgrade: (m, from, to) async {
       if (from < 2) {
-        // v2: gamification + SRS (M3).
+        // v2: gamification + SRS (M3). Tables are created at the current
+        // schema, so they already include the v3 columns.
         await m.createTable(userProfileRows);
         await m.createTable(srsCardRows);
         await m.createTable(xpEventRows);
         await m.createTable(streakRows);
         await m.createTable(heartsRows);
         await m.createTable(achievementRows);
+      }
+      if (from == 2) {
+        // v3: theme mode + onboarding flag (M4).
+        await m.addColumn(userProfileRows, userProfileRows.themeMode);
+        await m.addColumn(userProfileRows, userProfileRows.onboarded);
       }
     },
   );

@@ -55,37 +55,41 @@ class _OptionTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AnimatedContainer(
-      duration: const Duration(milliseconds: 120),
-      curve: Curves.easeOut,
-      decoration: BoxDecoration(
-        color: isSelected
-            ? colors.firoozeh.withValues(alpha: 0.10)
-            : colors.surface,
-        borderRadius: BorderRadius.circular(MirasRadii.md),
-        border: Border.all(
-          color: isSelected ? colors.firoozeh : colors.hairline,
-          width: isSelected ? 2 : 1,
-        ),
-      ),
-      child: Material(
-        type: MaterialType.transparency,
-        child: InkWell(
-          onTap: onTap,
+    return Semantics(
+      button: true,
+      selected: isSelected,
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 120),
+        curve: Curves.easeOut,
+        decoration: BoxDecoration(
+          color: isSelected
+              ? colors.firoozeh.withValues(alpha: 0.10)
+              : colors.surface,
           borderRadius: BorderRadius.circular(MirasRadii.md),
-          child: Container(
-            width: double.infinity,
-            constraints: const BoxConstraints(minHeight: 52),
-            padding: const EdgeInsetsDirectional.symmetric(
-              horizontal: MirasSpacing.md,
-              vertical: MirasSpacing.sm,
-            ),
-            alignment: AlignmentDirectional.centerStart,
-            child: Text(
-              label,
-              style: MirasTextStyles.body.copyWith(
-                color: isSelected ? colors.firoozeh : colors.ink,
-                fontWeight: isSelected ? FontWeight.w600 : FontWeight.w400,
+          border: Border.all(
+            color: isSelected ? colors.firoozeh : colors.hairline,
+            width: isSelected ? 2 : 1,
+          ),
+        ),
+        child: Material(
+          type: MaterialType.transparency,
+          child: InkWell(
+            onTap: onTap,
+            borderRadius: BorderRadius.circular(MirasRadii.md),
+            child: Container(
+              width: double.infinity,
+              constraints: const BoxConstraints(minHeight: 52),
+              padding: const EdgeInsetsDirectional.symmetric(
+                horizontal: MirasSpacing.md,
+                vertical: MirasSpacing.sm,
+              ),
+              alignment: AlignmentDirectional.centerStart,
+              child: Text(
+                label,
+                style: MirasTextStyles.body.copyWith(
+                  color: isSelected ? colors.firoozeh : colors.ink,
+                  fontWeight: isSelected ? FontWeight.w600 : FontWeight.w400,
+                ),
               ),
             ),
           ),

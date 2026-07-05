@@ -6,6 +6,7 @@ import 'package:miras/core/content/models.dart';
 import 'package:miras/core/theme/miras_colors.dart';
 import 'package:miras/core/theme/miras_spacing.dart';
 import 'package:miras/core/theme/miras_text_styles.dart';
+import 'package:miras/core/widgets/tazhib_rosette.dart';
 import 'package:miras/features/gamification/presentation/stats_header.dart';
 import 'package:miras/features/home_path/application/path_providers.dart';
 import 'package:miras/features/home_path/presentation/widgets/lesson_path_node.dart';
@@ -63,27 +64,40 @@ class _ChapterSection extends ConsumerWidget {
             horizontal: MirasSpacing.screenMargin,
             vertical: MirasSpacing.sm,
           ),
-          child: DecoratedBox(
-            decoration: BoxDecoration(
-              color: colors.lajvard,
-              borderRadius: BorderRadius.circular(MirasRadii.lg),
-            ),
-            child: Padding(
-              padding: const EdgeInsetsDirectional.all(MirasSpacing.lg),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(MirasRadii.lg),
+            child: DecoratedBox(
+              decoration: BoxDecoration(color: colors.lajvard),
+              child: Stack(
                 children: [
-                  Text(
-                    chapter.title,
-                    style: MirasTextStyles.headline.copyWith(
-                      color: Colors.white,
+                  // Ornamental moment: a faint rosette bleeding off the corner.
+                  PositionedDirectional(
+                    end: -28,
+                    top: -28,
+                    child: TazhibRosette(
+                      size: 120,
+                      color: Colors.white.withValues(alpha: 0.14),
                     ),
                   ),
-                  const SizedBox(height: MirasSpacing.xs),
-                  Text(
-                    chapter.subtitle,
-                    style: MirasTextStyles.bodySmall.copyWith(
-                      color: Colors.white.withValues(alpha: 0.85),
+                  Padding(
+                    padding: const EdgeInsetsDirectional.all(MirasSpacing.lg),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          chapter.title,
+                          style: MirasTextStyles.headline.copyWith(
+                            color: Colors.white,
+                          ),
+                        ),
+                        const SizedBox(height: MirasSpacing.xs),
+                        Text(
+                          chapter.subtitle,
+                          style: MirasTextStyles.bodySmall.copyWith(
+                            color: Colors.white.withValues(alpha: 0.85),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ],

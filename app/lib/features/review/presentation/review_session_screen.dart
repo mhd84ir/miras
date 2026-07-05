@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
@@ -142,7 +143,17 @@ class _ReviewSessionScreenState extends ConsumerState<ReviewSessionScreen> {
                     expand: true,
                     onPressed: _selected == null
                         ? null
-                        : () => controller.submit(_selected!),
+                        : () async {
+                            await controller.submit(_selected!);
+                            final correct = ref
+                                .read(reviewControllerProvider)
+                                .lastCorrect;
+                            if (correct != null) {
+                              await (correct
+                                  ? HapticFeedback.lightImpact()
+                                  : HapticFeedback.mediumImpact());
+                            }
+                          },
                   )
                 : MirasButton(
                     label: strings.lessonContinue,
