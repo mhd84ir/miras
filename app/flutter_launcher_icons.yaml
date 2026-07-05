@@ -1,0 +1,8 @@
+# Launcher icon config — source PNGs are generated from the in-app
+# TazhibRosette painter (test/tools/generate_launcher_icon_test.dart).
+flutter_launcher_icons:
+  android: true
+  ios: false
+  image_path: assets/launcher/icon.png
+  adaptive_icon_background: "#26619C"
+  adaptive_icon_foreground: assets/launcher/icon_fg.png

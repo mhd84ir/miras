@@ -1,7 +1,8 @@
 name: miras
 description: "Miras (میراث) — gamified learning app for Persian classical literature."
 publish_to: 'none'
-version: 0.1.0+1
+# 0.9.x = phase-1 beta; 1.0.0 after beta feedback.
+version: 0.9.0+2
 
 environment:
   sdk: ^3.12.2
@@ -26,6 +27,7 @@ dependencies:
 dev_dependencies:
   build_runner: ^2.15.0
   drift_dev: ^2.34.0
+  flutter_launcher_icons: ^0.14.4
   flutter_test:
     sdk: flutter
   very_good_analysis: ^10.3.0

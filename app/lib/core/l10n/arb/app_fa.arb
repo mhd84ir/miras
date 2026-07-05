@@ -263,6 +263,14 @@
       "count": {"type": "String"}
     }
   },
+  "bootErrorTitle": "خطا در راه‌اندازی",
+  "@bootErrorTitle": {
+    "description": "Fatal bootstrap failure screen title."
+  },
+  "bootErrorBody": "برنامه نتوانست داده‌های خود را بارگذاری کند. لطفاً برنامه را ببندید و دوباره باز کنید؛ اگر مشکل ماند، برنامه را دوباره نصب کنید.",
+  "@bootErrorBody": {
+    "description": "Fatal bootstrap failure screen body."
+  },
   "semTodayXp": "امتیاز امروز: {earned} از {goal}",
   "@semTodayXp": {
     "description": "Accessibility label for the daily XP chip.",
