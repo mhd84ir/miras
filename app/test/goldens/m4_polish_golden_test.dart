@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:miras/core/content/models.dart';
-import 'package:miras/core/theme/miras_colors.dart';
 import 'package:miras/core/theme/miras_text_styles.dart';
 import 'package:miras/core/widgets/couplet_view.dart';
 import 'package:miras/core/widgets/tazhib_rosette.dart';
