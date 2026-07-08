@@ -12,3 +12,4 @@ ADRs are immutable once accepted; a changed decision gets a new ADR that superse
 | [0004](0004-drift-with-split-databases.md) | Drift/SQLite with split content and user databases | Accepted |
 | [0005](0005-prebaked-tts-audio.md) | Pre-baked TTS audio in content packs | Accepted |
 | [0006](0006-fsrs-for-spaced-repetition.md) | FSRS algorithm for spaced repetition | Accepted |
+| [0007](0007-sentry-for-crash-reporting.md) | Sentry for crash reporting | Accepted |

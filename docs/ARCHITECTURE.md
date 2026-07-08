@@ -88,6 +88,7 @@ notifiers/controllers) → `domain/` (entities + pure logic) ← `data/` (reposi
 | Persistence | Drift (SQLite), split content/user DBs | [0004](adr/0004-drift-with-split-databases.md) |
 | Audio | Pre-baked TTS in content packs | [0005](adr/0005-prebaked-tts-audio.md) |
 | Spaced repetition | FSRS | [0006](adr/0006-fsrs-for-spaced-repetition.md) |
+| Crash reporting | Sentry | [0007](adr/0007-sentry-for-crash-reporting.md) |
 | Navigation | go_router (declarative, deep-link ready for web phase) | — |
 | Lints | very_good_analysis | — |
 
@@ -126,8 +127,8 @@ directionality; adding locales later is additive.
   across layer boundaries).
 - Structured logging behind a `Logger` facade; debug builds log verbosely, release
   builds log warnings+. No PII by design (there is none).
-- Crash reporting deferred until beta distribution (decision in M5; candidates:
-  Sentry, Crashlytics — evaluated against the no-personal-data stance).
+- Crash reporting: Sentry ([ADR-0007](adr/0007-sentry-for-crash-reporting.md)),
+  integrated before beta distribution.
 
 ## 8. Testing strategy
 
