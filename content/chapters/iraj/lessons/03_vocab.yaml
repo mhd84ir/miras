@@ -1,0 +1,33 @@
+id: iraj.l03
+type: vocab
+title: "واژگان ۲ — از بیخ تا تابوت"
+exercises:
+  - id: iraj.l03.e01
+    type: vocabIntro
+    prompt: { vocabId: vocab.bikh }
+  - id: iraj.l03.e02
+    type: vocabIntro
+    prompt: { vocabId: vocab.zinhar }
+  - id: iraj.l03.e03
+    type: vocabIntro
+    prompt: { vocabId: vocab.abgun }
+  - id: iraj.l03.e04
+    type: vocabIntro
+    prompt: { vocabId: vocab.sahi }
+  - id: iraj.l03.e05
+    type: vocabIntro
+    prompt: { vocabId: vocab.tabut }
+  - id: iraj.l03.e06
+    type: vocabIntro
+    prompt: { vocabId: vocab.davar }
+  - id: iraj.l03.e07
+    type: matching
+    prompt:
+      pairs: [vocab.bikh, vocab.zinhar, vocab.abgun, vocab.sahi]
+  - id: iraj.l03.e08
+    type: multipleChoice
+    prompt:
+      question: "«سرو سهی» در وصفِ چه کسی به‌کار رفته است؟"
+      options: ["ایرج، برای بالای بلند و زیبایش", "فریدون، برای سالخوردگیِ او", "تور، برای خشمِ او"]
+      correctIndex: 0
+      vocabId: vocab.sahi

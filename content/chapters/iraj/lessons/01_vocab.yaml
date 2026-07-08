@@ -1,0 +1,30 @@
+id: iraj.l01
+type: vocab
+title: "واژگان ۱ — کهتری و کینه"
+exercises:
+  - id: iraj.l01.e01
+    type: vocabIntro
+    prompt: { vocabId: vocab.kehtar }
+  - id: iraj.l01.e02
+    type: vocabIntro
+    prompt: { vocabId: vocab.kin }
+  - id: iraj.l01.e03
+    type: vocabIntro
+    prompt: { vocabId: vocab.chin }
+  - id: iraj.l01.e04
+    type: vocabIntro
+    prompt: { vocabId: vocab.giti }
+  - id: iraj.l01.e05
+    type: multipleChoice
+    prompt:
+      question: "«کهتر» در برابرِ کدام واژه به‌کار می‌رود؟"
+      options: ["مهتر", "دلاور", "فرزانه"]
+      correctIndex: 0
+      vocabId: vocab.kehtar
+  - id: iraj.l01.e06
+    type: multipleChoice
+    prompt:
+      question: "در بیتِ «به دل پر ز کین شد به رخ پر ز چین»، واژهٔ «چین» در اینجا به چه معناست؟"
+      options: ["چروکِ خشم بر چهره", "نامِ سرزمینِ چین", "نوعی پارچهٔ ابریشمی"]
+      correctIndex: 0
+      vocabId: vocab.chin

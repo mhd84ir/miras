@@ -1,0 +1,56 @@
+id: iraj.l05
+type: verses
+title: "ابیات ۳ — کشته‌شدنِ ایرج"
+exercises:
+  - id: iraj.l05.e01
+    type: verseIntro
+    prompt: { verseId: iraj.v009 }
+  - id: iraj.l05.e02
+    type: verseIntro
+    prompt: { verseId: iraj.v010 }
+  - id: iraj.l05.e03
+    type: cloze
+    prompt:
+      verseId: iraj.v010
+      hemistich: 1
+      blankToken: 4
+      options: ["خاور", "باختر", "توران"]
+      correctIndex: 0
+  - id: iraj.l05.e04
+    type: verseIntro
+    prompt: { verseId: iraj.v011 }
+  - id: iraj.l05.e05
+    type: cloze
+    prompt:
+      verseId: iraj.v011
+      hemistich: 1
+      blankToken: 2
+      options: ["کهتری", "مهتری", "دلاوری"]
+      correctIndex: 0
+  - id: iraj.l05.e06
+    type: verseIntro
+    prompt: { verseId: iraj.v012 }
+  - id: iraj.l05.e07
+    type: verseIntro
+    prompt: { verseId: iraj.v013 }
+  - id: iraj.l05.e08
+    type: verseIntro
+    prompt: { verseId: iraj.v014 }
+  - id: iraj.l05.e09
+    type: hemistichAssembly
+    prompt:
+      verseId: iraj.v014
+      hemistich: 1
+      distractors: ["تیغ"]
+  - id: iraj.l05.e10
+    type: verseIntro
+    prompt: { verseId: iraj.v015 }
+  - id: iraj.l05.e11
+    type: comprehension
+    prompt:
+      question: "ایرج در برابرِ خشمِ تور چه کرد؟"
+      options:
+        - "تسلیم شد و زینهار خواست، نه ستیز"
+        - "با او به نبرد پرداخت"
+        - "از میدان گریخت"
+      correctIndex: 0

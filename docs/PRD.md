@@ -48,12 +48,13 @@ All personas are Persian speakers. Phase 1 does **not** target non-Persian speak
 
 ### 5.1 Content
 
-Four stories from the Shahnameh, in narrative order, ~6–8 lessons each (~28 lessons):
+Five stories from the Shahnameh, in narrative order, ~6–8 lessons each:
 
 1. **پادشاهی جمشید** — Jamshid's reign, glory, and hubris
 2. **ضحاک و کاوهٔ آهنگر** — Zahhak, the serpent king, and Kaveh's uprising
 3. **فریدون** — Fereydun's victory and the division of the world
-4. **رستم و سهراب** — the marquee tragedy
+4. **ایرج** — Salm and Tur's jealousy, Iraj's murder, and Fereydun's grief
+5. **رستم و سهراب** — the marquee tragedy
 
 Each story (Chapter) follows a five-part lesson arc:
 

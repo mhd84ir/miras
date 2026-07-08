@@ -1,0 +1,48 @@
+id: iraj.l04
+type: verses
+title: "ابیات ۲ — پیمانِ صلحِ ایرج"
+exercises:
+  - id: iraj.l04.e01
+    type: verseIntro
+    prompt: { verseId: iraj.v004 }
+  - id: iraj.l04.e02
+    type: verseIntro
+    prompt: { verseId: iraj.v005 }
+  - id: iraj.l04.e03
+    type: cloze
+    prompt:
+      verseId: iraj.v005
+      hemistich: 1
+      blankToken: 2
+      options: ["باد", "آب", "خاک"]
+      correctIndex: 0
+  - id: iraj.l04.e04
+    type: verseIntro
+    prompt: { verseId: iraj.v006 }
+  - id: iraj.l04.e05
+    type: multipleChoice
+    prompt:
+      question: "ایرج در پندِ خود به کدام شاهِ اسطوره‌ای اشاره می‌کند؟"
+      options: ["جمشید", "ضحاک", "کاووس"]
+      correctIndex: 0
+  - id: iraj.l04.e06
+    type: verseIntro
+    prompt: { verseId: iraj.v007 }
+  - id: iraj.l04.e07
+    type: hemistichAssembly
+    prompt:
+      verseId: iraj.v007
+      hemistich: 2
+      distractors: ["با سپاه"]
+  - id: iraj.l04.e08
+    type: verseIntro
+    prompt: { verseId: iraj.v008 }
+  - id: iraj.l04.e09
+    type: comprehension
+    prompt:
+      question: "فریدون در برابرِ تصمیمِ ایرج برای رفتنِ بی‌سپاه چه کرد؟"
+      options:
+        - "دل‌نگران بود اما اجازه داد و نامه‌ای برایش نوشت"
+        - "او را از رفتن بازداشت"
+        - "خودش نیز همراهِ او رفت"
+      correctIndex: 0

@@ -1,0 +1,54 @@
+# TODO(editorial): definitions and etymologies pending literary review.
+items:
+  - id: vocab.kehtar
+    word: "کهتر"
+    pronunciation: "kehtar"
+    meaning: "کوچک‌تر، جوان‌تر؛ در شاهنامه لقب ایرج، فرزند خردسال‌تر فریدون است"
+    etymology: "ضد «مهتر» (بزرگ‌تر)؛ در این داستان از یک نسبتِ سنی به آرمانِ فروتنی ایرج بدل می‌شود"
+    example_verse: iraj.v002
+  - id: vocab.kin
+    word: "کین"
+    pronunciation: "kin"
+    meaning: "دشمنی، کینه، آرزوی انتقام"
+    example_verse: iraj.v003
+  - id: vocab.chin
+    word: "چین"
+    pronunciation: "chin"
+    meaning: "چروکِ پیشانی یا رخسار از خشم؛ «چین بر ابرو آوردن»: اخم کردن"
+    etymology: "با نامِ سرزمین «چین» هم‌نویسه است — در همین بیت، هر دو معنا کنار هم می‌آیند"
+    example_verse: iraj.v003
+  - id: vocab.giti
+    word: "گیتی"
+    pronunciation: "giti"
+    meaning: "جهان، دنیا"
+    example_verse: iraj.v006
+  - id: vocab.bikh
+    word: "بیخ"
+    pronunciation: "bikh"
+    meaning: "ریشه؛ «بیخ کسی را از جای برکندن»: او را یکسره نابود کردن"
+    example_verse: iraj.v009
+  - id: vocab.zinhar
+    word: "زینهار"
+    pronunciation: "zinhār"
+    meaning: "امان، پناه؛ «زینهار خواستن»: جان امان خواستن"
+    example_verse: iraj.v013
+  - id: vocab.abgun
+    word: "آبگون"
+    pronunciation: "âbgun"
+    meaning: "به رنگ آب؛ کبودرنگ، فولادی‌رنگ — صفتِ تیغه‌های برنده در شاهنامه"
+    example_verse: iraj.v014
+  - id: vocab.sahi
+    word: "سهی"
+    pronunciation: "sahi"
+    meaning: "بلند و راست‌قامت؛ صفتِ سرو در وصفِ بالای زیبا و جوان"
+    example_verse: iraj.v015
+  - id: vocab.tabut
+    word: "تابوت"
+    pronunciation: "tābut"
+    meaning: "صندوقی که پیکر مرده را در آن نهند"
+    example_verse: iraj.v016
+  - id: vocab.davar
+    word: "داور"
+    pronunciation: "dāvar"
+    meaning: "قاضی، کسی که میان حق و ناحق حکم کند؛ «داور دادگر»: خداوند، به‌عنوانِ داورِ راستین"
+    example_verse: iraj.v020

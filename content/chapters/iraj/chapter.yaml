@@ -1,0 +1,25 @@
+# Chapter: ایرج
+# Verse text verbatim from Ganjoor (public domain): /ferdousi/shahname/fereydoon,
+# continuing directly from the fereydoon chapter's last verse (sh6#2): sh6#4
+# through sh11#49 (Salm and Tur's jealousy, their conspiracy, Iraj's pledge of
+# peace, his murder, and Fereydun's lament). Manuchehr's birth and revenge is a
+# distinct, later story and is out of scope for this chapter.
+# TODO(editorial): meanings, interpretations, and retelling are original drafts
+# pending literary review.
+id: iraj
+position: 4
+title: "ایرج"
+subtitle: "رشکِ برادران، و کهتریِ ایرج"
+summary: >-
+  سلم و تور از بخشِ فریدون بر ایرجِ کهتر رشک بردند و با هم هم‌داستان شدند تا
+  ایران را از او بازپس گیرند. ایرج، از کینهٔ برادران آگاه، بی‌هیچ سپاهی نزدشان
+  رفت و تاج و تخت را نیز به آنان بخشید — اما فروتنیِ او رشکشان را
+  فرونشاند. تور به خشم خنجر برکشید و ایرج را کشت. سوگِ فریدون بر سرِ تابوتِ
+  فرزند، از تلخ‌ترین سوگ‌نامه‌های شاهنامه است.
+lessons:
+  - lessons/01_vocab.yaml
+  - lessons/02_verses_rashk.yaml
+  - lessons/03_vocab.yaml
+  - lessons/04_verses_peyman.yaml
+  - lessons/05_verses_koshtan.yaml
+  - lessons/06_story_review.yaml

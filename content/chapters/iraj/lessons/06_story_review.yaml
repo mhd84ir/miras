@@ -1,0 +1,90 @@
+id: iraj.l06
+type: review
+title: "داستان و مرور — سوگِ فریدون"
+exercises:
+  - id: iraj.l06.e01
+    type: storySection
+    prompt: { retellingId: iraj.r01 }
+  - id: iraj.l06.e02
+    type: storySection
+    prompt: { retellingId: iraj.r02 }
+  - id: iraj.l06.e03
+    type: comprehension
+    prompt:
+      question: "رشکِ سلم و تور از چه بود؟"
+      options:
+        - "ایرانِ آباد به ایرجِ کهتر رسیده بود"
+        - "فریدون آنان را دوست نداشت"
+        - "آنان هیچ سهمی از جهان دریافت نکرده بودند"
+      correctIndex: 0
+  - id: iraj.l06.e04
+    type: storySection
+    prompt: { retellingId: iraj.r03 }
+  - id: iraj.l06.e05
+    type: comprehension
+    prompt:
+      question: "ایرج به‌جای آماده‌شدن برای جنگ چه کرد؟"
+      options:
+        - "بی‌هیچ سپاهی نزدِ برادران رفت تا کینه را از میان بردارد"
+        - "لشکری بزرگ گرد آورد"
+        - "از فریدون خواست به‌جای او بجنگد"
+      correctIndex: 0
+  - id: iraj.l06.e06
+    type: storySection
+    prompt: { retellingId: iraj.r04 }
+  - id: iraj.l06.e07
+    type: comprehension
+    prompt:
+      question: "فروتنیِ ایرج در برابرِ خشمِ تور چه اثری داشت؟"
+      options:
+        - "او را از خشم بازنداشت و ایرج کشته شد"
+        - "تور را پشیمان کرد و صلح برقرار شد"
+        - "جنگ را برای همیشه پایان داد"
+      correctIndex: 0
+  - id: iraj.l06.e08
+    type: storySection
+    prompt: { retellingId: iraj.r05 }
+  - id: iraj.l06.e09
+    type: verseIntro
+    prompt: { verseId: iraj.v016 }
+  - id: iraj.l06.e10
+    type: verseIntro
+    prompt: { verseId: iraj.v020 }
+  - id: iraj.l06.e11
+    type: comprehension
+    prompt:
+      question: "فریدون در سوگِ ایرج چه کرد؟"
+      options:
+        - "گلستانِ خود را ویران کرد و رو به داورِ دادگر فریاد زد"
+        - "بی‌درنگ لشکر به کینِ او کشید"
+        - "تاج و تخت را به سلم بخشید"
+      correctIndex: 0
+  - id: iraj.l06.e12
+    type: sequencing
+    difficulty: 2
+    prompt:
+      events:
+        - id: a
+          text: "فریدون جهان را میان سه پسر بخش می‌کند"
+        - id: b
+          text: "سلم و تور بر ایرجِ کهتر رشک می‌برند و با هم هم‌داستان می‌شوند"
+        - id: c
+          text: "ایرج بی‌هیچ سپاهی برای صلح نزدِ برادران می‌رود"
+        - id: d
+          text: "ایرج تاج و تخت را نیز به برادران می‌بخشد، اما تور او را می‌کشد"
+        - id: e
+          text: "سرِ بریدهٔ ایرج در تابوتی نزدِ فریدون می‌رسد"
+        - id: f
+          text: "فریدون در سوگِ فرزند، گلستانِ خود را ویران می‌کند"
+      correctOrder: [a, b, c, d, e, f]
+  - id: iraj.l06.e13
+    type: matching
+    prompt:
+      pairs: [vocab.kehtar, vocab.tabut, vocab.davar, vocab.sahi]
+  - id: iraj.l06.e14
+    type: hemistichAssembly
+    difficulty: 2
+    prompt:
+      verseId: iraj.v011
+      hemistich: 2
+      distractors: ["فروتنی"]

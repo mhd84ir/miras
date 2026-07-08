@@ -1,0 +1,144 @@
+# Verse text verbatim from Ganjoor (public domain). Do not edit hemistichs.
+# Continues directly from content/chapters/fereydoon/verses.yaml (last verse: sh6#2).
+# TODO(editorial): meanings and interpretations pending literary review.
+verses:
+  - id: iraj.v001
+    hemistich1: "بجنبید مر سلم را دل ز جای"
+    hemistich2: "دگرگونه‌تر شد به آیین و رای"
+    meaning: "دل سلم از جای خود به لرزه افتاد؛ منش و اندیشه‌اش دگرگون شد."
+    interpretation: "نخستین ترک‌خوردنِ آرامشِ پانصدساله — همان بذرِ رشکی که در پایانِ داستانِ فریدون کاشته شده بود، اینک جوانه می‌زند."
+    source: "ganjoor:/ferdousi/shahname/fereydoon/sh6#4"
+  - id: iraj.v002
+    hemistich1: "نبودش پسندیده بخش پدر"
+    hemistich2: "که داد او به کهتر پسر تخت زر"
+    meaning: "بخشِ پدر را نمی‌پسندید، که تختِ زرین را به پسرِ کهترش داده بود."
+    interpretation: "ریشهٔ رشک به‌روشنی بیان می‌شود: نه دشمنیِ شخصی، که رشک بر جایگاه — همان زخمی که در شاهنامه بارها میان برادران سر باز می‌کند."
+    vocabulary: [vocab.kehtar]
+    source: "ganjoor:/ferdousi/shahname/fereydoon/sh6#6"
+  - id: iraj.v003
+    hemistich1: "به دل پر ز کین شد به رخ پر ز چین"
+    hemistich2: "فرسته فرستاد زی شاه چین"
+    meaning: "دلش از کینه آکنده و چهره‌اش پر از چین [اخم] شد؛ فرستاده‌ای نزدِ شاهِ چین [تور] فرستاد."
+    interpretation: "بازیِ زیبای فردوسی با یک واژه: «چین» نخست به معنای چروکِ خشم می‌آید و بی‌درنگ به نامِ سرزمینِ تور بدل می‌شود."
+    vocabulary: [vocab.kin, vocab.chin]
+    source: "ganjoor:/ferdousi/shahname/fereydoon/sh6#7"
+  - id: iraj.v004
+    hemistich1: "چنین داد پاسخ که ای شهریار"
+    hemistich2: "نگه کن بدین گردش روزگار"
+    meaning: "چنین پاسخ داد که ای شهریار، به این گردشِ روزگار بنگر."
+    interpretation: "آغازِ سخنِ ایرج به پدر — پیش از هر توجیه، نگاهی به گردشِ زمان؛ فلسفه‌ای که سراسرِ پاسخ او را رنگ می‌زند."
+    vocabulary: [vocab.shahriar]
+    source: "ganjoor:/ferdousi/shahname/fereydoon/sh7#13"
+  - id: iraj.v005
+    hemistich1: "که چون باد بر ما همی بگذرد"
+    hemistich2: "خردمند مردم چرا غم خورد"
+    meaning: "چون روزگار مانند باد بر ما می‌گذرد، چرا آدمِ خردمند غم بخورد؟"
+    interpretation: "پژواکِ پندِ خودِ فریدون به فرزندانش در پایانِ داستانِ پیشین («آز مپرست و انده مخور») — اکنون از زبانِ ایرج بازمی‌گردد."
+    source: "ganjoor:/ferdousi/shahname/fereydoon/sh7#14"
+  - id: iraj.v006
+    hemistich1: "به گیتی مدارید چندین امید"
+    hemistich2: "نگر تا چه بد کرد با جمشید"
+    meaning: "این‌قدر به دنیا امید نبندید؛ بنگرید که با جمشید چه کرد."
+    interpretation: "ایرج سرنوشتِ جمشید را گواه می‌گیرد: غروری که فرّ را بر باد داد. هشداری که برادرانش نمی‌شنوند."
+    vocabulary: [vocab.giti]
+    source: "ganjoor:/ferdousi/shahname/fereydoon/sh7#25"
+  - id: iraj.v007
+    hemistich1: "نباید مرا تاج و تخت و کلاه"
+    hemistich2: "شوم پیش ایشان دوان بی‌سپاه"
+    meaning: "مرا تاج و تخت و کلاهِ شاهی لازم نیست؛ بی‌هیچ لشکری، شتابان نزدِ آنان می‌روم."
+    interpretation: "تصمیمِ ایرج در یک بیت: رهاکردنِ کاملِ نشانه‌های قدرت، پیش از آنکه حتی به برادران برسد."
+    source: "ganjoor:/ferdousi/shahname/fereydoon/sh7#22"
+  - id: iraj.v008
+    hemistich1: "مگر باز بینم ترا تن درست"
+    hemistich2: "که روشن روانم به دیدار تست"
+    meaning: "باشد که تو را دوباره تندرست ببینم، که روانم از دیدارت روشن می‌شود."
+    interpretation: "واپسین سخنِ فریدون پیش از رفتنِ ایرج — نه فرمان، که آرزو؛ لحنی که ترسِ پنهانِ یک پدر را آشکار می‌کند."
+    source: "ganjoor:/ferdousi/shahname/fereydoon/sh7#37"
+  - id: iraj.v009
+    hemistich1: "اگر بیخ او نگسلانی ز جای"
+    hemistich2: "ز تخت بلندت کشد زیر پای"
+    meaning: "اگر ریشهٔ او را از جای برنکنی، تو را از تختِ بلند به زیرِ پا خواهد کشید."
+    interpretation: "سخنِ سلم به تور، درست پیش از رسیدنِ ایرج — رشک اکنون در قالبِ منطقِ سیاسی توجیه می‌شود."
+    vocabulary: [vocab.bikh]
+    source: "ganjoor:/ferdousi/shahname/fereydoon/sh9#19"
+  - id: iraj.v010
+    hemistich1: "من ایران نخواهم نه خاور نه چین"
+    hemistich2: "نه شاهی نه گسترده روی زمین"
+    meaning: "من نه ایران می‌خواهم، نه خاور و نه چین؛ نه شاهی و نه پهنهٔ زمین را."
+    interpretation: "پاسخِ ایرج به تور — واژهٔ «خاور» که در بخشِ جهانِ فریدون به سلم رسیده بود، اینجا در دهانِ ایرج به نشانهٔ ردِ کاملِ قدرت می‌آید."
+    vocabulary: [vocab.khavar]
+    source: "ganjoor:/ferdousi/shahname/fereydoon/sh10#12"
+  - id: iraj.v011
+    hemistich1: "جز از کهتری نیست آیین من"
+    hemistich2: "مباد آز و گردن‌کشی دین من"
+    meaning: "آیینِ من چیزی جز کهتری [فروتنی] نیست؛ باد آز و سرکشی هرگز دینِ من نباشد."
+    interpretation: "بلندترین بیتِ شخصیتِ ایرج: همان «کهتری» که در آغازِ داستان انگ بود، اینجا به آرمانِ آگاهانه بدل می‌شود."
+    vocabulary: [vocab.kehtar, vocab.aaz]
+    source: "ganjoor:/ferdousi/shahname/fereydoon/sh10#19"
+  - id: iraj.v012
+    hemistich1: "چو بشنید تور از برادر چنین"
+    hemistich2: "به ابرو ز خشم اندر آورد چین"
+    meaning: "چون تور این سخنان را از برادر شنید، از خشم بر ابرویش چین افتاد."
+    interpretation: "همان واژهٔ «چین» که در آغازِ داستان بر چهرهٔ سلم نشسته بود، اکنون بر پیشانیِ تور می‌نشیند — خشم از برادری به برادرِ دیگر سرایت کرده است."
+    vocabulary: [vocab.chin]
+    source: "ganjoor:/ferdousi/shahname/fereydoon/sh10#20"
+  - id: iraj.v013
+    hemistich1: "بزد بر سر خسرو تاجدار"
+    hemistich2: "از او خواست ایرج به جان زینهار"
+    meaning: "بر سرِ آن شاهِ تاجدار [ایرج] زد؛ ایرج از او زینهار [امانِ جان] خواست."
+    interpretation: "نخستین ضربه — و در برابرش، نه مقاومت که درخواستِ امان؛ ایرج تا واپسین دم به آیینِ خود وفادار می‌ماند."
+    vocabulary: [vocab.zinhar]
+    source: "ganjoor:/ferdousi/shahname/fereydoon/sh10#24"
+  - id: iraj.v014
+    hemistich1: "یکی خنجر آبگون برکشید"
+    hemistich2: "سراپای او چادر خون کشید"
+    meaning: "خنجری آبگون [کبودرنگ] بیرون کشید؛ سراسرِ تنِ او را چادرِ خون پوشاند."
+    interpretation: "لحظهٔ کشتار به کوتاه‌ترین و بی‌رحم‌ترین تصویرِ ممکن گفته می‌شود — فردوسی درنگ نمی‌کند."
+    vocabulary: [vocab.abgun]
+    source: "ganjoor:/ferdousi/shahname/fereydoon/sh10#32"
+  - id: iraj.v015
+    hemistich1: "فرود آمد از پای سرو سهی"
+    hemistich2: "گسست آن کمرگاه شاهنشهی"
+    meaning: "آن سروِ سهی [ایرج] از پای درآمد؛ کمرگاهِ شاهانه‌اش گسست."
+    interpretation: "استعارهٔ سرو — که در داستانِ فریدون نمادِ آبادانی بود — اینجا برای مرگِ جوان به کار می‌رود: سروی که از پای درمی‌آید."
+    vocabulary: [vocab.sahi]
+    source: "ganjoor:/ferdousi/shahname/fereydoon/sh10#34"
+  - id: iraj.v016
+    hemistich1: "ز تابوت چون پرنیان برکشید"
+    hemistich2: "سر ایرج آمد بریده پدید"
+    meaning: "چون پرنیان [پارچهٔ ابریشمی] را از تابوت کنار زدند، سرِ بریدهٔ ایرج پدیدار شد."
+    interpretation: "لحظهٔ آشکارشدن — فریدون و همراهانش، پیش از این، تنها واژه‌ها را شنیده بودند؛ اکنون با چشمِ خود می‌بینند."
+    vocabulary: [vocab.tabut]
+    source: "ganjoor:/ferdousi/shahname/fereydoon/sh11#11"
+  - id: iraj.v017
+    hemistich1: "بیافتاد ز اسپ آفریدون به خاک"
+    hemistich2: "سپه سر به سر جامه کردند چاک"
+    meaning: "فریدون از اسب به خاک افتاد؛ سراسرِ سپاه جامهٔ خود را چاک زدند."
+    interpretation: "فروپاشیِ فریدونِ فرزانه در برابرِ چشمِ سپاه — همان پادشاهی که پانصد سال بنیادِ بد ننهاده بود، اکنون بر خاک می‌افتد."
+    source: "ganjoor:/ferdousi/shahname/fereydoon/sh11#12"
+  - id: iraj.v018
+    hemistich1: "خروشیدن پهلوانان به درد"
+    hemistich2: "کنان گوشت تن را بران رادمرد"
+    meaning: "پهلوانان از دردْ خروش برآوردند و برای آن مردِ جوانمرد [ایرج]، گوشتِ تن خود را می‌کَندند [نشانِ سوگواری]."
+    interpretation: "همان خروشی که کاوه در برابرِ بیدادِ ضحاک برآورد، اینجا دوباره طنین می‌اندازد — اما این‌بار نه فریادِ اعتراض، که فریادِ سوگ."
+    vocabulary: [vocab.khorushidan]
+    source: "ganjoor:/ferdousi/shahname/fereydoon/sh11#17"
+  - id: iraj.v019
+    hemistich1: "گلستانش برکند و سروان بسوخت"
+    hemistich2: "به یکبارگی چشم شادی بدوخت"
+    meaning: "گلستانش را از ریشه برکند و سروها را سوزاند؛ چشمِ شادی را یکسره بربست."
+    interpretation: "همان باغی که فریدون به‌جای گیاهِ خودرو، سرو و گلبن کاشته بود — اکنون با دستِ خودش ویران می‌شود؛ سوگ، حتی نشانه‌های شکوهِ گذشته را نمی‌بخشد."
+    source: "ganjoor:/ferdousi/shahname/fereydoon/sh11#31"
+  - id: iraj.v020
+    hemistich1: "همی گفت کای داور دادگر"
+    hemistich2: "بدین بی‌گنه کشته اندر نگر"
+    meaning: "می‌گفت: ای داورِ دادگر، به این بی‌گناهِ کشته‌شده بنگر."
+    interpretation: "لحظهٔ اوجِ سوگ: فریدون رو به آسمان می‌کند و از خداوند، نه انتقام که «نگریستن» می‌خواهد — دیده‌شدنِ بی‌عدالتی."
+    vocabulary: [vocab.davar]
+    source: "ganjoor:/ferdousi/shahname/fereydoon/sh11#33"
+  - id: iraj.v021
+    hemistich1: "چه مایه چنین روز بگذاشتند"
+    hemistich2: "همه زندگی مرگ پنداشتند"
+    meaning: "چه بسیار چنین روزی را از سر گذراندند؛ همه، زندگی را همچون مرگ می‌پنداشتند."
+    interpretation: "پایان‌بندیِ تلخِ فردوسی: سوگی که چنان فراگیر است که مرز میانِ زندگی و مرگ را از میان می‌برد."
+    source: "ganjoor:/ferdousi/shahname/fereydoon/sh11#49"

@@ -12,7 +12,7 @@ Miras teaches readers to understand the Shahnameh the way Duolingo teaches langu
 
 | Phase | Target | Status |
 |---|---|---|
-| 1 | Android app (4 stories, core gamification, SRS) | 🚧 In progress |
+| 1 | Android app (5 stories, core gamification, SRS) | 🚧 In progress |
 | 2 | Web app | Planned |
 | 3 | iOS / PWA | Planned |
 
