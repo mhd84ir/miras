@@ -47,6 +47,17 @@ void main() {
       expect(s.count, 4);
     });
 
+    test('now before lastRefillAt (clock skew) leaves state untouched', () {
+      var s = HeartsEconomy.spend(HeartsEconomy.full(t0), t0);
+      s = HeartsEconomy.settle(s, t0.subtract(const Duration(hours: 1)));
+      expect(
+        s.count,
+        4,
+        reason: 'must not fabricate hearts on negative elapsed time',
+      );
+      expect(s.lastRefillAt, t0);
+    });
+
     test(
       'multiple intervals refill multiple hearts and keep the remainder',
       () {
