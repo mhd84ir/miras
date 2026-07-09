@@ -7,6 +7,7 @@ import 'package:miras/core/content/data/content_database.dart';
 import 'package:miras/core/content/data/drift_content_repository.dart';
 import 'package:miras/core/content/data/pack_bootstrap.dart';
 import 'package:miras/core/db/user_database.dart';
+import 'package:miras/core/haptics/haptics_service.dart';
 import 'package:miras/core/notifications/notification_service.dart';
 import 'package:miras/core/router/app_router.dart';
 import 'package:miras/core/widgets/boot_error_app.dart';
@@ -52,6 +53,9 @@ Future<void> main() async {
           LocalNotificationService(),
         ),
         audioServiceProvider.overrideWithValue(JustAudioService()),
+        hapticsServiceProvider.overrideWithValue(
+          const VibratorHapticsService(),
+        ),
       ],
       child: MirasApp(
         initialLocation: onboarded ? AppRoutes.home : AppRoutes.onboarding,

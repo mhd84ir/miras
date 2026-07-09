@@ -1,4 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Answer feedback drives the vibrator directly (core/haptics/) because
+         view-level haptics are gated behind a system setting many devices
+         disable. -->
+    <uses-permission android:name="android.permission.VIBRATE"/>
     <application
         android:label="miras"
         android:name="${applicationName}"

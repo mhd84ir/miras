@@ -1,12 +1,12 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import 'package:miras/core/audio/audio_service.dart';
 import 'package:miras/core/content/exercise_prompt.dart';
+import 'package:miras/core/haptics/haptics_service.dart';
 import 'package:miras/core/l10n/gen/app_localizations.dart';
 import 'package:miras/core/widgets/miras_button.dart';
 import 'package:miras/features/lesson/application/lesson_controller.dart';
@@ -169,9 +169,8 @@ class _LessonScreenState extends ConsumerState<LessonScreen> {
   Future<void> _answerHaptic(WidgetRef ref, String lessonId) async {
     final correct = ref.read(lessonControllerProvider(lessonId)).lastCorrect;
     if (correct == null) return;
-    await (correct
-        ? HapticFeedback.lightImpact()
-        : HapticFeedback.mediumImpact());
+    final haptics = ref.read(hapticsServiceProvider);
+    await (correct ? haptics.success() : haptics.failure());
   }
 
   String? _correctAnswerText(LoadedExercise current) {

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import 'package:miras/core/haptics/haptics_service.dart';
 import 'package:miras/core/l10n/gen/app_localizations.dart';
 import 'package:miras/core/theme/miras_colors.dart';
 import 'package:miras/core/theme/miras_spacing.dart';
@@ -149,9 +149,12 @@ class _ReviewSessionScreenState extends ConsumerState<ReviewSessionScreen> {
                                 .read(reviewControllerProvider)
                                 .lastCorrect;
                             if (correct != null) {
+                              final haptics = ref.read(
+                                hapticsServiceProvider,
+                              );
                               await (correct
-                                  ? HapticFeedback.lightImpact()
-                                  : HapticFeedback.mediumImpact());
+                                  ? haptics.success()
+                                  : haptics.failure());
                             }
                           },
                   )
