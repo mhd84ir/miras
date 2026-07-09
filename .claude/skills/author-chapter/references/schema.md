@@ -62,10 +62,18 @@ items:
   - id: vocab.geranmayeh        # required, vocab id regex, unique
     word: "گرانمایه"             # required, Persian
     pronunciation: "gerān-māye"  # required — Latin transliteration (the one field where Latin letters are expected, not just tolerated)
+    tts_text: "گِران‌مایه"        # optional — fully-diacritized form fed to TTS instead of word; authoring-only, never compiled into the pack
     meaning: "ارزشمند، بزرگوار"  # required, Persian
     etymology: "..."             # optional, Persian
     example_verse: zahak.v002    # optional — must resolve to a real verse id in this chapter
 ```
+
+`tts_text` exists because unvowelized Persian is ambiguous to the TTS
+grapheme-to-phoneme step (درفش: darafsh? derafsh?). Any vocab word whose short
+vowels a reader could guess wrong should carry a `tts_text` with explicit
+diacritics (فتحه/کسره/ضمه، سکون where clusters are ambiguous), matching the
+`pronunciation` transliteration exactly. Derive it from `pronunciation` —
+never change the `word` field itself.
 
 ## `verses.yaml`
 

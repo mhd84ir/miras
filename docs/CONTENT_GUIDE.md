@@ -91,6 +91,13 @@ generating voice — swapping the model regenerates everything, visibly. The
 legacy Azure backend (`--tts azure`, `AZURE_SPEECH_KEY`/`AZURE_SPEECH_REGION`)
 remains available but is not the supported path.
 
+**Pronunciation control:** unvowelized Persian is ambiguous to the TTS
+grapheme-to-phoneme step (درفش: *darafsh*? *derafsh*?). Give any ambiguous
+vocab item an optional `tts_text` — the fully-diacritized form (e.g.
+`دِرَفْش`), derived from its `pronunciation` transliteration — and the
+compiler synthesizes from that instead of `word`. Authoring-only; it never
+enters the pack, and changing it regenerates exactly that clip.
+
 ## Review workflow
 
 Content changes go through PRs like code: CI validates the whole content tree
