@@ -137,6 +137,58 @@ void main() {
     );
   });
 
+  testWidgets('listening exercise', (tester) async {
+    await pumpGolden(
+      tester,
+      ListeningView(
+        loaded: exerciseWith(
+          const ListeningPrompt(
+            vocabId: 'vocab.derafsh',
+            options: ['درفش', 'درویش', 'فرش'],
+            correctIndex: 0,
+          ),
+          vocab: Fixtures.vocab2,
+        ),
+        selected: null,
+        onSelect: (_) {},
+        enabled: true,
+        playing: false,
+        onPlay: () {},
+      ),
+      surfaceSize: const Size(400, 560),
+    );
+    await expectLater(
+      goldenSubject(),
+      matchesGoldenFile('goldens/exercise_listening.png'),
+    );
+  });
+
+  testWidgets('listening exercise — playing state', (tester) async {
+    await pumpGolden(
+      tester,
+      ListeningView(
+        loaded: exerciseWith(
+          const ListeningPrompt(
+            vocabId: 'vocab.derafsh',
+            options: ['درفش', 'درویش', 'فرش'],
+            correctIndex: 0,
+          ),
+          vocab: Fixtures.vocab2,
+        ),
+        selected: null,
+        onSelect: (_) {},
+        enabled: true,
+        playing: true,
+        onPlay: () {},
+      ),
+      surfaceSize: const Size(400, 560),
+    );
+    await expectLater(
+      goldenSubject(),
+      matchesGoldenFile('goldens/exercise_listening_playing.png'),
+    );
+  });
+
   testWidgets('feedback footer — wrong answer', (tester) async {
     await pumpGolden(
       tester,

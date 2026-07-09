@@ -120,6 +120,34 @@ void main() {
     expect(tiles, ['او']);
   });
 
+  testWidgets('listening auto-plays on entry and replays on tap', (
+    tester,
+  ) async {
+    var plays = 0;
+    await pumpGolden(
+      tester,
+      ListeningView(
+        loaded: exerciseWith(
+          const ListeningPrompt(
+            vocabId: 'vocab.derafsh',
+            options: ['درفش', 'درویش', 'فرش'],
+            correctIndex: 0,
+          ),
+          vocab: Fixtures.vocab2,
+        ),
+        selected: null,
+        onSelect: (_) {},
+        enabled: true,
+        playing: false,
+        onPlay: () => plays++,
+      ),
+    );
+    expect(plays, 1, reason: 'clip auto-plays once when the exercise appears');
+
+    await tester.tap(find.byIcon(Icons.volume_up));
+    expect(plays, 2, reason: 'button replays the clip');
+  });
+
   testWidgets(
     'matching completes with zero wrong attempts only when never mismatched',
     (tester) async {

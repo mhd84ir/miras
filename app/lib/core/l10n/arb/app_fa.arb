@@ -75,6 +75,10 @@
   "@listeningInstruction": {
     "description": "Instruction shown above a listening exercise."
   },
+  "listeningPlay": "پخش صدا",
+  "@listeningPlay": {
+    "description": "Play/replay button label (TalkBack) on a listening exercise."
+  },
   "matchingInstruction": "هر واژه را با معنی آن جفت کن",
   "@matchingInstruction": {
     "description": "Instruction shown above a matching board."

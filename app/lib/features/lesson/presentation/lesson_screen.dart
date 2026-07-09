@@ -1,8 +1,11 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import 'package:miras/core/audio/audio_service.dart';
 import 'package:miras/core/content/exercise_prompt.dart';
 import 'package:miras/core/l10n/gen/app_localizations.dart';
 import 'package:miras/core/widgets/miras_button.dart';
@@ -134,6 +137,13 @@ class _LessonScreenState extends ConsumerState<LessonScreen> {
         selected: (_draft as ChoiceAnswer?)?.index,
         onSelect: (i) => setDraft(ChoiceAnswer(i)),
         enabled: enabled,
+        playing: ref.watch(audioPlayingProvider).value ?? false,
+        onPlay: switch (current.vocab?.audioAsset) {
+          null => null,
+          final asset => () => unawaited(
+            ref.read(audioServiceProvider).playAsset(asset),
+          ),
+        },
       ),
       HemistichAssemblyPrompt() => HemistichAssemblyView(
         loaded: current,

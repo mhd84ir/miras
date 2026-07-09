@@ -135,14 +135,16 @@ class ClozeView extends StatelessWidget {
   }
 }
 
-/// listening: play button + options. Playback lands with the audio pipeline;
-/// until packs carry audio these exercises are filtered out by LessonLoader.
-class ListeningView extends StatelessWidget {
+/// listening: hear the word, pick what you heard. The clip auto-plays once on
+/// entry (the audio IS the question); the button replays it.
+class ListeningView extends StatefulWidget {
   const ListeningView({
     required this.loaded,
     required this.selected,
     required this.onSelect,
     required this.enabled,
+    required this.playing,
+    this.onPlay,
     super.key,
   });
 
@@ -151,11 +153,30 @@ class ListeningView extends StatelessWidget {
   final ValueChanged<int> onSelect;
   final bool enabled;
 
+  /// Live playback state, reflected in the button icon.
+  final bool playing;
+
+  /// Plays/replays the vocab clip. Null only if the pack carries no audio for
+  /// this vocab — LessonLoader filters such exercises out, so this is
+  /// defensive, not a reachable UI state.
+  final VoidCallback? onPlay;
+
+  @override
+  State<ListeningView> createState() => _ListeningViewState();
+}
+
+class _ListeningViewState extends State<ListeningView> {
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) => widget.onPlay?.call());
+  }
+
   @override
   Widget build(BuildContext context) {
     final colors = context.mirasColors;
     final strings = AppLocalizations.of(context);
-    final prompt = loaded.prompt as ListeningPrompt;
+    final prompt = widget.loaded.prompt as ListeningPrompt;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -174,18 +195,21 @@ class ListeningView extends StatelessWidget {
             child: IconButton(
               iconSize: 40,
               padding: const EdgeInsetsDirectional.all(MirasSpacing.lg),
-              // TODO(m4-audio): wire playback once packs carry audio assets.
-              onPressed: () {},
-              icon: const Icon(Icons.volume_up, color: Colors.white),
+              onPressed: widget.onPlay,
+              tooltip: strings.listeningPlay,
+              icon: Icon(
+                widget.playing ? Icons.graphic_eq : Icons.volume_up,
+                color: Colors.white,
+              ),
             ),
           ),
         ),
         const SizedBox(height: MirasSpacing.xl),
         OptionTiles(
           options: prompt.options,
-          selected: selected,
-          onSelect: onSelect,
-          enabled: enabled,
+          selected: widget.selected,
+          onSelect: widget.onSelect,
+          enabled: widget.enabled,
         ),
       ],
     );
