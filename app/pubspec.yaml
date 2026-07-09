@@ -41,6 +41,8 @@ flutter:
     # Asset folders are not recursive, so audio/ needs its own entry.
     - assets/content/
     - assets/content/audio/
+    # UI feedback sounds (committed app assets, not pack content).
+    - assets/sfx/
 
   fonts:
     - family: Vazirmatn

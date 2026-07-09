@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import 'package:miras/core/audio/audio_service.dart';
+import 'package:miras/core/audio/sfx_service.dart';
 import 'package:miras/core/content/exercise_prompt.dart';
 import 'package:miras/core/haptics/haptics_service.dart';
 import 'package:miras/core/l10n/gen/app_localizations.dart';
@@ -34,6 +35,9 @@ class _LessonScreenState extends ConsumerState<LessonScreen> {
   ExerciseAnswer? _draft;
   int _draftIndex = -1;
 
+  /// The completion sound plays once per completion (retry resets it).
+  bool _completeSfxPlayed = false;
+
   @override
   Widget build(BuildContext context) {
     final provider = lessonControllerProvider(widget.lessonId);
@@ -54,6 +58,10 @@ class _LessonScreenState extends ConsumerState<LessonScreen> {
         );
 
       case LessonPhase.completed:
+        if (!_completeSfxPlayed) {
+          _completeSfxPlayed = true;
+          unawaited(ref.read(sfxServiceProvider).play(Sfx.complete));
+        }
         return LessonResultsView(
           state: state,
           onExit: () => context.go('/'),
@@ -62,6 +70,7 @@ class _LessonScreenState extends ConsumerState<LessonScreen> {
         );
 
       case LessonPhase.question || LessonPhase.feedback:
+        _completeSfxPlayed = false;
         final current = state.current!;
         final isQuestion = state.phase == LessonPhase.question;
         final isPresentation = current.prompt.isPresentation;
@@ -98,7 +107,7 @@ class _LessonScreenState extends ConsumerState<LessonScreen> {
                               isPresentation ? const Acknowledged() : _draft!,
                             );
                             if (!isPresentation) {
-                              await _answerHaptic(ref, widget.lessonId);
+                              await _answerFeedback(ref, widget.lessonId);
                             }
                           }
                         : null,
@@ -164,11 +173,14 @@ class _LessonScreenState extends ConsumerState<LessonScreen> {
     };
   }
 
-  /// Gentle physical confirmation on answers (DESIGN_SYSTEM.md §5); no-op
-  /// when the device has no vibrator.
-  Future<void> _answerHaptic(WidgetRef ref, String lessonId) async {
+  /// Physical + audible answer confirmation (DESIGN_SYSTEM.md §5); each is a
+  /// no-op when the device or the user's settings say so.
+  Future<void> _answerFeedback(WidgetRef ref, String lessonId) async {
     final correct = ref.read(lessonControllerProvider(lessonId)).lastCorrect;
     if (correct == null) return;
+    unawaited(
+      ref.read(sfxServiceProvider).play(correct ? Sfx.correct : Sfx.wrong),
+    );
     final haptics = ref.read(hapticsServiceProvider);
     await (correct ? haptics.success() : haptics.failure());
   }

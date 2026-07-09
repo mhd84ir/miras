@@ -35,6 +35,7 @@ abstract interface class GamificationRepository {
   Stream<UserProfileSettings> watchProfile();
   Future<void> setDailyXpGoal(int xp);
   Future<void> setNotificationsEnabled({required bool enabled});
+  Future<void> setSoundEnabled({required bool enabled});
   Future<void> setThemeMode(ThemeMode mode);
   Future<void> setOnboarded();
 }
@@ -43,6 +44,7 @@ abstract interface class GamificationRepository {
 typedef UserProfileSettings = ({
   int dailyXpGoal,
   bool notificationsEnabled,
+  bool soundEnabled,
   ThemeMode themeMode,
   bool onboarded,
 });
@@ -235,6 +237,7 @@ class DriftGamificationRepository implements GamificationRepository {
         (r) => (
           dailyXpGoal: r.dailyXpGoal,
           notificationsEnabled: r.notificationsEnabled,
+          soundEnabled: r.soundEnabled,
           themeMode:
               ThemeMode.values.asNameMap()[r.themeMode] ?? ThemeMode.system,
           onboarded: r.onboarded,
@@ -284,6 +287,18 @@ class DriftGamificationRepository implements GamificationRepository {
         .write(
           UserProfileRowsCompanion(
             notificationsEnabled: Value(enabled),
+            updatedAt: Value(_ts),
+          ),
+        );
+  }
+
+  @override
+  Future<void> setSoundEnabled({required bool enabled}) async {
+    await _db
+        .update(_db.userProfileRows)
+        .write(
+          UserProfileRowsCompanion(
+            soundEnabled: Value(enabled),
             updatedAt: Value(_ts),
           ),
         );

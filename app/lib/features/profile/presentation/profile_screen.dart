@@ -125,6 +125,16 @@ class ProfileScreen extends ConsumerWidget {
           const SizedBox(height: MirasSpacing.md),
           SwitchListTile(
             title: Text(
+              strings.profileSound,
+              style: MirasTextStyles.body.copyWith(color: colors.ink),
+            ),
+            value: profile?.soundEnabled ?? true,
+            onChanged: (enabled) => ref
+                .read(gamificationRepositoryProvider)
+                .setSoundEnabled(enabled: enabled),
+          ),
+          SwitchListTile(
+            title: Text(
               strings.profileNotifications,
               style: MirasTextStyles.body.copyWith(color: colors.ink),
             ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:miras/app.dart';
 import 'package:miras/core/audio/audio_service.dart';
+import 'package:miras/core/audio/sfx_service.dart';
 import 'package:miras/core/content/content_providers.dart';
 import 'package:miras/core/content/data/content_database.dart';
 import 'package:miras/core/content/data/drift_content_repository.dart';
@@ -53,6 +54,11 @@ Future<void> main() async {
           LocalNotificationService(),
         ),
         audioServiceProvider.overrideWithValue(JustAudioService()),
+        sfxServiceProvider.overrideWithValue(
+          JustAudioSfxService(
+            enabled: gamification.watchProfile().map((p) => p.soundEnabled),
+          ),
+        ),
         hapticsServiceProvider.overrideWithValue(
           const VibratorHapticsService(),
         ),
