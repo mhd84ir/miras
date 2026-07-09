@@ -114,6 +114,7 @@ class VocabItem {
     required this.sourceFile,
     this.etymology,
     this.exampleVerseId,
+    this.ttsText,
   });
 
   final String id;
@@ -127,6 +128,12 @@ class VocabItem {
   final String meaning;
   final String? etymology;
   final String? exampleVerseId;
+
+  /// Fully-diacritized form fed to TTS instead of [word] — unvowelized
+  /// Persian is ambiguous to grapheme-to-phoneme (درفش: darafsh? derafsh?),
+  /// so archaic words need explicit vowels for correct synthesis.
+  /// Authoring-only; never compiled into the pack.
+  final String? ttsText;
   final String sourceFile;
 }
 

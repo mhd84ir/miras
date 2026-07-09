@@ -116,7 +116,9 @@ Future<void> main(List<String> argv) async {
   }
 
   for (final v in bundle.allVocab) {
-    await synthesizeFor(v.id, v.word);
+    // tts_text (fully-diacritized) overrides the display form for synthesis;
+    // see VocabItem.ttsText.
+    await synthesizeFor(v.id, v.ttsText ?? v.word);
   }
   for (final v in bundle.allVerses) {
     await synthesizeFor(v.id, '${v.hemistich1}، ${v.hemistich2}');

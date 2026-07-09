@@ -38,6 +38,16 @@ void main() {
       expect(db.select('SELECT * FROM vocabulary_items'), hasLength(2));
       expect(db.select('SELECT * FROM verse_vocabulary'), hasLength(2));
 
+      // tts_text is authoring-only: loaded (diacritics intact) for synthesis,
+      // never compiled into the pack.
+      final vocab = {for (final v in bundle.allVocab) v.id: v};
+      expect(vocab['vocab.kherad']!.ttsText, 'خِرَد');
+      expect(vocab['vocab.andisheh']!.ttsText, isNull);
+      expect(
+        db.select('SELECT * FROM vocabulary_items').first.keys,
+        isNot(contains('tts_text')),
+      );
+
       final verse = db.select('SELECT * FROM verses').single;
       expect(verse['hemistich_1'], 'به نام خداوند جان و خرد');
       expect(verse['source'], 'ganjoor:/ferdousi/shahname/aghaz/sh1#0');

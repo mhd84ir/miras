@@ -102,6 +102,7 @@ class YamlLoader {
           meaning: meaning,
           etymology: r.optionalPersian('etymology'),
           exampleVerseId: r.optionalString('example_verse'),
+          ttsText: r.optionalPersian('tts_text'),
           sourceFile: file,
         ),
       );

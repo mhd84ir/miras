@@ -2,6 +2,7 @@ items:
   - id: vocab.kherad
     word: "خرد"
     pronunciation: "kherad"
+    tts_text: "خِرَد"
     meaning: "عقل و دانایی"
     etymology: "از فارسی میانه «خرد» (xrad)"
     example_verse: sample.v001
