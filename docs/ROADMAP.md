@@ -126,4 +126,7 @@ owner lifting the deferral.
 ## Post-phase-1 (parked)
 
 Leagues + accounts/sync (backend phase) · more stories · web app (phase 2) ·
-iOS (phase 3) · additional works (Hafez, Saadi…).
+iOS (phase 3) · additional works (Hafez, Saadi…) · vocab-audio regeneration via
+an Iranian commercial TTS (owner decision 2026-07-09: local Piper quality is
+accepted for beta and not worth further tuning; candidate service ivira.ai —
+the ADR-0005/0008 adapter seam makes this a pack-only swap).
