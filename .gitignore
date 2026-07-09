@@ -17,6 +17,8 @@
 **/local.properties
 **/*.keystore
 **/key.properties
+# Kotlin compiler session scratch (created next to the Gradle project)
+**/.kotlin/
 
 # iOS (phase 3)
 **/Pods/
