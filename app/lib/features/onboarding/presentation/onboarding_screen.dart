@@ -11,7 +11,9 @@ import 'package:miras/core/theme/miras_spacing.dart';
 import 'package:miras/core/theme/miras_text_styles.dart';
 import 'package:miras/core/widgets/couplet_view.dart';
 import 'package:miras/core/widgets/miras_button.dart';
+import 'package:miras/features/gamification/application/recap_scheduler.dart';
 import 'package:miras/features/gamification/data/gamification_repository.dart';
+import 'package:miras/features/review/data/srs_repository.dart';
 
 /// First-run flow: welcome → daily goal → notification opt-in.
 /// Completing it sets the onboarded flag; the router never returns here.
@@ -53,12 +55,12 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
     final repo = ref.read(gamificationRepositoryProvider);
 
     if (wantsReminder) {
-      final granted = await ref
-          .read(notificationServiceProvider)
-          .enableDaily(
-            title: strings.notificationTitle,
-            body: strings.notificationBody,
-          );
+      final granted = await scheduleDailyRecap(
+        gamification: repo,
+        srs: ref.read(srsRepositoryProvider),
+        notifications: ref.read(notificationServiceProvider),
+        strings: strings,
+      );
       await repo.setNotificationsEnabled(enabled: granted);
     }
     await repo.setOnboarded();

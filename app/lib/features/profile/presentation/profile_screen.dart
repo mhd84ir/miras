@@ -8,9 +8,11 @@ import 'package:miras/core/theme/miras_colors.dart';
 import 'package:miras/core/theme/miras_spacing.dart';
 import 'package:miras/core/theme/miras_text_styles.dart';
 import 'package:miras/core/widgets/tazhib_rosette.dart';
+import 'package:miras/features/gamification/application/recap_scheduler.dart';
 import 'package:miras/features/gamification/application/stats_providers.dart';
 import 'package:miras/features/gamification/data/gamification_repository.dart';
 import 'package:miras/features/gamification/domain/achievements.dart';
+import 'package:miras/features/review/data/srs_repository.dart';
 
 /// Stats, achievements, and settings.
 class ProfileScreen extends ConsumerWidget {
@@ -143,9 +145,11 @@ class ProfileScreen extends ConsumerWidget {
               final repo = ref.read(gamificationRepositoryProvider);
               final notifications = ref.read(notificationServiceProvider);
               if (enabled) {
-                final granted = await notifications.enableDaily(
-                  title: strings.notificationTitle,
-                  body: strings.notificationBody,
+                final granted = await scheduleDailyRecap(
+                  gamification: repo,
+                  srs: ref.read(srsRepositoryProvider),
+                  notifications: notifications,
+                  strings: strings,
                 );
                 await repo.setNotificationsEnabled(enabled: granted);
               } else {

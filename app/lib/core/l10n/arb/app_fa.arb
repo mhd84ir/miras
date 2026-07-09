@@ -207,7 +207,29 @@
   },
   "notificationBody": "وقت مرور است! پیوستگی‌ات را نگه دار.",
   "@notificationBody": {
-    "description": "Daily reminder notification body."
+    "description": "Daily reminder notification body (fallback when no streak and nothing due)."
+  },
+  "notificationBodyStreakDue": "پیوستگی {streak} روزه‌ات را نگه دار — {due} واژه برای مرور آماده است",
+  "@notificationBodyStreakDue": {
+    "description": "Recap body with an active streak and due reviews. Counts arrive pre-formatted in Persian digits.",
+    "placeholders": {
+      "streak": {"type": "String"},
+      "due": {"type": "String"}
+    }
+  },
+  "notificationBodyStreak": "پیوستگی {streak} روزه‌ات منتظر توست — امروز هم ادامه بده",
+  "@notificationBodyStreak": {
+    "description": "Recap body with an active streak and nothing due.",
+    "placeholders": {
+      "streak": {"type": "String"}
+    }
+  },
+  "notificationBodyDue": "{due} واژه برای مرور آماده است — چند دقیقه کافی است",
+  "@notificationBodyDue": {
+    "description": "Recap body with due reviews and no active streak.",
+    "placeholders": {
+      "due": {"type": "String"}
+    }
   },
   "themeLabel": "پوسته",
   "@themeLabel": {

@@ -1,11 +1,17 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import 'package:miras/core/l10n/gen/app_localizations.dart';
+import 'package:miras/core/notifications/notification_service.dart';
 import 'package:miras/core/router/app_router.dart';
 import 'package:miras/core/theme/miras_theme.dart';
+import 'package:miras/features/gamification/application/recap_scheduler.dart';
 import 'package:miras/features/gamification/application/stats_providers.dart';
+import 'package:miras/features/gamification/data/gamification_repository.dart';
+import 'package:miras/features/review/data/srs_repository.dart';
 
 class MirasApp extends ConsumerStatefulWidget {
   const MirasApp({this.initialLocation = AppRoutes.home, super.key});
@@ -22,6 +28,30 @@ class _MirasAppState extends ConsumerState<MirasApp> {
   late final GoRouter _router = createAppRouter(
     initialLocation: widget.initialLocation,
   );
+
+  /// Refreshing on hide keeps tonight's reminder text current (PRD §5.3)
+  /// without any background polling.
+  late final AppLifecycleListener _lifecycle = AppLifecycleListener(
+    onHide: () => unawaited(_refreshDailyRecap()),
+  );
+
+  Future<void> _refreshDailyRecap() async {
+    final gamification = ref.read(gamificationRepositoryProvider);
+    final profile = await gamification.watchProfile().first;
+    if (!profile.notificationsEnabled) return;
+    await scheduleDailyRecap(
+      gamification: gamification,
+      srs: ref.read(srsRepositoryProvider),
+      notifications: ref.read(notificationServiceProvider),
+      strings: lookupAppLocalizations(const Locale('fa')),
+    );
+  }
+
+  @override
+  void dispose() {
+    _lifecycle.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
