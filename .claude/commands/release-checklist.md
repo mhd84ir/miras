@@ -10,13 +10,15 @@ Runs the mechanical parts of docs/RELEASE.md end-to-end and stops cleanly
 before anything that's genuinely risky, external, or a judgment call. This
 command never touches `app/android/key.properties` or the upload keystore
 (docs/RELEASE.md marks that step "owner only" — keystore + passwords are
-credentials, handled outside this command, full stop) and never uploads
-anything to Play Console (that's a manual, external, hard-to-reverse action).
+credentials, handled outside this command, full stop) and never publishes
+a GitHub Release or uploads to a store (manual, external, hard-to-reverse
+actions — it may only *draft* the `gh release create` command for the owner
+to run).
 
 Target version (optional): $ARGUMENTS — if given, propose bumping
 `app/pubspec.yaml`'s `version:` to this. If not given, read the current
 version and propose only incrementing the build number (`+N`) by one,
-which docs/RELEASE.md says happens "for every Play upload" — ask before
+which docs/RELEASE.md says happens for every published build — ask before
 applying either way; don't silently pick a semver bump (X.Y.Z) yourself,
 that's the owner's call.
 
@@ -33,12 +35,18 @@ that's the owner's call.
 1. **Preconditions (read-only, report don't fix):**
    - Current `version:` in `app/pubspec.yaml`.
    - Whether `app/android/key.properties` exists. If not: say plainly that
-     the resulting bundle will be debug-signed and Play will reject it —
-     that's expected/fine for a local dry run, not an error to fix here.
-   - Whether `AZURE_SPEECH_KEY`/`AZURE_SPEECH_REGION` are set. If not: note
-     that the content pack will build with null audio and the app will hide
-     listening exercises (docs/CONTENT_GUIDE.md) — ask whether that's
-     intentional for this release rather than assuming.
+     the resulting APK will be debug-signed — expected/fine for a local dry
+     run, wrong for anything published.
+   - Whether `content/audio_cache/ADAPTER` exists (the committed audio
+     cache). If not, the `--tts cache` build below will fail — report it,
+     don't work around it.
+   - Whether `SENTRY_DSN` is set in the environment. Until the M7 crash
+     wiring lands this is informational; after it lands, an unset DSN means
+     the release ships without crash reporting — flag it as a checklist
+     failure per docs/RELEASE.md, not a nice-to-have.
+   - Whether a physical device is attached (`adb devices`) — the E2E step
+     below needs one; if none, that step gets reported as "not run,
+     manual", never skipped silently.
 
 2. **Propose the version bump**, show the diff, and only apply it to
    `app/pubspec.yaml` after explicit confirmation.
@@ -47,41 +55,52 @@ that's the owner's call.
    immediately if any step fails** (mirror CI's own gating — don't paper over
    a failure and continue):
    ```
-   cd tool/content_compiler && dart run content_compiler build --strict --content ../../content --out ../../app/assets/content
+   cd tool/content_compiler && dart run content_compiler build --tts cache --strict --content ../../content --out ../../app/assets/content
    cd ../../app
    flutter gen-l10n
    dart run build_runner build --delete-conflicting-outputs
    flutter test
    flutter analyze
    ```
+   Then, if a device is attached, the E2E critical path (this wipes the
+   device's user store — confirm with the owner first if the attached
+   device is their daily one with real progress):
+   ```
+   flutter test integration_test -d <device-id>
+   ```
    If a step fails, stop, report exactly what failed and where, and don't
-   attempt the remaining steps or the appbundle build.
+   attempt the remaining steps or the APK build.
 
-4. **Build the release bundle** (a local, reversible build artifact — safe
+4. **Build the release APK** (a local, reversible build artifact — safe
    to run regardless of signing status):
    ```
-   flutter build appbundle --release
+   flutter build apk --release --dart-define=SENTRY_DSN=$SENTRY_DSN
    ```
-   Report the output path (`build/app/outputs/bundle/release/app-release.aab`)
-   and its size.
+   Report the output path (`build/app/outputs/flutter-apk/app-release.apk`),
+   its size, and its `shasum -a 256`.
 
 5. **Offer to draft Persian release notes.** Look at
-   `git log --oneline` since the last version-bump commit (or last release
-   tag, if any exist — none do yet, so fall back to a sensible recent range
-   and say so) and propose short, plain-Persian release notes summarizing
-   user-facing changes only (skip internal refactors/chores/docs) — clearly
-   labeled as a draft for the owner to edit before pasting into Play Console.
+   `git log --oneline` since the last release tag (fall back to a sensible
+   recent range if none and say so) and propose short, plain-Persian release
+   notes summarizing user-facing changes only (skip internal
+   refactors/chores/docs) — clearly labeled as a draft for the owner to edit.
    Don't write this to any file unless asked; just present it.
 
-6. **Finish with the docs/RELEASE.md checklist itself**, marking each item
+6. **Draft (never run) the publish command** with the real paths and the
+   proposed tag, for the owner to execute:
+   ```
+   gh release create v<X.Y.Z> <apk> <apk>.sha256 --title "میراث <X.Y.Z>" --notes-file <notes>
+   ```
+
+7. **Finish with the docs/RELEASE.md checklist itself**, marking each item
    done/not-done based on what this command actually verified:
-   - [ ] `--strict` content build clean — done if step 3 passed
+   - [ ] `--tts cache --strict` content build clean — done if step 3 passed
    - [ ] full test suite green — done if step 3 passed
+   - [ ] E2E on device — done only if it actually ran and passed
    - [ ] version bumped — done if step 2 was applied
-   - [ ] release notes (fa) written — draft offered in step 5, not "written"
-     until the owner reviews/edits it
+   - [ ] SENTRY_DSN passed — per the precondition check
+   - [ ] release notes (fa) written — draft offered, not "written" until the
+     owner reviews it
+   - [ ] APK + sha256 attached to the GitHub Release — manual (step 6 drafts
+     the command)
    - [ ] smoke test on a real device — always manual, never claim this
-   
-   Then the remaining Play Console steps (create/upload release, store
-   listing assets, tester rollout) are entirely manual per docs/RELEASE.md —
-   list them plainly as next steps, don't imply this command has done them.
