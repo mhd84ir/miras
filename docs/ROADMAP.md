@@ -75,8 +75,9 @@ delta from audio ≤ 10 MB.
 
 ## M7 — Reliability & measurement (~2 weeks)
 
-Crash reporting per ADR-0007 (day-1 spike: verify sentry.io ingest from Iranian
-IPs; fallback self-hosted GlitchTip — same SDK) with no-PII verification · local
+Crash reporting per ADR-0007/ADR-0009 (self-hosted GlitchTip — sentry.io
+skipped outright: unreachable for the Iranian user base) with no-PII
+verification · local
 PRD §7 beta-metrics module + opt-in share-sheet export · `integration_test/`
 critical-path E2E on device · dynamic daily-recap notification (streak + due
 reviews, PRD §5.3) · beta channel: signed universal APKs on GitHub Releases;
