@@ -31,7 +31,7 @@ jobs:
         working-directory: tool/content_compiler
         run: |
           dart pub get
-          dart run content_compiler build --content ../../content --out ../../app/assets/content
+          dart run content_compiler build --content ../../content --out ../../app/assets/content --tts cache --strict
 
       - name: Generate localizations
         run: flutter gen-l10n
@@ -76,5 +76,5 @@ jobs:
       - name: Validate authored content (strict)
         run: dart run content_compiler validate --content ../../content --strict
 
-      - name: Build content pack
-        run: dart run content_compiler build --content ../../content --out ../../build/pack
+      - name: Build content pack (audio-complete, from committed cache)
+        run: dart run content_compiler build --content ../../content --out ../../build/pack --tts cache --strict
