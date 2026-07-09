@@ -1,3 +1,5 @@
+import 'dart:developer' show TimelineTask;
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:miras/app.dart';
@@ -38,12 +40,17 @@ Future<void> _run() async {
   final DriftGamificationRepository gamification;
   final bool onboarded;
   try {
-    final packFile = await ensureContentPack();
+    // Timeline spans attribute cold-start cost per phase in DevTools /
+    // systrace (M8 budget work); free in release builds.
+    final packFile = await _traced('packCopy', ensureContentPack);
     contentDb = ContentDatabase.openPack(packFile);
     userDb = UserDatabase.open();
     gamification = DriftGamificationRepository(userDb);
-    await gamification.ensureSeeded();
-    onboarded = (await gamification.watchProfile().first).onboarded;
+    await _traced('userSeed', gamification.ensureSeeded);
+    onboarded = (await _traced(
+      'profileRead',
+      () => gamification.watchProfile().first,
+    )).onboarded;
   } on Exception catch (error) {
     runApp(BootErrorApp(error: error));
     return;
@@ -79,4 +86,13 @@ Future<void> _run() async {
       ),
     ),
   );
+}
+
+Future<T> _traced<T>(String phase, Future<T> Function() run) async {
+  final task = TimelineTask()..start('miras.bootstrap.$phase');
+  try {
+    return await run();
+  } finally {
+    task.finish();
+  }
 }
