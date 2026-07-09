@@ -23,8 +23,8 @@ content/
 
 ```sh
 dart run content_compiler validate --content ../../content
-dart run content_compiler build --content ../../content --out ../../build/pack
-dart run content_compiler build --strict --tts azure ...   # release mode
+dart run content_compiler build --content ../../content --out ../../build/pack --tts cache --strict   # CI/release mode
+dart run content_compiler build --tts piper --piper-model <voice.onnx> ...     # regenerate audio (authoring machine)
 ```
 
 `validate` prints every issue with file + path; `build` additionally emits
@@ -68,11 +68,28 @@ including that a cloze's correct option equals the actual blanked verse token
 
 ## Audio
 
-Vocabulary words and verses get TTS audio at build time (ADR-0005), cached by
-content hash in `tool/content_compiler/.cache/` (gitignored). Without a
-configured TTS backend, packs build with null audio and the app hides
-listening exercises — authoring them is still correct; they activate when
-audio exists. Azure backend: set `AZURE_SPEECH_KEY` + `AZURE_SPEECH_REGION`.
+Vocabulary words and verses get TTS audio at build time (ADR-0005), generated
+locally with Piper (ADR-0008) and cached by content hash in
+`content/audio_cache/` — which is **committed**, so `--tts cache` builds
+audio-complete packs deterministically with no synthesis toolchain (that's
+what CI runs, with `--strict`, which also fails the build if any listening
+exercise's vocab lacks audio).
+
+Regenerating audio (new/changed vocab, or a voice change) happens on the
+authoring machine only and needs `piper` and `ffmpeg`:
+
+```sh
+python3 -m venv .cache/venv && .cache/venv/bin/pip install piper-tts
+PIPER_BIN=.cache/venv/bin/piper dart run content_compiler build \
+  --content ../../content --out ../../app/assets/content \
+  --tts piper --piper-model .cache/models/fa_IR-amir-medium.onnx --strict
+```
+
+Only changed text re-synthesizes (content-hash cache); commit the resulting
+`content/audio_cache/` diff. The cache's `ADAPTER` marker records the
+generating voice — swapping the model regenerates everything, visibly. The
+legacy Azure backend (`--tts azure`, `AZURE_SPEECH_KEY`/`AZURE_SPEECH_REGION`)
+remains available but is not the supported path.
 
 ## Review workflow
 
