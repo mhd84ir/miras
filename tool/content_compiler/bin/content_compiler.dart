@@ -15,9 +15,15 @@ Future<void> main(List<String> argv) async {
     ..addOption('pack-version', defaultsTo: '1')
     ..addOption(
       'tts',
-      allowed: ['none', 'azure'],
+      allowed: ['none', 'azure', 'piper', 'cache'],
       defaultsTo: 'none',
-      help: 'TTS backend for audio generation',
+      help:
+          'TTS backend for audio generation; "cache" replays the committed '
+          'audio cache without a backend (CI/release mode)',
+    )
+    ..addOption(
+      'piper-model',
+      help: 'Path to a Piper voice model (.onnx); PIPER_MODEL env fallback',
     )
     ..addFlag('strict', help: 'Treat warnings as failures (CI/release mode)')
     ..addFlag('help', abbr: 'h', negatable: false);
@@ -73,21 +79,26 @@ Future<void> main(List<String> argv) async {
   if (command == 'validate') return;
 
   // --------------------------------------------------------------- audio
+  // The cache is committed alongside authored content (ADR-0008), so builds
+  // are audio-complete and deterministic without a synthesis backend.
+  final cacheDir = Directory(p.join(contentDir.path, 'audio_cache'));
   final adapter = switch (args.option('tts')) {
     'azure' =>
       AzureTts.fromEnvironment() ??
           (throw StateError(
             'AZURE_SPEECH_KEY / AZURE_SPEECH_REGION not set',
           )),
+    'piper' => switch (args.option('piper-model')) {
+      final model? => PiperTts(model: File(model)),
+      null =>
+        PiperTts.fromEnvironment() ??
+            (throw StateError('--piper-model or PIPER_MODEL not set')),
+    },
+    'cache' => CacheOnlyTts(cacheDir),
     _ => const NoopTts(),
   };
   final outDir = Directory(args.option('out')!);
-  final tts = CachedTts(
-    adapter,
-    Directory(
-      p.join(contentDir.parent.path, 'tool/content_compiler/.cache/tts'),
-    ),
-  );
+  final tts = CachedTts(adapter, cacheDir);
 
   final audioAssets = <String, String>{};
   var missingAudio = 0;
@@ -115,6 +126,20 @@ Future<void> main(List<String> argv) async {
       'audio: $missingAudio items without audio (tts=${adapter.id}) — '
       'listening exercises will be skipped by the app until audio exists',
     );
+  }
+  final silentListening = listeningWithoutAudio(
+    bundle,
+    audioAssets.keys.toSet(),
+  );
+  if (silentListening.isNotEmpty) {
+    final message =
+        'audio: ${silentListening.length} listening exercises would be '
+        'silently skipped by the app: ${silentListening.join(', ')}';
+    if (args.flag('strict')) {
+      stderr.writeln('ERROR $message');
+      exit(1);
+    }
+    stdout.writeln('WARN  $message');
   }
 
   // ---------------------------------------------------------------- pack

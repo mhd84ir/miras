@@ -33,8 +33,9 @@ app/assets/content/
 coverage/
 **/failures/
 
-# Content pipeline caches (generated audio is cached, not committed;
-# compiled content packs are build artifacts produced by tool/content_compiler)
+# Content pipeline scratch (piper binaries/voice models, misc caches).
+# Generated audio IS committed — content/audio_cache/ — so CI builds
+# audio-complete packs without a synthesis backend (ADR-0008).
 tool/content_compiler/.cache/
 
 # Secrets (TTS API keys for the content pipeline)

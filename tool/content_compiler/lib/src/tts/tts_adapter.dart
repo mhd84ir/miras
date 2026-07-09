@@ -87,6 +87,113 @@ class AzureTts implements TtsAdapter {
       .replaceAll('>', '&gt;');
 }
 
+/// Local Piper neural TTS (ADR-0008): synthesis runs offline on the authoring
+/// machine — no account, no network, no key. Requires the `piper` binary
+/// (override with `PIPER_BIN`) and `ffmpeg` on PATH; both are authoring-time
+/// dependencies only, never needed in CI (see [CacheOnlyTts]).
+class PiperTts implements TtsAdapter {
+  PiperTts({required this.model, String? piperBin, String? ffmpegBin})
+    : piperBin = piperBin ?? Platform.environment['PIPER_BIN'] ?? 'piper',
+      ffmpegBin = ffmpegBin ?? 'ffmpeg',
+      // Voice identity = model name + content hash, so swapping or updating
+      // the .onnx invalidates cached audio exactly like a voice change.
+      id =
+          'piper:${p.basenameWithoutExtension(model.path)}'
+          '@${sha256.convert(model.readAsBytesSync()).toString().substring(
+            0,
+            8,
+          )}';
+
+  static PiperTts? fromEnvironment() {
+    final model = Platform.environment['PIPER_MODEL'];
+    if (model == null) return null;
+    return PiperTts(model: File(model));
+  }
+
+  final File model;
+  final String piperBin;
+  final String ffmpegBin;
+
+  @override
+  final String id;
+
+  @override
+  Future<List<int>?> synthesize(String text) async {
+    final tmp = Directory.systemTemp.createTempSync('miras_piper');
+    try {
+      final wav = p.join(tmp.path, 'out.wav');
+      final piper = await Process.start(piperBin, [
+        '--model',
+        model.path,
+        '--output_file',
+        wav,
+      ]);
+      piper.stdin.writeln(text);
+      await piper.stdin.close();
+      final errOut = piper.stderr.transform(utf8.decoder).join();
+      await piper.stdout.drain<void>();
+      if (await piper.exitCode != 0) {
+        throw ProcessException(piperBin, [], 'piper failed: ${await errOut}');
+      }
+      // Match AzureTts's output profile (24 kHz mono 48 kbps mp3) so pack
+      // size and playback behavior stay uniform across adapters.
+      final mp3 = p.join(tmp.path, 'out.mp3');
+      final ffmpeg = await Process.run(ffmpegBin, [
+        '-y',
+        '-i',
+        wav,
+        '-ar',
+        '24000',
+        '-ac',
+        '1',
+        '-b:a',
+        '48k',
+        mp3,
+      ]);
+      if (ffmpeg.exitCode != 0) {
+        throw ProcessException(
+          ffmpegBin,
+          [],
+          'ffmpeg failed: ${ffmpeg.stderr}',
+        );
+      }
+      return File(mp3).readAsBytes();
+    } finally {
+      tmp.deleteSync(recursive: true);
+    }
+  }
+}
+
+/// Replays the committed audio cache with no synthesis backend, so CI and
+/// contributor builds produce audio-complete packs deterministically without
+/// piper installed (ADR-0008). The generating adapter records its [id] in an
+/// `ADAPTER` marker file inside the cache (see [CachedTts.get]); a cache miss
+/// is a hard error — audio silently missing from a pack means listening
+/// exercises silently vanish from lessons.
+class CacheOnlyTts implements TtsAdapter {
+  CacheOnlyTts(Directory cacheDir) : id = _readId(cacheDir);
+
+  static String _readId(Directory cacheDir) {
+    final marker = File(p.join(cacheDir.path, 'ADAPTER'));
+    if (!marker.existsSync()) {
+      throw StateError(
+        'audio cache has no ADAPTER marker (${marker.path}); '
+        'generate audio first, e.g. --tts piper',
+      );
+    }
+    return marker.readAsStringSync().trim();
+  }
+
+  @override
+  final String id;
+
+  @override
+  Future<List<int>?> synthesize(String text) => throw StateError(
+    'audio cache miss for "$text" (tts=cache); '
+    'regenerate the cache, e.g. --tts piper',
+  );
+}
+
 /// Content-hash cache in front of a [TtsAdapter]: unchanged text never
 /// re-synthesizes (keeps rebuilds fast and API costs near zero).
 class CachedTts {
@@ -108,6 +215,9 @@ class CachedTts {
     if (bytes == null) return null;
     file.parent.createSync(recursive: true);
     await file.writeAsBytes(bytes);
+    // Record which adapter produced the cache so CacheOnlyTts can replay it
+    // under the same cache keys.
+    File(p.join(cacheDir.path, 'ADAPTER')).writeAsStringSync(adapter.id);
     return bytes;
   }
 
