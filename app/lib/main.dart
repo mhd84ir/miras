@@ -11,6 +11,7 @@ import 'package:miras/core/db/user_database.dart';
 import 'package:miras/core/haptics/haptics_service.dart';
 import 'package:miras/core/notifications/notification_service.dart';
 import 'package:miras/core/router/app_router.dart';
+import 'package:miras/core/share/share_service.dart';
 import 'package:miras/core/widgets/boot_error_app.dart';
 import 'package:miras/features/gamification/data/gamification_repository.dart';
 import 'package:miras/features/home_path/data/progress_repository.dart';
@@ -62,6 +63,7 @@ Future<void> main() async {
         hapticsServiceProvider.overrideWithValue(
           const VibratorHapticsService(),
         ),
+        shareServiceProvider.overrideWithValue(const IntentShareService()),
       ],
       child: MirasApp(
         initialLocation: onboarded ? AppRoutes.home : AppRoutes.onboarding,

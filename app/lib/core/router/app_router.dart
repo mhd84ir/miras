@@ -12,6 +12,7 @@ import 'package:miras/features/lesson/presentation/lesson_screen.dart';
 import 'package:miras/features/library/presentation/library_chapter_screen.dart';
 import 'package:miras/features/library/presentation/library_screen.dart';
 import 'package:miras/features/onboarding/presentation/onboarding_screen.dart';
+import 'package:miras/features/profile/presentation/beta_report_screen.dart';
 import 'package:miras/features/profile/presentation/profile_screen.dart';
 import 'package:miras/features/review/presentation/review_screen.dart';
 import 'package:miras/features/review/presentation/review_session_screen.dart';
@@ -23,6 +24,7 @@ abstract final class AppRoutes {
   static const reviewSession = '/review/session';
   static const library = '/library';
   static const profile = '/profile';
+  static const betaReport = '/profile/beta-report';
   static const gallery = '/dev/gallery';
 
   static String lesson(String lessonId) => '/lesson/$lessonId';
@@ -76,6 +78,12 @@ GoRouter createAppRouter({String initialLocation = AppRoutes.home}) => GoRouter(
             GoRoute(
               path: AppRoutes.profile,
               builder: (context, state) => const ProfileScreen(),
+              routes: [
+                GoRoute(
+                  path: 'beta-report',
+                  builder: (context, state) => const BetaReportScreen(),
+                ),
+              ],
             ),
           ],
         ),

@@ -1,6 +1,7 @@
 package ir.miras
 
 import android.content.Context
+import android.content.Intent
 import android.os.Build
 import android.os.VibrationEffect
 import android.os.Vibrator
@@ -22,6 +23,25 @@ class MainActivity : FlutterActivity() {
                         val durationMs = (call.argument<Int>("durationMs") ?: 40).toLong()
                         val amplitude = call.argument<Int>("amplitude") ?: -1
                         vibrate(durationMs, amplitude)
+                        result.success(null)
+                    }
+                    else -> result.notImplemented()
+                }
+            }
+        // System share sheet for the (opt-in) beta report export — one
+        // intent, not worth a plugin dependency.
+        MethodChannel(flutterEngine.dartExecutor.binaryMessenger, "miras/share")
+            .setMethodCallHandler { call, result ->
+                when (call.method) {
+                    "shareText" -> {
+                        val intent = Intent(Intent.ACTION_SEND).apply {
+                            type = "text/plain"
+                            putExtra(Intent.EXTRA_TEXT, call.argument<String>("text") ?: "")
+                            call.argument<String>("subject")?.let {
+                                putExtra(Intent.EXTRA_SUBJECT, it)
+                            }
+                        }
+                        startActivity(Intent.createChooser(intent, null))
                         result.success(null)
                     }
                     else -> result.notImplemented()

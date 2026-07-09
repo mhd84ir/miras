@@ -83,6 +83,80 @@
   "@profileSound": {
     "description": "Settings toggle for UI feedback sounds (answer right/wrong, lesson complete)."
   },
+  "profileBetaReport": "گزارش بتا",
+  "@profileBetaReport": {
+    "description": "Profile row + screen title for the local beta-metrics report."
+  },
+  "betaReportShare": "اشتراک‌گذاری گزارش",
+  "@betaReportShare": {
+    "description": "Share button label on the beta report screen."
+  },
+  "betaReportPrivacyNote": "این گزارش فقط روی دستگاه توست و تنها اگر خودت بخواهی به اشتراک گذاشته می‌شود.",
+  "@betaReportPrivacyNote": {
+    "description": "Privacy note at the top of the beta report."
+  },
+  "betaReportLessons": "درس‌های کامل‌شده",
+  "@betaReportLessons": {
+    "description": "Metric label: lessons completed."
+  },
+  "betaReportActivation": "نخستین درس",
+  "@betaReportActivation": {
+    "description": "Metric label: activation (first lesson completed)."
+  },
+  "betaReportDaysAfterInstall": "{days} روز پس از نصب",
+  "@betaReportDaysAfterInstall": {
+    "description": "Activation value; days arrives pre-formatted in Persian digits.",
+    "placeholders": {
+      "days": {"type": "String"}
+    }
+  },
+  "betaReportNotYet": "هنوز نه",
+  "@betaReportNotYet": {
+    "description": "Value for a metric not achieved yet."
+  },
+  "betaReportReached": "به دست آمد",
+  "@betaReportReached": {
+    "description": "Value for an achieved milestone metric."
+  },
+  "betaReportCurrentStreak": "پیوستگی کنونی",
+  "@betaReportCurrentStreak": {
+    "description": "Metric label: effective current streak."
+  },
+  "betaReportLongestStreak": "بلندترین پیوستگی",
+  "@betaReportLongestStreak": {
+    "description": "Metric label: longest streak."
+  },
+  "betaReportSevenDay": "پیوستگی ۷ روزه",
+  "@betaReportSevenDay": {
+    "description": "Metric label: PRD retention proxy (7-day streak reached)."
+  },
+  "betaReportAccuracy": "دقت کل مرورها",
+  "@betaReportAccuracy": {
+    "description": "Metric label: all-time answer accuracy."
+  },
+  "betaReportAccuracyValue": "{percent}٪ از {count} پاسخ",
+  "@betaReportAccuracyValue": {
+    "description": "Accuracy value; both numbers arrive pre-formatted in Persian digits.",
+    "placeholders": {
+      "percent": {"type": "String"},
+      "count": {"type": "String"}
+    }
+  },
+  "betaReportTrend": "روند دقت هفتگی",
+  "@betaReportTrend": {
+    "description": "Section header for the weekly accuracy trend."
+  },
+  "betaReportThisWeek": "این هفته",
+  "@betaReportThisWeek": {
+    "description": "Trend row label for the current week."
+  },
+  "betaReportWeeksAgo": "{n} هفته پیش",
+  "@betaReportWeeksAgo": {
+    "description": "Trend row label; n arrives pre-formatted in Persian digits.",
+    "placeholders": {
+      "n": {"type": "String"}
+    }
+  },
   "matchingInstruction": "هر واژه را با معنی آن جفت کن",
   "@matchingInstruction": {
     "description": "Instruction shown above a matching board."

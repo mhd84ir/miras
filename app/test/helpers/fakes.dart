@@ -80,6 +80,10 @@ class FakeProgressRepository implements ProgressRepository {
   final completions = <LessonResult>[];
   final attempts = <(String, bool)>[];
 
+  /// Seed directly in tests that exercise the beta-metrics path.
+  final attemptLog = <({DateTime at, bool correct})>[];
+  DateTime? firstCompletion;
+
   @override
   Stream<Map<String, LessonProgress>> watchAll() =>
       Stream.value(Map.unmodifiable(_progress));
@@ -103,6 +107,13 @@ class FakeProgressRepository implements ProgressRepository {
   }) async {
     attempts.add((exerciseId, wasCorrect));
   }
+
+  @override
+  Future<List<({DateTime at, bool correct})>> attemptHistory() async =>
+      List.of(attemptLog);
+
+  @override
+  Future<DateTime?> firstCompletionAt() async => firstCompletion;
 }
 
 /// In-memory gamification store with a controllable clock.
@@ -112,6 +123,7 @@ class FakeGamificationRepository implements GamificationRepository {
 
   HeartsState heartsState;
   StreakState streakState = StreakState.initial;
+  DateTime installed = DateTime(2026, 6);
   final xpEvents = <({int amount, XpSource source, DateTime at})>[];
   final unlocked = <String>{};
   int dailyXpGoal = XpRules.defaultDailyGoal;
@@ -169,6 +181,9 @@ class FakeGamificationRepository implements GamificationRepository {
   Future<void> unlockAchievement(String id, DateTime at) async {
     unlocked.add(id);
   }
+
+  @override
+  Future<DateTime> installedAt() async => installed;
 
   @override
   Stream<UserProfileSettings> watchProfile() => Stream.value(

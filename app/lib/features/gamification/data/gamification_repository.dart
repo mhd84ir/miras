@@ -32,6 +32,9 @@ abstract interface class GamificationRepository {
   Stream<Set<String>> watchUnlockedAchievements();
   Future<void> unlockAchievement(String id, DateTime at);
 
+  /// Profile creation time — the "install moment" for beta metrics.
+  Future<DateTime> installedAt();
+
   Stream<UserProfileSettings> watchProfile();
   Future<void> setDailyXpGoal(int xp);
   Future<void> setNotificationsEnabled({required bool enabled});
@@ -230,6 +233,11 @@ class DriftGamificationRepository implements GamificationRepository {
   }
 
   // ---------------------------------------------------------- profile
+
+  @override
+  Future<DateTime> installedAt() async => DateTime.parse(
+    (await _singleRow(_db.userProfileRows).getSingle()).createdAt,
+  );
 
   @override
   Stream<UserProfileSettings> watchProfile() =>

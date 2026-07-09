@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
 import 'package:miras/core/l10n/gen/app_localizations.dart';
 import 'package:miras/core/notifications/notification_service.dart';
 import 'package:miras/core/persian_text/persian_text.dart';
+import 'package:miras/core/router/app_router.dart';
 import 'package:miras/core/theme/miras_colors.dart';
 import 'package:miras/core/theme/miras_spacing.dart';
 import 'package:miras/core/theme/miras_text_styles.dart';
@@ -157,6 +159,15 @@ class ProfileScreen extends ConsumerWidget {
                 await repo.setNotificationsEnabled(enabled: false);
               }
             },
+          ),
+          ListTile(
+            contentPadding: EdgeInsetsDirectional.zero,
+            leading: Icon(Icons.query_stats, color: colors.inkMuted),
+            title: Text(
+              strings.profileBetaReport,
+              style: MirasTextStyles.body.copyWith(color: colors.ink),
+            ),
+            onTap: () => context.push(AppRoutes.betaReport),
           ),
         ],
       ),

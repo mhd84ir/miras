@@ -1,3 +1,4 @@
+import 'package:drift/drift.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:miras/core/db/user_database.dart';
@@ -18,6 +19,13 @@ abstract interface class ProgressRepository {
     required bool wasCorrect,
     required String lessonSessionId,
   });
+
+  /// Every logged attempt as (when, correct), oldest first — feeds the
+  /// PRD §7 accuracy trend.
+  Future<List<({DateTime at, bool correct})>> attemptHistory();
+
+  /// First-ever lesson completion (PRD §7 activation), null before it.
+  Future<DateTime?> firstCompletionAt();
 }
 
 class DriftProgressRepository implements ProgressRepository {
@@ -92,6 +100,27 @@ class DriftProgressRepository implements ProgressRepository {
             lessonSessionId: lessonSessionId,
           ),
         );
+  }
+
+  @override
+  Future<List<({DateTime at, bool correct})>> attemptHistory() async {
+    final rows = await (_db.select(
+      _db.exerciseAttemptRows,
+    )..orderBy([(t) => OrderingTerm.asc(t.answeredAt)])).get();
+    return [
+      for (final r in rows)
+        (at: DateTime.parse(r.answeredAt), correct: r.wasCorrect),
+    ];
+  }
+
+  @override
+  Future<DateTime?> firstCompletionAt() async {
+    // ISO-8601 UTC strings order lexicographically, so min() is earliest.
+    final earliest = _db.lessonProgressRows.createdAt.min();
+    final query = _db.selectOnly(_db.lessonProgressRows)
+      ..addColumns([earliest]);
+    final value = (await query.getSingle()).read(earliest);
+    return value == null ? null : DateTime.parse(value);
   }
 }
 
