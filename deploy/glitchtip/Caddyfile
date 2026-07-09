@@ -1,0 +1,4 @@
+# Automatic HTTPS (Let's Encrypt) in front of GlitchTip.
+{$GLITCHTIP_HOST} {
+	reverse_proxy web:8000
+}

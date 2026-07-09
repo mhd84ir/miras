@@ -1,0 +1,59 @@
+# Self-hosted GlitchTip (ADR-0009) — crash-report backend for the Miras beta.
+# Adapted from the official compose.sample.yml (GlitchTip 6, all-in-one role).
+# Secrets/host-specifics live in .env (see .env.example, never commit .env).
+
+x-environment: &default-environment
+  DATABASE_URL: postgres://postgres:postgres@postgres:5432/postgres
+  VALKEY_URL: redis://valkey:6379
+  SECRET_KEY: ${SECRET_KEY}
+  EMAIL_URL: ${EMAIL_URL:-consolemail://}
+  GLITCHTIP_DOMAIN: ${GLITCHTIP_DOMAIN}
+  DEFAULT_FROM_EMAIL: ${DEFAULT_FROM_EMAIL}
+  ENABLE_ADMIN: "False"
+  ENABLE_OPENAPI: "False"
+  GLITCHTIP_ENABLE_MCP: "False"
+  GLITCHTIP_ENABLE_DUCKDB: "False"
+
+services:
+  postgres:
+    image: postgres:18
+    environment:
+      # Reachable only on the compose-internal network; no published port.
+      POSTGRES_HOST_AUTH_METHOD: trust
+    restart: unless-stopped
+    volumes:
+      - pg-data:/var/lib/postgresql
+
+  valkey:
+    image: valkey/valkey:9
+    restart: unless-stopped
+
+  web:
+    image: glitchtip/glitchtip:6
+    depends_on:
+      - postgres
+      - valkey
+    environment:
+      <<: *default-environment
+      SERVER_ROLE: all_in_one
+    restart: unless-stopped
+    volumes:
+      - uploads:/code/uploads
+    # No published port: caddy terminates TLS and proxies to web:8000.
+
+  caddy:
+    image: caddy:2
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      GLITCHTIP_HOST: ${GLITCHTIP_HOST}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
+
+volumes:
+  pg-data:
+  uploads:
+  caddy-data:
