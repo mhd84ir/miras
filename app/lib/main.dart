@@ -7,6 +7,7 @@ import 'package:miras/core/content/content_providers.dart';
 import 'package:miras/core/content/data/content_database.dart';
 import 'package:miras/core/content/data/drift_content_repository.dart';
 import 'package:miras/core/content/data/pack_bootstrap.dart';
+import 'package:miras/core/crash/crash_reporting.dart';
 import 'package:miras/core/db/user_database.dart';
 import 'package:miras/core/haptics/haptics_service.dart';
 import 'package:miras/core/notifications/notification_service.dart';
@@ -16,8 +17,16 @@ import 'package:miras/core/widgets/boot_error_app.dart';
 import 'package:miras/features/gamification/data/gamification_repository.dart';
 import 'package:miras/features/home_path/data/progress_repository.dart';
 import 'package:miras/features/review/data/srs_repository.dart';
+import 'package:sentry_flutter/sentry_flutter.dart';
 
 Future<void> main() async {
+  // Crash reporting wraps the app only when a build carries a DSN
+  // (ADR-0007/0009); dev builds boot untouched.
+  if (sentryDsn.isEmpty) return _run();
+  await SentryFlutter.init(configureSentryOptions, appRunner: _run);
+}
+
+Future<void> _run() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   // The pack copy is ~200 KB; doing it before runApp keeps every screen's
