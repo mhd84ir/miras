@@ -34,3 +34,16 @@ exercises:
         - "به سفر رفتن"
       correctIndex: 0
       vocabId: vocab.mani
+  # TODO(editorial): M6 listening drafts — distractor choices pending review.
+  - id: jamshid.l03.e09
+    type: listening
+    prompt:
+      vocabId: vocab.haras
+      options: ["هراس", "حواس", "هوس"]
+      correctIndex: 0
+  - id: jamshid.l03.e10
+    type: listening
+    prompt:
+      vocabId: vocab.nasepas
+      options: ["ناسپاس", "ناشناس", "سپاس"]
+      correctIndex: 0

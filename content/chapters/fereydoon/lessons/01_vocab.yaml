@@ -34,3 +34,16 @@ exercises:
       options: ["فریدون", "جمشید", "کاوه"]
       correctIndex: 0
       vocabId: vocab.mehregan
+  # TODO(editorial): M6 listening drafts — distractor choices pending review.
+  - id: fereydoon.l01.e09
+    type: listening
+    prompt:
+      vocabId: vocab.khojasteh
+      options: ["خجسته", "شکسته", "خسته"]
+      correctIndex: 0
+  - id: fereydoon.l01.e10
+    type: listening
+    prompt:
+      vocabId: vocab.bonyad
+      options: ["بنیاد", "بیداد", "نهاد"]
+      correctIndex: 0

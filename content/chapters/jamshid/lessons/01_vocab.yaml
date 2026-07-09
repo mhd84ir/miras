@@ -37,3 +37,16 @@ exercises:
       options: ["تار", "نخ", "ریسه"]
       correctIndex: 0
       vocabId: vocab.pud
+  # TODO(editorial): M6 listening drafts — distractor choices pending review.
+  - id: jamshid.l01.e09
+    type: listening
+    prompt:
+      vocabId: vocab.joshan
+      options: ["جوشن", "جشن", "روشن"]
+      correctIndex: 0
+  - id: jamshid.l01.e10
+    type: listening
+    prompt:
+      vocabId: vocab.gohar
+      options: ["گوهر", "جوهر", "ساحر"]
+      correctIndex: 0

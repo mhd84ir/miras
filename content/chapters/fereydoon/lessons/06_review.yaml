@@ -54,3 +54,10 @@ exercises:
         - "در آغاز داستان ضحاک"
         - "در دیباچهٔ شاهنامه"
       correctIndex: 0
+  # TODO(editorial): M6 listening draft — distractor choices pending review.
+  - id: fereydoon.l06.e07
+    type: listening
+    prompt:
+      vocabId: vocab.salkhord
+      options: ["سالخورد", "سالگرد", "شاگرد"]
+      correctIndex: 0

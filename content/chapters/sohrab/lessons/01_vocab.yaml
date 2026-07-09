@@ -34,3 +34,16 @@ exercises:
       options: ["تیردان", "زره", "نیزهٔ کوتاه"]
       correctIndex: 0
       vocabId: vocab.tarkash
+  # TODO(editorial): M6 listening drafts — distractor choices pending review.
+  - id: sohrab.l01.e09
+    type: listening
+    prompt:
+      vocabId: vocab.toranj
+      options: ["ترنج", "برنج", "رنج"]
+      correctIndex: 0
+  - id: sohrab.l01.e10
+    type: listening
+    prompt:
+      vocabId: vocab.shohreh
+      options: ["شهره", "مهره", "زهره"]
+      correctIndex: 0

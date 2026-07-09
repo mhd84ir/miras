@@ -57,3 +57,10 @@ exercises:
       verseId: jamshid.v009
       hemistich: 2
       distractors: ["هراس"]
+  # TODO(editorial): M6 listening draft — distractor choices pending review.
+  - id: jamshid.l06.e10
+    type: listening
+    prompt:
+      vocabId: vocab.afshandan
+      options: ["افشاندن", "افکندن", "نشاندن"]
+      correctIndex: 0

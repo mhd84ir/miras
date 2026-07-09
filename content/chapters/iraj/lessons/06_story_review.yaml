@@ -88,3 +88,10 @@ exercises:
       verseId: iraj.v011
       hemistich: 2
       distractors: ["فروتنی"]
+  # TODO(editorial): M6 listening draft — distractor choices pending review.
+  - id: iraj.l06.e15
+    type: listening
+    prompt:
+      vocabId: vocab.abgun
+      options: ["آبگون", "گلگون", "واژگون"]
+      correctIndex: 0

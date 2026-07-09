@@ -34,3 +34,16 @@ exercises:
         - "فقط در شاهنامه به کار رفته است"
       correctIndex: 0
       vocabId: vocab.khavar
+  # TODO(editorial): M6 listening drafts — distractor choices pending review.
+  - id: fereydoon.l03.e09
+    type: listening
+    prompt:
+      vocabId: vocab.kohan
+      options: ["کهن", "کهنه", "کوهان"]
+      correctIndex: 0
+  - id: fereydoon.l03.e10
+    type: listening
+    prompt:
+      vocabId: vocab.nahofteh
+      options: ["نهفته", "نگفته", "شکفته"]
+      correctIndex: 0

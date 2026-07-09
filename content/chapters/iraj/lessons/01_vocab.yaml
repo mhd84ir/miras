@@ -28,3 +28,16 @@ exercises:
       options: ["چروکِ خشم بر چهره", "نامِ سرزمینِ چین", "نوعی پارچهٔ ابریشمی"]
       correctIndex: 0
       vocabId: vocab.chin
+  # TODO(editorial): M6 listening drafts — distractor choices pending review.
+  - id: iraj.l01.e07
+    type: listening
+    prompt:
+      vocabId: vocab.kin
+      options: ["کین", "چین", "کیش"]
+      correctIndex: 0
+  - id: iraj.l01.e08
+    type: listening
+    prompt:
+      vocabId: vocab.giti
+      options: ["گیتی", "گفتی", "کشتی"]
+      correctIndex: 0

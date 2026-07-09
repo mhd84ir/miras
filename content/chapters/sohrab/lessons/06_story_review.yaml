@@ -71,3 +71,10 @@ exercises:
       verseId: sohrab.v014
       hemistich: 1
       distractors: ["ترگ"]
+  # TODO(editorial): M6 listening draft — distractor choices pending review.
+  - id: sohrab.l06.e12
+    type: listening
+    prompt:
+      vocabId: vocab.nooshdaru
+      options: ["نوشدارو", "نوشانوش", "دارو"]
+      correctIndex: 0

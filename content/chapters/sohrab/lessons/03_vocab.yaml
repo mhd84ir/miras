@@ -34,3 +34,16 @@ exercises:
     type: matching
     prompt:
       pairs: [vocab.deshneh, vocab.targ, vocab.tarkash, vocab.mohreh]
+  # TODO(editorial): M6 listening drafts — distractor choices pending review.
+  - id: sohrab.l03.e10
+    type: listening
+    prompt:
+      vocabId: vocab.deshneh
+      options: ["دشنه", "تشنه", "دشمن"]
+      correctIndex: 0
+  - id: sohrab.l03.e11
+    type: listening
+    prompt:
+      vocabId: vocab.targ
+      options: ["ترگ", "تگرگ", "برگ"]
+      correctIndex: 0

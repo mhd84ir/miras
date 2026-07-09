@@ -31,3 +31,16 @@ exercises:
       options: ["ایرج، برای بالای بلند و زیبایش", "فریدون، برای سالخوردگیِ او", "تور، برای خشمِ او"]
       correctIndex: 0
       vocabId: vocab.sahi
+  # TODO(editorial): M6 listening drafts — distractor choices pending review.
+  - id: iraj.l03.e09
+    type: listening
+    prompt:
+      vocabId: vocab.davar
+      options: ["داور", "دلاور", "باور"]
+      correctIndex: 0
+  - id: iraj.l03.e10
+    type: listening
+    prompt:
+      vocabId: vocab.zinhar
+      options: ["زینهار", "زیان‌بار", "شهسوار"]
+      correctIndex: 0
