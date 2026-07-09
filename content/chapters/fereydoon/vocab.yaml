@@ -1,4 +1,5 @@
 # TODO(editorial): definitions and etymologies pending literary review.
+# TODO(editorial): M6 tts_text diacritics pending review.
 items:
   - id: vocab.kamgar
     word: "کامگار"
@@ -9,6 +10,7 @@ items:
   - id: vocab.khojasteh
     word: "خجسته"
     pronunciation: "khojasteh"
+    tts_text: "خُجَسته"
     meaning: "فرخنده، مبارک"
     example_verse: fereydoon.v002
   - id: vocab.mehregan
@@ -25,6 +27,7 @@ items:
   - id: vocab.bonyad
     word: "بنیاد"
     pronunciation: "bonyād"
+    tts_text: "بُنْیاد"
     meaning: "پایه، اساس؛ «بنیاد نهادن»: پی‌ریزی کردن"
     example_verse: fereydoon.v005
   - id: vocab.aaz
@@ -51,16 +54,19 @@ items:
   - id: vocab.nahofteh
     word: "نهفته"
     pronunciation: "nahofteh"
+    tts_text: "نَهُفته"
     meaning: "پنهان، پوشیده"
     example_verse: fereydoon.v010
   - id: vocab.salkhord
     word: "سالخورد"
     pronunciation: "sālkhord"
+    tts_text: "سالْخورد"
     meaning: "پیر، کهن‌سال"
     etymology: "کسی که سال بسیار «خورده» است — تصویری کهن از گذر عمر"
     example_verse: fereydoon.v012
   - id: vocab.kohan
     word: "کهن"
     pronunciation: "kohan"
+    tts_text: "کُهَن"
     meaning: "کهنه، دیرینه، باستانی"
     example_verse: fereydoon.v013

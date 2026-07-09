@@ -1,4 +1,5 @@
 # TODO(editorial): definitions and etymologies pending literary review.
+# TODO(editorial): M6 tts_text diacritics pending review.
 items:
   - id: vocab.tondbad
     word: "تندباد"
@@ -8,6 +9,7 @@ items:
   - id: vocab.toranj
     word: "ترنج"
     pronunciation: "toranj"
+    tts_text: "تُرَنج"
     meaning: "میوه‌ای خوش‌بو از خانوادهٔ مرکبات؛ بالنگ"
     example_verse: sohrab.v001
   - id: vocab.setamkareh
@@ -29,6 +31,7 @@ items:
   - id: vocab.shohreh
     word: "شهره"
     pronunciation: "shohreh"
+    tts_text: "شُهره"
     meaning: "نامدار، مشهور"
     example_verse: sohrab.v007
   - id: vocab.mohreh
@@ -44,11 +47,13 @@ items:
   - id: vocab.deshneh
     word: "دشنه"
     pronunciation: "deshneh"
+    tts_text: "دِشْنه"
     meaning: "خنجر، کارد جنگی"
     example_verse: sohrab.v011
   - id: vocab.nooshdaru
     word: "نوشدارو"
     pronunciation: "nushdāru"
+    tts_text: "نوشْدارو"
     meaning: "داروی شفابخش افسانه‌ای؛ در فارسی امروز: چاره‌ای که دیر برسد"
     etymology: "از «نوش» (شهد، بی‌مرگی) + «دارو» — «نوشدارو پس از مرگ سهراب» از همین داستان مَثَل شد"
     example_verse: sohrab.v012
@@ -61,6 +66,7 @@ items:
   - id: vocab.targ
     word: "ترگ"
     pronunciation: "targ"
+    tts_text: "تَرْگ"
     meaning: "کلاهخود جنگی"
     example_verse: sohrab.v014
   - id: vocab.farakh

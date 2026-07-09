@@ -1,4 +1,5 @@
 # TODO(editorial): definitions and etymologies pending literary review.
+# TODO(editorial): M6 tts_text diacritics pending review.
 items:
   - id: vocab.geranmayeh
     word: "گرانمایه"
@@ -15,6 +16,7 @@ items:
   - id: vocab.saboksar
     word: "سبکسار"
     pronunciation: "sabok-sār"
+    tts_text: "سَبُکْسار"
     meaning: "سبک‌مغز، بی‌فکر و نااستوار"
     example_verse: zahak.v003
   - id: vocab.nikkhah
@@ -31,6 +33,7 @@ items:
   - id: vocab.bidadgar
     word: "بیدادگر"
     pronunciation: "bidādgar"
+    tts_text: "بیدادْگَر"
     meaning: "ستمگر"
     etymology: "«بیداد» (بی + داد: نبودِ عدالت) + پسوند «گر»"
     example_verse: zahak.v005
@@ -48,6 +51,7 @@ items:
   - id: vocab.khoresh
     word: "خورش"
     pronunciation: "khoresh"
+    tts_text: "خورِش"
     meaning: "خوراک، غذا"
     etymology: "از ریشهٔ «خوردن»؛ معنای کهن آن هر گونه خوراک است، نه فقط خورشت امروزی"
     example_verse: zahak.v009
@@ -81,6 +85,7 @@ items:
   - id: vocab.gazand
     word: "گزند"
     pronunciation: "gazand"
+    tts_text: "گَزَند"
     meaning: "آسیب، زیان"
     example_verse: zahak.v012
   - id: vocab.dadkhah
@@ -102,6 +107,7 @@ items:
   - id: vocab.derafsh
     word: "درفش"
     pronunciation: "derafsh"
+    tts_text: "دِرَفْش"
     meaning: "پرچم"
     etymology: "از فارسی میانه «drafš»؛ درفش کاویانی پرچم ملی ایران باستان شد"
     example_verse: zahak.v020

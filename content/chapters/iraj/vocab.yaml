@@ -1,4 +1,5 @@
 # TODO(editorial): definitions and etymologies pending literary review.
+# TODO(editorial): M6 tts_text diacritics pending review.
 items:
   - id: vocab.kehtar
     word: "کهتر"
@@ -30,11 +31,13 @@ items:
   - id: vocab.zinhar
     word: "زینهار"
     pronunciation: "zinhār"
+    tts_text: "زینْهار"
     meaning: "امان، پناه؛ «زینهار خواستن»: جان امان خواستن"
     example_verse: iraj.v013
   - id: vocab.abgun
     word: "آبگون"
     pronunciation: "âbgun"
+    tts_text: "آبْگون"
     meaning: "به رنگ آب؛ کبودرنگ، فولادی‌رنگ — صفتِ تیغه‌های برنده در شاهنامه"
     example_verse: iraj.v014
   - id: vocab.sahi
@@ -50,5 +53,6 @@ items:
   - id: vocab.davar
     word: "داور"
     pronunciation: "dāvar"
+    tts_text: "داوَر"
     meaning: "قاضی، کسی که میان حق و ناحق حکم کند؛ «داور دادگر»: خداوند، به‌عنوانِ داورِ راستین"
     example_verse: iraj.v020

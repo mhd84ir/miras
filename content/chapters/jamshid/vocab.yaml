@@ -1,4 +1,5 @@
 # TODO(editorial): definitions and etymologies pending literary review.
+# TODO(editorial): M6 tts_text diacritics pending review.
 items:
   - id: vocab.farreh
     word: "فرّه"
@@ -14,6 +15,7 @@ items:
   - id: vocab.joshan
     word: "جوشن"
     pronunciation: "joshan"
+    tts_text: "جوشَن"
     meaning: "زره، جامهٔ جنگی فلزی"
     example_verse: jamshid.v003
   - id: vocab.reshtan
@@ -30,11 +32,13 @@ items:
   - id: vocab.gohar
     word: "گوهر"
     pronunciation: "gohar"
+    tts_text: "گوهَر"
     meaning: "سنگ گران‌بها؛ در معنای گسترده‌تر: ذات و سرشت"
     example_verse: jamshid.v005
   - id: vocab.afshandan
     word: "افشاندن"
     pronunciation: "afshāndan"
+    tts_text: "اَفْشاندَن"
     meaning: "پاشیدن، ریختن (گوهر افشاندن: نثار کردن جواهر برای شادباش)"
     example_verse: jamshid.v008
   - id: vocab.khosrow
@@ -56,10 +60,12 @@ items:
   - id: vocab.nasepas
     word: "ناسپاس"
     pronunciation: "nāsepās"
+    tts_text: "ناسِپاس"
     meaning: "ناشکر، قدرنشناس"
     example_verse: jamshid.v014
   - id: vocab.haras
     word: "هراس"
     pronunciation: "harās"
+    tts_text: "هَراس"
     meaning: "ترس، بیم"
     example_verse: jamshid.v014
