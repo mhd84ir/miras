@@ -1,0 +1,80 @@
+# Self-hosted GlitchTip for Miras (ADR-0009).
+# On a VPS that already runs Nginx (e.g. shared with tebtejarat.com), do NOT
+# bind Caddy to :80/:443 — use compose.nginx.yml + the host Nginx instead.
+#
+# Adapted from the official GlitchTip 6 sample (all-in-one role to save RAM).
+
+x-environment: &default-environment
+  DATABASE_URL: postgres://postgres:postgres@postgres:5432/postgres
+  VALKEY_URL: redis://valkey:6379
+  SECRET_KEY: ${SECRET_KEY:?SECRET_KEY is required}
+  EMAIL_URL: ${EMAIL_URL:-consolemail://}
+  GLITCHTIP_DOMAIN: ${GLITCHTIP_DOMAIN:?GLITCHTIP_DOMAIN is required}
+  DEFAULT_FROM_EMAIL: ${DEFAULT_FROM_EMAIL:-noreply@tebtejarat.com}
+  ALLOWED_HOSTS: ${ALLOWED_HOSTS:-miras.tebtejarat.com,localhost,127.0.0.1}
+  ENABLE_ADMIN: "False"
+  ENABLE_OPENAPI: "False"
+  GLITCHTIP_ENABLE_MCP: "False"
+  GLITCHTIP_ENABLE_DUCKDB: "False"
+  ENABLE_USER_REGISTRATION: ${ENABLE_USER_REGISTRATION:-False}
+  ENABLE_ORGANIZATION_CREATION: ${ENABLE_ORGANIZATION_CREATION:-False}
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: miras_glitchtip_postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    restart: unless-stopped
+    volumes:
+      - pg-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U postgres']
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  valkey:
+    image: valkey/valkey:8-alpine
+    container_name: miras_glitchtip_valkey
+    restart: unless-stopped
+    healthcheck:
+      test: ['CMD', 'valkey-cli', 'ping']
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  web:
+    image: glitchtip/glitchtip:6.1.8
+    container_name: miras_glitchtip_web
+    depends_on:
+      postgres:
+        condition: service_healthy
+      valkey:
+        condition: service_healthy
+    environment:
+      <<: *default-environment
+      SERVER_ROLE: all_in_one
+      PORT: '8000'
+    restart: unless-stopped
+    volumes:
+      - uploads:/code/uploads
+    ports:
+      # Host Nginx proxies miras.tebtejarat.com → this port (TTS GlitchTip uses 8000)
+      - '127.0.0.1:8001:8000'
+    healthcheck:
+      test:
+        [
+          'CMD-SHELL',
+          "python -c \"import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/')\" || exit 1",
+        ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 60s
+
+volumes:
+  pg-data:
+  uploads:
