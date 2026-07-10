@@ -32,16 +32,19 @@ void main() {
       expect(scaled[0], 3372);
     });
 
-    test('keeps the −1 end-of-audio marker when present', () {
+    test('keeps the −1 title marker when present', () {
+      // Observed in real files (e.g. recitation 22796) BEFORE hemistich 0:
+      // −1 is the poem-title announcement, not an end-of-audio bound.
       final starts = parseSyncXml(
         _xml.replaceFirst(
-          '</SyncArray>',
+          '<SyncInfo><VerseOrder>0</VerseOrder>',
           '<SyncInfo><VerseOrder>-1</VerseOrder>'
-              '<AudioMiliseconds>20000</AudioMiliseconds></SyncInfo>'
-              '</SyncArray>',
+              '<AudioMiliseconds>500</AudioMiliseconds></SyncInfo>'
+              '<SyncInfo><VerseOrder>0</VerseOrder>',
         ),
       );
-      expect(starts[-1], 20000);
+      expect(starts[-1], 500);
+      expect(starts[0], 1686);
     });
   });
 
@@ -56,13 +59,20 @@ void main() {
       expect(coupletRangeMs(starts, 1), (startMs: 9186, endMs: null));
     });
 
-    test('the last couplet ends at the −1 marker when present', () {
-      final withEnd = Map<int, int>.of(starts)..[-1] = 20000;
-      expect(coupletRangeMs(withEnd, 1), (startMs: 9186, endMs: 20000));
+    test('the −1 title marker never serves as an end bound', () {
+      // A title marker at the START of the audio must not truncate the
+      // final couplet into a negative range (the sohrab sh1 regression).
+      final withTitle = Map<int, int>.of(starts)..[-1] = 500;
+      expect(coupletRangeMs(withTitle, 1), (startMs: 9186, endMs: null));
     });
 
     test('a couplet missing from the sync is a hard error', () {
       expect(() => coupletRangeMs(starts, 7), throwsStateError);
+    });
+
+    test('an out-of-order sync is a hard error, not a garbled clip', () {
+      final broken = Map<int, int>.of(starts)..[2] = 100;
+      expect(() => coupletRangeMs(broken, 0), throwsStateError);
     });
   });
 

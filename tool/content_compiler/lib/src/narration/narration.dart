@@ -6,8 +6,9 @@ library;
 /// Start time (ms) per 0-based hemistich order, from a recitation sync XML.
 ///
 /// `OneSecondBugFix` is the legacy time-scale marker (1000 = plain
-/// milliseconds); a `VerseOrder` of −1, when present, marks end-of-audio and
-/// is kept so it can serve as the final couplet's end bound.
+/// milliseconds). A `VerseOrder` of −1, when present, marks the poem-title
+/// announcement (observed before hemistich 0 in real files) — kept in the
+/// map for inspection but never used as a slice bound.
 Map<int, int> parseSyncXml(String xml) {
   final fixMatch = RegExp(
     r'<OneSecondBugFix>(\d+)</OneSecondBugFix>',
@@ -26,9 +27,10 @@ Map<int, int> parseSyncXml(String xml) {
 }
 
 /// The time slice for 0-based [coupletIndex]: from its first hemistich's
-/// start to the next couplet's start (or the −1 end marker); a null end
-/// means "to end of file". Throws [StateError] when the recitation has no
-/// sync entry for the couplet — silence would otherwise ship as content.
+/// start to the next couplet's start; a null end means "to end of file".
+/// Throws [StateError] when the recitation has no sync entry for the couplet
+/// or the sync is inconsistent — silence or a garbled slice would otherwise
+/// ship as content.
 ({int startMs, int? endMs}) coupletRangeMs(
   Map<int, int> starts,
   int coupletIndex,
@@ -37,7 +39,14 @@ Map<int, int> parseSyncXml(String xml) {
   if (start == null) {
     throw StateError('no sync entry for couplet $coupletIndex');
   }
-  return (startMs: start, endMs: starts[2 * coupletIndex + 2] ?? starts[-1]);
+  final end = starts[2 * coupletIndex + 2];
+  if (end != null && end <= start) {
+    throw StateError(
+      'inconsistent sync for couplet $coupletIndex '
+      '(start ${start}ms, next couplet ${end}ms)',
+    );
+  }
+  return (startMs: start, endMs: end);
 }
 
 /// Splits an authored provenance ref `ganjoor:<path>#<couplet-index>`.
