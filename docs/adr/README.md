@@ -15,3 +15,4 @@ ADRs are immutable once accepted; a changed decision gets a new ADR that superse
 | [0007](0007-sentry-for-crash-reporting.md) | Sentry for crash reporting | Accepted |
 | [0008](0008-local-piper-tts-for-vocabulary-audio.md) | Local Piper TTS for vocabulary audio | Accepted |
 | [0009](0009-self-hosted-glitchtip-crash-backend.md) | Self-hosted GlitchTip as the crash-report backend | Accepted |
+| [0010](0010-pack-update-protocol.md) | Content-pack update protocol — signed manifest, version-checked bootstrap | Accepted |
