@@ -77,7 +77,9 @@ Future<void> _run() async {
           ),
         ),
         hapticsServiceProvider.overrideWithValue(
-          const VibratorHapticsService(),
+          VibratorHapticsService(
+            enabled: gamification.watchProfile().map((p) => p.hapticsEnabled),
+          ),
         ),
         shareServiceProvider.overrideWithValue(const IntentShareService()),
       ],

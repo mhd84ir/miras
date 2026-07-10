@@ -83,6 +83,10 @@
   "@profileSound": {
     "description": "Settings toggle for UI feedback sounds (answer right/wrong, lesson complete)."
   },
+  "profileHaptics": "بازخورد لمسی",
+  "@profileHaptics": {
+    "description": "Settings toggle for vibration feedback."
+  },
   "profileBetaReport": "گزارش بتا",
   "@profileBetaReport": {
     "description": "Profile row + screen title for the local beta-metrics report."

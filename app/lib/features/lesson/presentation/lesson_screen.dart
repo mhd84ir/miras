@@ -61,6 +61,7 @@ class _LessonScreenState extends ConsumerState<LessonScreen> {
         if (!_completeSfxPlayed) {
           _completeSfxPlayed = true;
           unawaited(ref.read(sfxServiceProvider).play(Sfx.complete));
+          unawaited(ref.read(hapticsServiceProvider).celebrate());
         }
         return LessonResultsView(
           state: state,

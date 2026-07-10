@@ -50,6 +50,8 @@ class UserProfileRows extends Table {
       .withDefault(const Constant(false))();
   BoolColumn get soundEnabled =>
       boolean().named('sound_enabled').withDefault(const Constant(true))();
+  BoolColumn get hapticsEnabled =>
+      boolean().named('haptics_enabled').withDefault(const Constant(true))();
 
   /// 'system' | 'light' | 'dark' — parsed into ThemeMode by the UI layer.
   TextColumn get themeMode =>
@@ -156,14 +158,14 @@ class UserDatabase extends _$UserDatabase {
   }
 
   @override
-  int get schemaVersion => 3;
+  int get schemaVersion => 4;
 
   @override
   MigrationStrategy get migration => MigrationStrategy(
     onUpgrade: (m, from, to) async {
       if (from < 2) {
         // v2: gamification + SRS (M3). Tables are created at the current
-        // schema, so they already include the v3 columns.
+        // schema, so they already include every later column.
         await m.createTable(userProfileRows);
         await m.createTable(srsCardRows);
         await m.createTable(xpEventRows);
@@ -175,6 +177,11 @@ class UserDatabase extends _$UserDatabase {
         // v3: theme mode + onboarding flag (M4).
         await m.addColumn(userProfileRows, userProfileRows.themeMode);
         await m.addColumn(userProfileRows, userProfileRows.onboarded);
+      }
+      if (from >= 2 && from < 4) {
+        // v4: haptics toggle (M8). Skipped for from<2 — createTable above
+        // already produced the current schema.
+        await m.addColumn(userProfileRows, userProfileRows.hapticsEnabled);
       }
     },
   );

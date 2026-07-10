@@ -129,6 +129,7 @@ class FakeGamificationRepository implements GamificationRepository {
   int dailyXpGoal = XpRules.defaultDailyGoal;
   bool notificationsEnabled = false;
   bool soundEnabled = true;
+  bool hapticsEnabled = true;
   ThemeMode themeMode = ThemeMode.system;
   bool onboarded = true;
 
@@ -191,6 +192,7 @@ class FakeGamificationRepository implements GamificationRepository {
       dailyXpGoal: dailyXpGoal,
       notificationsEnabled: notificationsEnabled,
       soundEnabled: soundEnabled,
+      hapticsEnabled: hapticsEnabled,
       themeMode: themeMode,
       onboarded: onboarded,
     ),
@@ -212,6 +214,10 @@ class FakeGamificationRepository implements GamificationRepository {
   @override
   Future<void> setSoundEnabled({required bool enabled}) async =>
       soundEnabled = enabled;
+
+  @override
+  Future<void> setHapticsEnabled({required bool enabled}) async =>
+      hapticsEnabled = enabled;
 }
 
 /// In-memory SRS store.

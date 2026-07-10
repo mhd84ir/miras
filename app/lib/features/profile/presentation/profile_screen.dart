@@ -139,6 +139,16 @@ class ProfileScreen extends ConsumerWidget {
           ),
           SwitchListTile(
             title: Text(
+              strings.profileHaptics,
+              style: MirasTextStyles.body.copyWith(color: colors.ink),
+            ),
+            value: profile?.hapticsEnabled ?? true,
+            onChanged: (enabled) => ref
+                .read(gamificationRepositoryProvider)
+                .setHapticsEnabled(enabled: enabled),
+          ),
+          SwitchListTile(
+            title: Text(
               strings.profileNotifications,
               style: MirasTextStyles.body.copyWith(color: colors.ink),
             ),
