@@ -87,6 +87,17 @@
   "@profileHaptics": {
     "description": "Settings toggle for vibration feedback."
   },
+  "libraryPlayNarration": "پخش خوانش",
+  "@libraryPlayNarration": {
+    "description": "Play button (tooltip/TalkBack) for a verse's narration in the library."
+  },
+  "libraryNarrationCredit": "خوانش از {narrators} (آوای گنجور)",
+  "@libraryNarrationCredit": {
+    "description": "Attribution footer under the verses list; narrators is a pre-joined Persian name list.",
+    "placeholders": {
+      "narrators": {"type": "String"}
+    }
+  },
   "profileBetaReport": "گزارش بتا",
   "@profileBetaReport": {
     "description": "Profile row + screen title for the local beta-metrics report."

@@ -26,4 +26,7 @@ abstract interface class ContentRepository {
   Future<List<Verse>> versesOf(String chapterId);
 
   Future<List<RetellingSection>> retellingsOf(String chapterId);
+
+  /// Attribution rows (ADR-0011); empty when the pack carries none.
+  Future<List<Credit>> credits();
 }

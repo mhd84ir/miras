@@ -21,6 +21,7 @@ class FakeContentRepository implements ContentRepository {
     this.vocabMap = const {},
     this.verseMap = const {},
     this.retellingMap = const {},
+    this.creditList = const [],
   });
 
   final List<Chapter> chapterList;
@@ -29,6 +30,7 @@ class FakeContentRepository implements ContentRepository {
   final Map<String, VocabItem> vocabMap;
   final Map<String, Verse> verseMap;
   final Map<String, RetellingSection> retellingMap;
+  final List<Credit> creditList;
 
   @override
   Future<List<Chapter>> chapters() async => chapterList;
@@ -69,6 +71,9 @@ class FakeContentRepository implements ContentRepository {
     for (final r in retellingMap.values)
       if (r.chapterId == chapterId) r,
   ];
+
+  @override
+  Future<List<Credit>> credits() async => creditList;
 }
 
 /// Records completions/attempts and lets tests seed prior progress.

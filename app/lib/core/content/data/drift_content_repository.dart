@@ -134,6 +134,15 @@ class DriftContentRepository implements ContentRepository {
     return rows.map(_retelling).toList();
   }
 
+  @override
+  Future<List<Credit>> credits() async {
+    final rows = await _db.select(_db.creditRows).get();
+    return [
+      for (final r in rows)
+        Credit(id: r.id, kind: r.kind, name: r.name, url: r.url),
+    ];
+  }
+
   Verse _verse(VerseRow r) => Verse(
     id: r.id,
     chapterId: r.chapterId,

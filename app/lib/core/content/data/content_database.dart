@@ -100,6 +100,19 @@ class VerseVocabularyRows extends Table {
   Set<Column<Object>> get primaryKey => {verseId, vocabularyItemId};
 }
 
+class CreditRows extends Table {
+  @override
+  String get tableName => 'credits';
+
+  TextColumn get id => text()();
+  TextColumn get kind => text()();
+  TextColumn get name => text()();
+  TextColumn get url => text().nullable()();
+
+  @override
+  Set<Column<Object>> get primaryKey => {id};
+}
+
 class RetellingRows extends Table {
   @override
   String get tableName => 'retellings';
@@ -124,6 +137,7 @@ class RetellingRows extends Table {
     VerseRows,
     VerseVocabularyRows,
     RetellingRows,
+    CreditRows,
   ],
 )
 class ContentDatabase extends _$ContentDatabase {
@@ -139,8 +153,9 @@ class ContentDatabase extends _$ContentDatabase {
     return ContentDatabase(NativeDatabase.opened(db));
   }
 
+  // v2: credits table (narration attribution, ADR-0011).
   @override
-  int get schemaVersion => 1;
+  int get schemaVersion => 2;
 
   /// The pack ships with its schema already created (and `user_version` set
   /// by the compiler); the app must never attempt DDL on it.

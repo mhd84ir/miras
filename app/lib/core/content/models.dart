@@ -129,3 +129,21 @@ class RetellingSection {
   final String body;
   final String? illustrationAsset;
 }
+
+/// Attribution shipped in the pack (ADR-0011), e.g. an آوای گنجور narrator.
+@immutable
+class Credit {
+  const Credit({
+    required this.id,
+    required this.kind,
+    required this.name,
+    this.url,
+  });
+
+  final String id;
+
+  /// e.g. `narration`.
+  final String kind;
+  final String name;
+  final String? url;
+}
