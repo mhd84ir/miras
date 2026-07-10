@@ -1,0 +1,106 @@
+{
+  "schema": 1,
+  "source": "آوای گنجور (ganjoor.net)",
+  "narrators": [
+    {
+      "name": "عندلیب",
+      "url": "https://t.me/Satkani_Andalib"
+    },
+    {
+      "name": "سهیل قاسمی",
+      "url": "https://setiq.com"
+    }
+  ],
+  "verses": {
+    "sohrab.v001": {
+      "poem": "/ferdousi/shahname/sohrab/sh1",
+      "couplet": 0,
+      "recitation_id": 22796,
+      "artist": "عندلیب"
+    },
+    "sohrab.v002": {
+      "poem": "/ferdousi/shahname/sohrab/sh1",
+      "couplet": 1,
+      "recitation_id": 22796,
+      "artist": "عندلیب"
+    },
+    "sohrab.v003": {
+      "poem": "/ferdousi/shahname/sohrab/sh1",
+      "couplet": 2,
+      "recitation_id": 22796,
+      "artist": "عندلیب"
+    },
+    "sohrab.v004": {
+      "poem": "/ferdousi/shahname/sohrab/sh1",
+      "couplet": 13,
+      "recitation_id": 22796,
+      "artist": "عندلیب"
+    },
+    "sohrab.v005": {
+      "poem": "/ferdousi/shahname/sohrab/sh2",
+      "couplet": 2,
+      "recitation_id": 22797,
+      "artist": "عندلیب"
+    },
+    "sohrab.v006": {
+      "poem": "/ferdousi/shahname/sohrab/sh4",
+      "couplet": 3,
+      "recitation_id": 22879,
+      "artist": "عندلیب"
+    },
+    "sohrab.v007": {
+      "poem": "/ferdousi/shahname/sohrab/sh4",
+      "couplet": 37,
+      "recitation_id": 22879,
+      "artist": "عندلیب"
+    },
+    "sohrab.v008": {
+      "poem": "/ferdousi/shahname/sohrab/sh4",
+      "couplet": 40,
+      "recitation_id": 22879,
+      "artist": "عندلیب"
+    },
+    "sohrab.v009": {
+      "poem": "/ferdousi/shahname/sohrab/sh6",
+      "couplet": 1,
+      "recitation_id": 22881,
+      "artist": "عندلیب"
+    },
+    "sohrab.v010": {
+      "poem": "/ferdousi/shahname/sohrab/sh18",
+      "couplet": 5,
+      "recitation_id": 35249,
+      "artist": "سهیل قاسمی"
+    },
+    "sohrab.v014": {
+      "poem": "/ferdousi/shahname/sohrab/sh18",
+      "couplet": 76,
+      "recitation_id": 35249,
+      "artist": "سهیل قاسمی"
+    },
+    "sohrab.v015": {
+      "poem": "/ferdousi/shahname/sohrab/sh18",
+      "couplet": 56,
+      "recitation_id": 35249,
+      "artist": "سهیل قاسمی"
+    },
+    "sohrab.v011": {
+      "poem": "/ferdousi/shahname/sohrab/sh19",
+      "couplet": 2,
+      "recitation_id": 25968,
+      "artist": "عندلیب"
+    },
+    "sohrab.v012": {
+      "poem": "/ferdousi/shahname/sohrab/sh19",
+      "couplet": 4,
+      "recitation_id": 25968,
+      "artist": "عندلیب"
+    },
+    "sohrab.v013": {
+      "poem": "/ferdousi/shahname/sohrab/sh20",
+      "couplet": 3,
+      "recitation_id": 25969,
+      "artist": "عندلیب"
+    }
+  }
+}

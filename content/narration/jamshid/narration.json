@@ -1,0 +1,96 @@
+{
+  "schema": 1,
+  "source": "آوای گنجور (ganjoor.net)",
+  "narrators": [
+    {
+      "name": "فرید حامد",
+      "url": "https://t.me/GouyaKetab"
+    }
+  ],
+  "verses": {
+    "jamshid.v001": {
+      "poem": "/ferdousi/shahname/jamshid/sh1",
+      "couplet": 0,
+      "recitation_id": 4755,
+      "artist": "فرید حامد"
+    },
+    "jamshid.v002": {
+      "poem": "/ferdousi/shahname/jamshid/sh1",
+      "couplet": 5,
+      "recitation_id": 4755,
+      "artist": "فرید حامد"
+    },
+    "jamshid.v003": {
+      "poem": "/ferdousi/shahname/jamshid/sh1",
+      "couplet": 8,
+      "recitation_id": 4755,
+      "artist": "فرید حامد"
+    },
+    "jamshid.v004": {
+      "poem": "/ferdousi/shahname/jamshid/sh1",
+      "couplet": 13,
+      "recitation_id": 4755,
+      "artist": "فرید حامد"
+    },
+    "jamshid.v005": {
+      "poem": "/ferdousi/shahname/jamshid/sh1",
+      "couplet": 47,
+      "recitation_id": 4755,
+      "artist": "فرید حامد"
+    },
+    "jamshid.v006": {
+      "poem": "/ferdousi/shahname/jamshid/sh1",
+      "couplet": 49,
+      "recitation_id": 4755,
+      "artist": "فرید حامد"
+    },
+    "jamshid.v007": {
+      "poem": "/ferdousi/shahname/jamshid/sh1",
+      "couplet": 50,
+      "recitation_id": 4755,
+      "artist": "فرید حامد"
+    },
+    "jamshid.v008": {
+      "poem": "/ferdousi/shahname/jamshid/sh1",
+      "couplet": 51,
+      "recitation_id": 4755,
+      "artist": "فرید حامد"
+    },
+    "jamshid.v009": {
+      "poem": "/ferdousi/shahname/jamshid/sh1",
+      "couplet": 54,
+      "recitation_id": 4755,
+      "artist": "فرید حامد"
+    },
+    "jamshid.v010": {
+      "poem": "/ferdousi/shahname/jamshid/sh1",
+      "couplet": 55,
+      "recitation_id": 4755,
+      "artist": "فرید حامد"
+    },
+    "jamshid.v011": {
+      "poem": "/ferdousi/shahname/jamshid/sh1",
+      "couplet": 61,
+      "recitation_id": 4755,
+      "artist": "فرید حامد"
+    },
+    "jamshid.v012": {
+      "poem": "/ferdousi/shahname/jamshid/sh1",
+      "couplet": 64,
+      "recitation_id": 4755,
+      "artist": "فرید حامد"
+    },
+    "jamshid.v013": {
+      "poem": "/ferdousi/shahname/jamshid/sh1",
+      "couplet": 69,
+      "recitation_id": 4755,
+      "artist": "فرید حامد"
+    },
+    "jamshid.v014": {
+      "poem": "/ferdousi/shahname/jamshid/sh1",
+      "couplet": 72,
+      "recitation_id": 4755,
+      "artist": "فرید حامد"
+    }
+  }
+}

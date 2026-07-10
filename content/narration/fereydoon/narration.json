@@ -1,0 +1,94 @@
+{
+  "schema": 1,
+  "source": "آوای گنجور (ganjoor.net)",
+  "narrators": [
+    {
+      "name": "فرید حامد",
+      "url": "https://t.me/GouyaKetab"
+    },
+    {
+      "name": "فرشید ربانی",
+      "url": "http://www.shereno.com/71065/"
+    }
+  ],
+  "verses": {
+    "fereydoon.v001": {
+      "poem": "/ferdousi/shahname/fereydoon/sh1",
+      "couplet": 0,
+      "recitation_id": 6139,
+      "artist": "فرید حامد"
+    },
+    "fereydoon.v002": {
+      "poem": "/ferdousi/shahname/fereydoon/sh1",
+      "couplet": 2,
+      "recitation_id": 6139,
+      "artist": "فرید حامد"
+    },
+    "fereydoon.v003": {
+      "poem": "/ferdousi/shahname/fereydoon/sh1",
+      "couplet": 3,
+      "recitation_id": 6139,
+      "artist": "فرید حامد"
+    },
+    "fereydoon.v004": {
+      "poem": "/ferdousi/shahname/fereydoon/sh1",
+      "couplet": 8,
+      "recitation_id": 6139,
+      "artist": "فرید حامد"
+    },
+    "fereydoon.v005": {
+      "poem": "/ferdousi/shahname/fereydoon/sh1",
+      "couplet": 10,
+      "recitation_id": 6139,
+      "artist": "فرید حامد"
+    },
+    "fereydoon.v006": {
+      "poem": "/ferdousi/shahname/fereydoon/sh1",
+      "couplet": 11,
+      "recitation_id": 6139,
+      "artist": "فرید حامد"
+    },
+    "fereydoon.v007": {
+      "poem": "/ferdousi/shahname/fereydoon/sh1",
+      "couplet": 43,
+      "recitation_id": 6139,
+      "artist": "فرید حامد"
+    },
+    "fereydoon.v008": {
+      "poem": "/ferdousi/shahname/fereydoon/sh1",
+      "couplet": 45,
+      "recitation_id": 6139,
+      "artist": "فرید حامد"
+    },
+    "fereydoon.v009": {
+      "poem": "/ferdousi/shahname/fereydoon/sh2",
+      "couplet": 0,
+      "recitation_id": 15635,
+      "artist": "فرشید ربانی"
+    },
+    "fereydoon.v010": {
+      "poem": "/ferdousi/shahname/fereydoon/sh5",
+      "couplet": 0,
+      "recitation_id": 15671,
+      "artist": "فرشید ربانی"
+    },
+    "fereydoon.v011": {
+      "poem": "/ferdousi/shahname/fereydoon/sh5",
+      "couplet": 1,
+      "recitation_id": 15671,
+      "artist": "فرشید ربانی"
+    },
+    "fereydoon.v012": {
+      "poem": "/ferdousi/shahname/fereydoon/sh6",
+      "couplet": 1,
+      "recitation_id": 15672,
+      "artist": "فرشید ربانی"
+    },
+    "fereydoon.v013": {
+      "poem": "/ferdousi/shahname/fereydoon/sh6",
+      "couplet": 2,
+      "recitation_id": 15672,
+      "artist": "فرشید ربانی"
+    }
+  }
+}

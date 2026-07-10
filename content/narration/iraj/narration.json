@@ -1,0 +1,138 @@
+{
+  "schema": 1,
+  "source": "آوای گنجور (ganjoor.net)",
+  "narrators": [
+    {
+      "name": "فرشید ربانی",
+      "url": "http://www.shereno.com/71065/"
+    }
+  ],
+  "verses": {
+    "iraj.v001": {
+      "poem": "/ferdousi/shahname/fereydoon/sh6",
+      "couplet": 4,
+      "recitation_id": 15672,
+      "artist": "فرشید ربانی"
+    },
+    "iraj.v002": {
+      "poem": "/ferdousi/shahname/fereydoon/sh6",
+      "couplet": 6,
+      "recitation_id": 15672,
+      "artist": "فرشید ربانی"
+    },
+    "iraj.v003": {
+      "poem": "/ferdousi/shahname/fereydoon/sh6",
+      "couplet": 7,
+      "recitation_id": 15672,
+      "artist": "فرشید ربانی"
+    },
+    "iraj.v004": {
+      "poem": "/ferdousi/shahname/fereydoon/sh7",
+      "couplet": 13,
+      "recitation_id": 15673,
+      "artist": "فرشید ربانی"
+    },
+    "iraj.v005": {
+      "poem": "/ferdousi/shahname/fereydoon/sh7",
+      "couplet": 14,
+      "recitation_id": 15673,
+      "artist": "فرشید ربانی"
+    },
+    "iraj.v006": {
+      "poem": "/ferdousi/shahname/fereydoon/sh7",
+      "couplet": 25,
+      "recitation_id": 15673,
+      "artist": "فرشید ربانی"
+    },
+    "iraj.v007": {
+      "poem": "/ferdousi/shahname/fereydoon/sh7",
+      "couplet": 22,
+      "recitation_id": 15673,
+      "artist": "فرشید ربانی"
+    },
+    "iraj.v008": {
+      "poem": "/ferdousi/shahname/fereydoon/sh7",
+      "couplet": 37,
+      "recitation_id": 15673,
+      "artist": "فرشید ربانی"
+    },
+    "iraj.v009": {
+      "poem": "/ferdousi/shahname/fereydoon/sh9",
+      "couplet": 19,
+      "recitation_id": 15675,
+      "artist": "فرشید ربانی"
+    },
+    "iraj.v010": {
+      "poem": "/ferdousi/shahname/fereydoon/sh10",
+      "couplet": 12,
+      "recitation_id": 15676,
+      "artist": "فرشید ربانی"
+    },
+    "iraj.v011": {
+      "poem": "/ferdousi/shahname/fereydoon/sh10",
+      "couplet": 19,
+      "recitation_id": 15676,
+      "artist": "فرشید ربانی"
+    },
+    "iraj.v012": {
+      "poem": "/ferdousi/shahname/fereydoon/sh10",
+      "couplet": 20,
+      "recitation_id": 15676,
+      "artist": "فرشید ربانی"
+    },
+    "iraj.v013": {
+      "poem": "/ferdousi/shahname/fereydoon/sh10",
+      "couplet": 24,
+      "recitation_id": 15676,
+      "artist": "فرشید ربانی"
+    },
+    "iraj.v014": {
+      "poem": "/ferdousi/shahname/fereydoon/sh10",
+      "couplet": 32,
+      "recitation_id": 15676,
+      "artist": "فرشید ربانی"
+    },
+    "iraj.v015": {
+      "poem": "/ferdousi/shahname/fereydoon/sh10",
+      "couplet": 34,
+      "recitation_id": 15676,
+      "artist": "فرشید ربانی"
+    },
+    "iraj.v016": {
+      "poem": "/ferdousi/shahname/fereydoon/sh11",
+      "couplet": 11,
+      "recitation_id": 15901,
+      "artist": "فرشید ربانی"
+    },
+    "iraj.v017": {
+      "poem": "/ferdousi/shahname/fereydoon/sh11",
+      "couplet": 12,
+      "recitation_id": 15901,
+      "artist": "فرشید ربانی"
+    },
+    "iraj.v018": {
+      "poem": "/ferdousi/shahname/fereydoon/sh11",
+      "couplet": 17,
+      "recitation_id": 15901,
+      "artist": "فرشید ربانی"
+    },
+    "iraj.v019": {
+      "poem": "/ferdousi/shahname/fereydoon/sh11",
+      "couplet": 31,
+      "recitation_id": 15901,
+      "artist": "فرشید ربانی"
+    },
+    "iraj.v020": {
+      "poem": "/ferdousi/shahname/fereydoon/sh11",
+      "couplet": 33,
+      "recitation_id": 15901,
+      "artist": "فرشید ربانی"
+    },
+    "iraj.v021": {
+      "poem": "/ferdousi/shahname/fereydoon/sh11",
+      "couplet": 49,
+      "recitation_id": 15901,
+      "artist": "فرشید ربانی"
+    }
+  }
+}
