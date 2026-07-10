@@ -17,6 +17,7 @@ class PackWriter {
     required this.bundle,
     required this.packVersion,
     this.audioAssets = const {},
+    this.assetDigests = const {},
   });
 
   final ContentBundle bundle;
@@ -25,7 +26,12 @@ class PackWriter {
   /// content id (vocab/verse) → pack-relative audio asset path.
   final Map<String, String> audioAssets;
 
-  void write(File dbFile) {
+  /// pack-relative asset path → sha256 of its bytes; part of the checksum
+  /// (ADR-0010) so changed audio invalidates the pack like changed text.
+  final Map<String, String> assetDigests;
+
+  /// Writes the pack and returns its checksum (also stored in content_pack).
+  String write(File dbFile) {
     if (dbFile.existsSync()) dbFile.deleteSync();
     dbFile.parent.createSync(recursive: true);
 
@@ -175,23 +181,29 @@ class PackWriter {
         }
       }
 
+      final checksum = _checksum();
       db
         ..execute('INSERT INTO content_pack VALUES (?, ?, ?, ?)', [
           packVersion,
           contentSchemaVersion,
-          _checksum(),
+          checksum,
           DateTime.now().toUtc().toIso8601String(),
         ])
         ..execute('COMMIT');
+      return checksum;
     } finally {
       db.close();
     }
   }
 
-  /// Deterministic digest over all content, so identical content always
+  /// Deterministic digest over all content — text and asset bytes
+  /// (docs/DATA_MODEL.md invariant; ADR-0010) — so identical content always
   /// yields the same checksum regardless of build time or machine.
   String _checksum() {
     final canonical = StringBuffer();
+    for (final path in assetDigests.keys.toList()..sort()) {
+      canonical.write('$path|${assetDigests[path]}');
+    }
     final chapters = [...bundle.chapters]..sort((a, b) => a.id.compareTo(b.id));
     for (final c in chapters) {
       canonical.write(

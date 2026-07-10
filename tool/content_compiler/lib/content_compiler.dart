@@ -2,6 +2,7 @@
 library;
 
 export 'src/audio_check.dart';
+export 'src/manifest.dart';
 export 'src/model/content.dart';
 export 'src/pack_writer.dart';
 export 'src/persian_normalizer.dart';

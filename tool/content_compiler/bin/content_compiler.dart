@@ -1,7 +1,9 @@
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:args/args.dart';
 import 'package:content_compiler/content_compiler.dart';
+import 'package:crypto/crypto.dart';
 import 'package:path/path.dart' as p;
 
 Future<void> main(List<String> argv) async {
@@ -101,6 +103,7 @@ Future<void> main(List<String> argv) async {
   final tts = CachedTts(adapter, cacheDir);
 
   final audioAssets = <String, String>{};
+  final assetFiles = <String, ({String sha256, int bytes})>{};
   var missingAudio = 0;
   Future<void> synthesizeFor(String id, String text) async {
     final bytes = await tts.get(text);
@@ -113,6 +116,10 @@ Future<void> main(List<String> argv) async {
     file.parent.createSync(recursive: true);
     await file.writeAsBytes(bytes);
     audioAssets[id] = asset;
+    assetFiles[asset] = (
+      sha256: sha256.convert(bytes).toString(),
+      bytes: bytes.length,
+    );
   }
 
   for (final v in bundle.allVocab) {
@@ -145,17 +152,47 @@ Future<void> main(List<String> argv) async {
   }
 
   // ---------------------------------------------------------------- pack
+  final packVersion = int.parse(args.option('pack-version')!);
   final dbFile = File(p.join(outDir.path, 'miras_content.db'));
-  PackWriter(
+  final checksum = PackWriter(
     bundle: bundle,
-    packVersion: int.parse(args.option('pack-version')!),
+    packVersion: packVersion,
     audioAssets: audioAssets,
+    assetDigests: {
+      for (final MapEntry(:key, :value) in assetFiles.entries)
+        key: value.sha256,
+    },
   ).write(dbFile);
+
+  // Manifest (CDN, signed at release time) + sidecar (bundled with the app
+  // so the bootstrap can version-check without reading DB bytes) — ADR-0010.
+  final dbBytes = dbFile.readAsBytesSync();
+  File(p.join(outDir.path, 'manifest.json')).writeAsStringSync(
+    const JsonEncoder.withIndent('  ').convert(
+      buildManifest(
+        packVersion: packVersion,
+        schemaVersion: contentSchemaVersion,
+        checksum: checksum,
+        files: {
+          'miras_content.db': (
+            sha256: sha256.convert(dbBytes).toString(),
+            bytes: dbBytes.length,
+          ),
+          ...assetFiles,
+        },
+        builtAt: DateTime.now(),
+      ),
+    ),
+  );
+  File(p.join(outDir.path, 'pack_meta.json')).writeAsStringSync(
+    jsonEncode(buildPackMeta(packVersion: packVersion, checksum: checksum)),
+  );
 
   final size = (dbFile.lengthSync() / 1024).toStringAsFixed(0);
   stdout.writeln(
     'build: wrote ${dbFile.path} ($size KB, '
-    'pack v${args.option('pack-version')}, schema v$contentSchemaVersion)',
+    'pack v$packVersion, schema v$contentSchemaVersion) '
+    '+ manifest.json + pack_meta.json',
   );
 }
 
