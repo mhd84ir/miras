@@ -98,6 +98,23 @@ vocab item an optional `tts_text` — the fully-diacritized form (e.g.
 compiler synthesizes from that instead of `word`. Authoring-only; it never
 enters the pack, and changing it regenerates exactly that clip.
 
+## Verse narration (خوانش)
+
+Verse audio is human recitation imported from آوای گنجور (ADR-0011), not TTS:
+
+```sh
+dart run content_compiler import-narration --content ../../content \
+  --chapter zahak            # optional: --artist "<narrator substring>"
+```
+
+Clips land ID-addressed in `content/narration/<chapter>/` (committed) with
+provenance in `narration.json`; `build` overlays them over synthesized verse
+audio and ships narrator attribution in the pack's `credits` table (shown
+under the library verses). Audition every imported clip before committing —
+sync data is crowd-made, so slice boundaries are only as good as the
+recitation's sync; re-import a poem with a different `--artist` if its
+default recitation disappoints.
+
 ## Review workflow
 
 Content changes go through PRs like code: CI validates the whole content tree
