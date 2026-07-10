@@ -27,6 +27,11 @@ Future<void> main(List<String> argv) async {
       'piper-model',
       help: 'Path to a Piper voice model (.onnx); PIPER_MODEL env fallback',
     )
+    ..addOption('chapter', help: 'Chapter id (import-narration)')
+    ..addOption(
+      'artist',
+      help: 'Preferred narrator name substring (import-narration)',
+    )
     ..addFlag('strict', help: 'Treat warnings as failures (CI/release mode)')
     ..addFlag('help', abbr: 'h', negatable: false);
 
@@ -42,7 +47,8 @@ Future<void> main(List<String> argv) async {
     exit(args.flag('help') ? 0 : 64);
   }
   final command = args.rest.first;
-  if (command != 'build' && command != 'validate') {
+  const commands = {'build', 'validate', 'import-narration'};
+  if (!commands.contains(command)) {
     _usage(parser, error: 'unknown command "$command"');
     exit(64);
   }
@@ -79,6 +85,21 @@ Future<void> main(List<String> argv) async {
     exit(1);
   }
   if (command == 'validate') return;
+
+  if (command == 'import-narration') {
+    final chapterId = args.option('chapter');
+    if (chapterId == null) {
+      _usage(parser, error: 'import-narration requires --chapter');
+      exit(64);
+    }
+    await importNarration(
+      bundle: bundle,
+      chapterId: chapterId,
+      contentDir: contentDir,
+      artistFilter: args.option('artist'),
+    );
+    return;
+  }
 
   // --------------------------------------------------------------- audio
   // The cache is committed alongside authored content (ADR-0008), so builds
@@ -151,6 +172,55 @@ Future<void> main(List<String> argv) async {
     stdout.writeln('WARN  $message');
   }
 
+  // ---------------------------------------------------- narration overlay
+  // Human recitation (ADR-0011) overrides synthesized verse audio; clips are
+  // ID-addressed under content/narration/<chapter>/ with provenance JSON.
+  final credits = <PackCredit>[];
+  final narrationRoot = Directory(p.join(contentDir.path, 'narration'));
+  if (narrationRoot.existsSync()) {
+    final verseIds = {for (final v in bundle.allVerses) v.id};
+    for (final chapterDir
+        in narrationRoot.listSync().whereType<Directory>().toList()
+          ..sort((a, b) => a.path.compareTo(b.path))) {
+      final metaFile = File(p.join(chapterDir.path, 'narration.json'));
+      if (!metaFile.existsSync()) continue;
+      final meta =
+          jsonDecode(metaFile.readAsStringSync()) as Map<String, dynamic>;
+      var clips = 0;
+      for (final clip in chapterDir.listSync().whereType<File>()) {
+        if (!clip.path.endsWith('.mp3')) continue;
+        final verseId = p.basenameWithoutExtension(clip.path);
+        if (!verseIds.contains(verseId)) {
+          stdout.writeln(
+            'WARN  narration clip for unknown verse "$verseId" ignored',
+          );
+          continue;
+        }
+        final bytes = clip.readAsBytesSync();
+        final digest = sha256.convert(bytes).toString();
+        final asset = 'audio/${digest.substring(0, 16)}.mp3';
+        File(p.join(outDir.path, asset))
+          ..parent.createSync(recursive: true)
+          ..writeAsBytesSync(bytes);
+        audioAssets[verseId] = asset;
+        assetFiles[asset] = (sha256: digest, bytes: bytes.length);
+        clips++;
+      }
+      for (final n in meta['narrators'] as List<dynamic>) {
+        final narrator = n as Map<String, dynamic>;
+        credits.add((
+          id: 'narration:${p.basename(chapterDir.path)}:${narrator['name']}',
+          kind: 'narration',
+          name: narrator['name'] as String,
+          url: narrator['url'] as String?,
+        ));
+      }
+      stdout.writeln(
+        'narration: ${p.basename(chapterDir.path)} — $clips clips',
+      );
+    }
+  }
+
   // ---------------------------------------------------------------- pack
   final packVersion = int.parse(args.option('pack-version')!);
   final dbFile = File(p.join(outDir.path, 'miras_content.db'));
@@ -162,6 +232,7 @@ Future<void> main(List<String> argv) async {
       for (final MapEntry(:key, :value) in assetFiles.entries)
         key: value.sha256,
     },
+    credits: credits,
   ).write(dbFile);
 
   // Manifest (CDN, signed at release time) + sidecar (bundled with the app

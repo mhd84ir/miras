@@ -6,7 +6,11 @@ import 'package:crypto/crypto.dart';
 import 'package:sqlite3/sqlite3.dart';
 
 /// Content-store schema version understood by the app (docs/DATA_MODEL.md).
-const contentSchemaVersion = 1;
+/// v2: credits table (narration attribution, ADR-0011).
+const contentSchemaVersion = 2;
+
+/// One attribution row (e.g. a narrator) shipped inside the pack.
+typedef PackCredit = ({String id, String kind, String name, String? url});
 
 /// Writes a [ContentBundle] into a SQLite content pack.
 ///
@@ -18,6 +22,7 @@ class PackWriter {
     required this.packVersion,
     this.audioAssets = const {},
     this.assetDigests = const {},
+    this.credits = const [],
   });
 
   final ContentBundle bundle;
@@ -29,6 +34,9 @@ class PackWriter {
   /// pack-relative asset path → sha256 of its bytes; part of the checksum
   /// (ADR-0010) so changed audio invalidates the pack like changed text.
   final Map<String, String> assetDigests;
+
+  /// Attribution rows (ADR-0011), e.g. آوای گنجور narrators.
+  final List<PackCredit> credits;
 
   /// Writes the pack and returns its checksum (also stored in content_pack).
   String write(File dbFile) {
@@ -104,6 +112,12 @@ class PackWriter {
           position INTEGER NOT NULL,
           body TEXT NOT NULL,
           illustration_asset TEXT
+        );
+        CREATE TABLE credits (
+          id TEXT PRIMARY KEY,
+          kind TEXT NOT NULL,
+          name TEXT NOT NULL,
+          url TEXT
         );
 
         CREATE INDEX idx_lessons_chapter ON lessons(chapter_id, position);
@@ -181,6 +195,15 @@ class PackWriter {
         }
       }
 
+      for (final credit in credits) {
+        db.execute('INSERT INTO credits VALUES (?, ?, ?, ?)', [
+          credit.id,
+          credit.kind,
+          credit.name,
+          credit.url,
+        ]);
+      }
+
       final checksum = _checksum();
       db
         ..execute('INSERT INTO content_pack VALUES (?, ?, ?, ?)', [
@@ -203,6 +226,10 @@ class PackWriter {
     final canonical = StringBuffer();
     for (final path in assetDigests.keys.toList()..sort()) {
       canonical.write('$path|${assetDigests[path]}');
+    }
+    final sortedCredits = [...credits]..sort((a, b) => a.id.compareTo(b.id));
+    for (final c in sortedCredits) {
+      canonical.write('${c.id}|${c.kind}|${c.name}|${c.url}');
     }
     final chapters = [...bundle.chapters]..sort((a, b) => a.id.compareTo(b.id));
     for (final c in chapters) {
