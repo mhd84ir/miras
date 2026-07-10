@@ -1,6 +1,5 @@
 # Verse text verbatim from Ganjoor (public domain). Do not edit hemistichs;
 # fix at source reference if a transcription error is ever found.
-# TODO(editorial): meanings and interpretations pending literary review.
 verses:
   # --- خاستگاه ضحاک (شاهنامه، پادشاهی جمشید، بخش ۲ و ۳)
   - id: zahak.v001

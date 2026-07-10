@@ -1,6 +1,5 @@
 # Verse text verbatim from Ganjoor (public domain). Do not edit hemistichs.
 # Continues directly from content/chapters/fereydoon/verses.yaml (last verse: sh6#2).
-# TODO(editorial): meanings and interpretations pending literary review.
 verses:
   - id: iraj.v001
     hemistich1: "بجنبید مر سلم را دل ز جای"
