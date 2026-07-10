@@ -9,8 +9,8 @@ Two physically separate SQLite databases (via Drift):
   replaceable).
 
 Content IDs are human-readable, stable, and immutable across pack versions:
-`zahhak` (chapter) · `zahhak.l03` (lesson) · `zahhak.l03.e07` (exercise) ·
-`zahhak.v012` (verse) · `vocab.kherad` (vocabulary item).
+`zahak` (chapter) · `zahak.l03` (lesson) · `zahak.l03.e07` (exercise) ·
+`zahak.v012` (verse) · `vocab.kherad` (vocabulary item).
 
 ---
 
@@ -27,7 +27,7 @@ Content IDs are human-readable, stable, and immutable across pack versions:
 ### `chapters` — a story (داستان)
 | Column | Type | Notes |
 |---|---|---|
-| `id` | text PK | e.g. `zahhak` |
+| `id` | text PK | e.g. `zahak` |
 | `position` | int | Order on the learning path |
 | `title` | text | Persian, e.g. «ضحاک و کاوهٔ آهنگر» |
 | `subtitle` | text | One-line Persian teaser |
@@ -37,7 +37,7 @@ Content IDs are human-readable, stable, and immutable across pack versions:
 ### `lessons`
 | Column | Type | Notes |
 |---|---|---|
-| `id` | text PK | e.g. `zahhak.l03` |
+| `id` | text PK | e.g. `zahak.l03` |
 | `chapter_id` | text FK | |
 | `position` | int | |
 | `type` | text enum | `vocab · practice · verses · story · review` |
@@ -46,7 +46,7 @@ Content IDs are human-readable, stable, and immutable across pack versions:
 ### `exercises`
 | Column | Type | Notes |
 |---|---|---|
-| `id` | text PK | e.g. `zahhak.l03.e07` |
+| `id` | text PK | e.g. `zahak.l03.e07` |
 | `lesson_id` | text FK | |
 | `position` | int | |
 | `type` | text enum | 8 types, see §3 |
@@ -68,7 +68,7 @@ Content IDs are human-readable, stable, and immutable across pack versions:
 ### `verses` — one row per بیت (couplet)
 | Column | Type | Notes |
 |---|---|---|
-| `id` | text PK | e.g. `zahhak.v012` |
+| `id` | text PK | e.g. `zahak.v012` |
 | `chapter_id` | text FK | |
 | `position` | int | Narrative order within chapter |
 | `hemistich_1` | text | مصراع اول |

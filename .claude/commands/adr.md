@@ -9,8 +9,8 @@ allowed-tools: Bash, Read, Write, Edit, Grep, Glob
 Title: $ARGUMENTS
 
 An ADR here records a decision *already made*, in the project's own words —
-it's not a tool for making the decision itself. All 6 existing ADRs in
-`docs/adr/` are status `Accepted`; none were speculative. Read at least 2 of
+it's not a tool for making the decision itself. Every existing ADR in
+`docs/adr/` is status `Accepted`; none were speculative. Read at least 2 of
 them (e.g. `docs/adr/0001-*.md` and `docs/adr/0006-*.md`) before drafting, to
 match the house voice: terse, concrete, comparative (rejected alternatives
 named with a one-line reason each, not just the winner justified in

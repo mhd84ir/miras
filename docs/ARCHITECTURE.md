@@ -111,8 +111,8 @@ notifiers/controllers) → `domain/` (entities + pure logic) ← `data/` (reposi
    downloaded, checksum-verified, and swapped atomically; user progress references
    content by stable IDs, which are **immutable across pack versions**.
 
-Content IDs are human-readable and stable, e.g. `zahhak`, `zahhak.l03`,
-`zahhak.v012`, `vocab.kherad` — renames are forbidden; deprecation is additive.
+Content IDs are human-readable and stable, e.g. `zahak`, `zahak.l03`,
+`zahak.v012`, `vocab.kherad` — renames are forbidden; deprecation is additive.
 
 ## 6. Localization
 
