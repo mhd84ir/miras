@@ -18,6 +18,8 @@ x-environment: &default-environment
   GLITCHTIP_ENABLE_DUCKDB: "False"
   ENABLE_USER_REGISTRATION: ${ENABLE_USER_REGISTRATION:-False}
   ENABLE_ORGANIZATION_CREATION: ${ENABLE_ORGANIZATION_CREATION:-False}
+  # Django 4+ CSRF origin check behind reverse proxy / FQDN trailing-dot
+  CSRF_TRUSTED_ORIGINS: ${CSRF_TRUSTED_ORIGINS:-https://miras.tebtejarat.com}
 
 services:
   postgres:
