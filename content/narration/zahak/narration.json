@@ -1,0 +1,144 @@
+{
+  "schema": 1,
+  "source": "آوای گنجور (ganjoor.net)",
+  "narrators": [
+    {
+      "name": "فرید حامد",
+      "url": "https://t.me/GouyaKetab"
+    }
+  ],
+  "verses": {
+    "zahak.v001": {
+      "poem": "/ferdousi/shahname/jamshid/sh2",
+      "couplet": 0,
+      "recitation_id": 4756,
+      "artist": "فرید حامد"
+    },
+    "zahak.v002": {
+      "poem": "/ferdousi/shahname/jamshid/sh2",
+      "couplet": 2,
+      "recitation_id": 4756,
+      "artist": "فرید حامد"
+    },
+    "zahak.v003": {
+      "poem": "/ferdousi/shahname/jamshid/sh2",
+      "couplet": 8,
+      "recitation_id": 4756,
+      "artist": "فرید حامد"
+    },
+    "zahak.v004": {
+      "poem": "/ferdousi/shahname/jamshid/sh2",
+      "couplet": 13,
+      "recitation_id": 4756,
+      "artist": "فرید حامد"
+    },
+    "zahak.v005": {
+      "poem": "/ferdousi/shahname/jamshid/sh2",
+      "couplet": 43,
+      "recitation_id": 4756,
+      "artist": "فرید حامد"
+    },
+    "zahak.v006": {
+      "poem": "/ferdousi/shahname/jamshid/sh3",
+      "couplet": 7,
+      "recitation_id": 4757,
+      "artist": "فرید حامد"
+    },
+    "zahak.v007": {
+      "poem": "/ferdousi/shahname/jamshid/sh3",
+      "couplet": 29,
+      "recitation_id": 4757,
+      "artist": "فرید حامد"
+    },
+    "zahak.v008": {
+      "poem": "/ferdousi/shahname/jamshid/sh3",
+      "couplet": 34,
+      "recitation_id": 4757,
+      "artist": "فرید حامد"
+    },
+    "zahak.v009": {
+      "poem": "/ferdousi/shahname/jamshid/sh3",
+      "couplet": 42,
+      "recitation_id": 4757,
+      "artist": "فرید حامد"
+    },
+    "zahak.v010": {
+      "poem": "/ferdousi/shahname/zahak/sh1",
+      "couplet": 0,
+      "recitation_id": 4774,
+      "artist": "فرید حامد"
+    },
+    "zahak.v011": {
+      "poem": "/ferdousi/shahname/zahak/sh1",
+      "couplet": 2,
+      "recitation_id": 4774,
+      "artist": "فرید حامد"
+    },
+    "zahak.v012": {
+      "poem": "/ferdousi/shahname/zahak/sh1",
+      "couplet": 3,
+      "recitation_id": 4774,
+      "artist": "فرید حامد"
+    },
+    "zahak.v013": {
+      "poem": "/ferdousi/shahname/zahak/sh3",
+      "couplet": 2,
+      "recitation_id": 4776,
+      "artist": "فرید حامد"
+    },
+    "zahak.v014": {
+      "poem": "/ferdousi/shahname/zahak/sh3",
+      "couplet": 6,
+      "recitation_id": 4776,
+      "artist": "فرید حامد"
+    },
+    "zahak.v015": {
+      "poem": "/ferdousi/shahname/zahak/sh7",
+      "couplet": 17,
+      "recitation_id": 4780,
+      "artist": "فرید حامد"
+    },
+    "zahak.v016": {
+      "poem": "/ferdousi/shahname/zahak/sh7",
+      "couplet": 20,
+      "recitation_id": 4780,
+      "artist": "فرید حامد"
+    },
+    "zahak.v017": {
+      "poem": "/ferdousi/shahname/zahak/sh7",
+      "couplet": 21,
+      "recitation_id": 4780,
+      "artist": "فرید حامد"
+    },
+    "zahak.v018": {
+      "poem": "/ferdousi/shahname/zahak/sh7",
+      "couplet": 34,
+      "recitation_id": 4780,
+      "artist": "فرید حامد"
+    },
+    "zahak.v019": {
+      "poem": "/ferdousi/shahname/zahak/sh7",
+      "couplet": 47,
+      "recitation_id": 4780,
+      "artist": "فرید حامد"
+    },
+    "zahak.v020": {
+      "poem": "/ferdousi/shahname/zahak/sh7",
+      "couplet": 58,
+      "recitation_id": 4780,
+      "artist": "فرید حامد"
+    },
+    "zahak.v021": {
+      "poem": "/ferdousi/shahname/zahak/sh12",
+      "couplet": 62,
+      "recitation_id": 4785,
+      "artist": "فرید حامد"
+    },
+    "zahak.v022": {
+      "poem": "/ferdousi/shahname/zahak/sh12",
+      "couplet": 67,
+      "recitation_id": 4785,
+      "artist": "فرید حامد"
+    }
+  }
+}
