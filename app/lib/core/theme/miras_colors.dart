@@ -7,6 +7,8 @@ import 'package:flutter/material.dart';
 class MirasColors extends ThemeExtension<MirasColors> {
   const MirasColors({
     required this.firoozeh,
+    required this.action,
+    required this.onAction,
     required this.lajvard,
     required this.zarrin,
     required this.anari,
@@ -20,8 +22,18 @@ class MirasColors extends ThemeExtension<MirasColors> {
     required this.hairline,
   });
 
-  /// Primary — turquoise (فیروزه): buttons, active states, progress.
+  /// Primary — turquoise (فیروزه): active states, progress, icon fills,
+  /// large text. For normal-size text or filled CTAs use [action]/[onAction]
+  /// — raw firoozeh misses WCAG AA (4.5:1) against paper and under white.
   final Color firoozeh;
+
+  /// Accessible companion to [firoozeh] for CTA fills and accent text at
+  /// normal sizes: deep turquoise in light, bright turquoise in dark. Pairs
+  /// with [onAction] at ≥ 5:1.
+  final Color action;
+
+  /// Label/icon color on [action] fills.
+  final Color onAction;
 
   /// Secondary — lapis (لاجورد): links, info, selected chips.
   final Color lajvard;
@@ -47,6 +59,8 @@ class MirasColors extends ThemeExtension<MirasColors> {
 
   static const light = MirasColors(
     firoozeh: Color(0xFF14A098),
+    action: Color(0xFF0F766E),
+    onAction: Color(0xFFFFFFFF),
     lajvard: Color(0xFF26619C),
     zarrin: Color(0xFFC9A227),
     anari: Color(0xFFB33A3A),
@@ -62,6 +76,8 @@ class MirasColors extends ThemeExtension<MirasColors> {
 
   static const dark = MirasColors(
     firoozeh: Color(0xFF2FC4B2),
+    action: Color(0xFF2FC4B2),
+    onAction: Color(0xFF0F1826),
     lajvard: Color(0xFF5B8FCB),
     zarrin: Color(0xFFD9B44A),
     anari: Color(0xFFD46A6A),
@@ -78,6 +94,8 @@ class MirasColors extends ThemeExtension<MirasColors> {
   @override
   MirasColors copyWith({
     Color? firoozeh,
+    Color? action,
+    Color? onAction,
     Color? lajvard,
     Color? zarrin,
     Color? anari,
@@ -92,6 +110,8 @@ class MirasColors extends ThemeExtension<MirasColors> {
   }) {
     return MirasColors(
       firoozeh: firoozeh ?? this.firoozeh,
+      action: action ?? this.action,
+      onAction: onAction ?? this.onAction,
       lajvard: lajvard ?? this.lajvard,
       zarrin: zarrin ?? this.zarrin,
       anari: anari ?? this.anari,
@@ -111,6 +131,8 @@ class MirasColors extends ThemeExtension<MirasColors> {
     if (other == null) return this;
     return MirasColors(
       firoozeh: Color.lerp(firoozeh, other.firoozeh, t)!,
+      action: Color.lerp(action, other.action, t)!,
+      onAction: Color.lerp(onAction, other.onAction, t)!,
       lajvard: Color.lerp(lajvard, other.lajvard, t)!,
       zarrin: Color.lerp(zarrin, other.zarrin, t)!,
       anari: Color.lerp(anari, other.anari, t)!,

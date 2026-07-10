@@ -87,7 +87,8 @@ class _OptionTile extends StatelessWidget {
               child: Text(
                 label,
                 style: MirasTextStyles.body.copyWith(
-                  color: isSelected ? colors.firoozeh : colors.ink,
+                  // action, not firoozeh: 16px text needs AA contrast.
+                  color: isSelected ? colors.action : colors.ink,
                   fontWeight: isSelected ? FontWeight.w600 : FontWeight.w400,
                 ),
               ),

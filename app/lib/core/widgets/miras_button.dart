@@ -55,21 +55,23 @@ class _MirasButtonState extends State<MirasButton> {
 
     final style =
         switch (widget.variant) {
+          // action/onAction (not raw firoozeh): label contrast is WCAG-AA,
+          // enforced by test/a11y/a11y_guidelines_test.dart.
           MirasButtonVariant.primary => FilledButton.styleFrom(
-            backgroundColor: colors.firoozeh,
-            foregroundColor: Colors.white,
+            backgroundColor: colors.action,
+            foregroundColor: colors.onAction,
             disabledBackgroundColor: colors.surfaceVariant,
             disabledForegroundColor: colors.inkMuted,
           ),
           MirasButtonVariant.secondary => FilledButton.styleFrom(
             backgroundColor: colors.surface,
-            foregroundColor: colors.firoozeh,
+            foregroundColor: colors.action,
             disabledForegroundColor: colors.inkMuted,
             side: BorderSide(color: colors.hairline, width: 1.5),
           ),
           MirasButtonVariant.text => FilledButton.styleFrom(
             backgroundColor: Colors.transparent,
-            foregroundColor: colors.firoozeh,
+            foregroundColor: colors.action,
             disabledForegroundColor: colors.inkMuted,
           ),
         }.copyWith(
