@@ -46,16 +46,41 @@ class VocabIntroView extends StatelessWidget {
   }
 }
 
-/// verseIntro: couplet, meaning, interpretation.
-class VerseIntroView extends StatelessWidget {
-  const VerseIntroView({required this.loaded, super.key});
+/// verseIntro: couplet, meaning, interpretation — narrated (ADR-0011) when
+/// the pack carries audio: the recitation auto-plays once as the verse
+/// appears, and the button replays it.
+class VerseIntroView extends StatefulWidget {
+  const VerseIntroView({
+    required this.loaded,
+    this.playing = false,
+    this.onPlay,
+    super.key,
+  });
 
   final LoadedExercise loaded;
 
+  /// Live playback state, reflected in the button icon.
+  final bool playing;
+
+  /// Plays/replays the narration; null hides the button (no audio in pack).
+  final VoidCallback? onPlay;
+
+  @override
+  State<VerseIntroView> createState() => _VerseIntroViewState();
+}
+
+class _VerseIntroViewState extends State<VerseIntroView> {
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) => widget.onPlay?.call());
+  }
+
   @override
   Widget build(BuildContext context) {
+    final colors = context.mirasColors;
     final strings = AppLocalizations.of(context);
-    final verse = loaded.verse!;
+    final verse = widget.loaded.verse!;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -65,6 +90,25 @@ class VerseIntroView extends StatelessWidget {
           hemistich1: verse.hemistich1,
           hemistich2: verse.hemistich2,
         ),
+        if (widget.onPlay != null) ...[
+          const SizedBox(height: MirasSpacing.md),
+          Center(
+            child: DecoratedBox(
+              decoration: BoxDecoration(
+                color: colors.action,
+                shape: BoxShape.circle,
+              ),
+              child: IconButton(
+                tooltip: strings.libraryPlayNarration,
+                onPressed: widget.onPlay,
+                icon: Icon(
+                  widget.playing ? Icons.graphic_eq : Icons.volume_up,
+                  color: colors.onAction,
+                ),
+              ),
+            ),
+          ),
+        ],
         const SizedBox(height: MirasSpacing.lg),
         _LabeledCard(label: strings.meaningLabel, body: verse.meaning),
         if (verse.interpretation != null) ...[

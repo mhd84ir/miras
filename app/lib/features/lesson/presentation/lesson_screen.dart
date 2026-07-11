@@ -128,7 +128,16 @@ class _LessonScreenState extends ConsumerState<LessonScreen> {
 
     return switch (current.prompt) {
       VocabIntroPrompt() => VocabIntroView(loaded: current),
-      VerseIntroPrompt() => VerseIntroView(loaded: current),
+      VerseIntroPrompt() => VerseIntroView(
+        loaded: current,
+        playing: ref.watch(audioPlayingProvider).value ?? false,
+        onPlay: switch (current.verse?.audioAsset) {
+          null => null,
+          final asset => () => unawaited(
+            ref.read(audioServiceProvider).playAsset(asset),
+          ),
+        },
+      ),
       StorySectionPrompt() => StorySectionView(loaded: current),
       MultipleChoicePrompt() || ComprehensionPrompt() => QuestionChoiceView(
         loaded: current,

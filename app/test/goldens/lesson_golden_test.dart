@@ -137,6 +137,23 @@ void main() {
     );
   });
 
+  testWidgets('verse intro — narrated', (tester) async {
+    await pumpGolden(
+      tester,
+      VerseIntroView(
+        loaded: exerciseWith(
+          const VerseIntroPrompt(verseId: 'zahak.v010'),
+          verse: Fixtures.verse,
+        ),
+        onPlay: () {},
+      ),
+    );
+    await expectLater(
+      goldenSubject(),
+      matchesGoldenFile('goldens/exercise_verse_intro_narrated.png'),
+    );
+  });
+
   testWidgets('listening exercise', (tester) async {
     await pumpGolden(
       tester,

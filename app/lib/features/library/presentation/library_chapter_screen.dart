@@ -96,7 +96,8 @@ class _VersesList extends ConsumerWidget {
                 ),
                 child: Text(
                   strings.libraryNarrationCredit(
-                    credits.map((c) => c.name).join('، '),
+                    // Credits are chapter-scoped rows; names repeat.
+                    {for (final c in credits) c.name}.join('، '),
                   ),
                   textAlign: TextAlign.center,
                   style: MirasTextStyles.caption.copyWith(

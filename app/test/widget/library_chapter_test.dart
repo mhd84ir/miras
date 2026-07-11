@@ -84,7 +84,13 @@ void main() {
   testWidgets('the خوانش credit appears when narration is present', (
     tester,
   ) async {
-    await pumpGolden(tester, screen(credits: const [credit]));
+    // Chapter-scoped rows repeat the same narrator; the footer dedupes.
+    const duplicate = Credit(
+      id: 'narration:jamshid:فرید حامد',
+      kind: 'narration',
+      name: 'فرید حامد',
+    );
+    await pumpGolden(tester, screen(credits: const [credit, duplicate]));
 
     await tester.scrollUntilVisible(
       find.text(strings.libraryNarrationCredit('فرید حامد')),

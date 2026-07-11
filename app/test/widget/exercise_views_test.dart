@@ -8,6 +8,7 @@ import 'package:miras/features/lesson/domain/loaded_exercise.dart';
 import 'package:miras/features/lesson/presentation/exercises/choice_views.dart';
 import 'package:miras/features/lesson/presentation/exercises/hemistich_assembly_view.dart';
 import 'package:miras/features/lesson/presentation/exercises/matching_view.dart';
+import 'package:miras/features/lesson/presentation/exercises/presentation_views.dart';
 
 import '../goldens/golden_harness.dart';
 import '../helpers/fakes.dart';
@@ -146,6 +147,44 @@ void main() {
 
     await tester.tap(find.byIcon(Icons.volume_up));
     expect(plays, 2, reason: 'button replays the clip');
+  });
+
+  testWidgets('verse intro auto-plays narration once and replays on tap', (
+    tester,
+  ) async {
+    var plays = 0;
+    await pumpGolden(
+      tester,
+      VerseIntroView(
+        loaded: exerciseWith(
+          const VerseIntroPrompt(verseId: 'zahak.v010'),
+          verse: Fixtures.verse,
+        ),
+        onPlay: () => plays++,
+      ),
+      surfaceSize: const Size(400, 800),
+    );
+    expect(plays, 1, reason: 'auto-played on entry');
+
+    await tester.tap(find.byIcon(Icons.volume_up));
+    expect(plays, 2);
+  });
+
+  testWidgets('verse intro without pack audio shows no play button', (
+    tester,
+  ) async {
+    await pumpGolden(
+      tester,
+      VerseIntroView(
+        loaded: exerciseWith(
+          const VerseIntroPrompt(verseId: 'zahak.v010'),
+          verse: Fixtures.verse,
+        ),
+      ),
+      surfaceSize: const Size(400, 800),
+    );
+
+    expect(find.byIcon(Icons.volume_up), findsNothing);
   });
 
   testWidgets(
