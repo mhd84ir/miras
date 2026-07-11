@@ -22,7 +22,7 @@ dependencies:
   just_audio: ^0.10.6
   path: ^1.9.1
   path_provider: ^2.1.6
-  sentry_flutter: ^8.14.2
+  sentry_flutter: ^9.24.0
   sqlite3: ^3.3.4
   timezone: ^0.11.1
 
