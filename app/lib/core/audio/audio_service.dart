@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:just_audio/just_audio.dart';
+import 'package:sentry_flutter/sentry_flutter.dart';
 
 /// Plays pre-baked pack audio (ADR-0005/ADR-0008): short local asset clips,
 /// currently vocabulary pronunciation for listening exercises. Local-first —
@@ -33,11 +34,18 @@ class JustAudioService implements AudioService {
 
   @override
   Future<void> playAsset(String assetPath) async {
-    // setAsset resets position, so a replay restarts from the top; the load
-    // is a bundled file read, effectively instant.
-    await _player.setAsset('assets/content/$assetPath');
-    // play() completes only when playback finishes — deliberately unawaited.
-    unawaited(_player.play());
+    try {
+      // setAsset resets position, so a replay restarts from the top; the
+      // load is a bundled file read, effectively instant.
+      await _player.setAsset('assets/content/$assetPath');
+      // play() completes when playback finishes — deliberately unawaited.
+      unawaited(_player.play());
+    } on Exception catch (error, stackTrace) {
+      // Playback must never break the flow, but a failing pack asset is a
+      // real content defect — surface it to crash reporting, not silence.
+      // (captureException is a no-op when the DSN is absent.)
+      unawaited(Sentry.captureException(error, stackTrace: stackTrace));
+    }
   }
 
   @override
