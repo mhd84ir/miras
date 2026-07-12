@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/foundation.dart';
 import 'package:sentry_flutter/sentry_flutter.dart';
 
@@ -16,5 +18,15 @@ void configureSentryOptions(SentryFlutterOptions options) {
     ..environment = kReleaseMode ? 'beta' : 'dev'
     ..sendDefaultPii = false
     ..attachScreenshot = false
-    ..tracesSampleRate = null;
+    ..tracesSampleRate = null
+    ..beforeSend = stripUser;
+}
+
+/// The first-drill inspection found the SDK's random per-install id and the
+/// connection IP rendered as a "user" on events. Zero-PII (ADR-0007) means
+/// neither ships: events carry no user at all. (The server can still infer
+/// connection IPs — the GlitchTip project-level IP scrub covers that side.)
+FutureOr<SentryEvent?> stripUser(SentryEvent event, Hint hint) {
+  event.user = null;
+  return event;
 }
