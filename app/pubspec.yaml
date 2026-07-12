@@ -2,7 +2,7 @@ name: miras
 description: "Miras (میراث) — gamified learning app for Persian classical literature."
 publish_to: 'none'
 # 0.9.x = phase-1 beta; 1.0.0 after beta feedback.
-version: 0.9.0+3
+version: 0.9.1+4
 
 environment:
   sdk: ^3.12.2
